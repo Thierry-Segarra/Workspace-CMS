@@ -71,3 +71,8 @@ Avancer du code par Jours
 21/02/2022
 
     Petit objectif : rajouter une functionnalité de liste et de tableau avec les option adéquat et rajouter une une partit js pour les Bouton
+
+    création de la fonction de la liste plus création de la ligne dans une liste
+    il faudra modifier les option Liste et les option de la Ligne dans une liste
+
+    
