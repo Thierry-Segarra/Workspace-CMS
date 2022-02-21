@@ -1,0 +1,1 @@
+    <div class="builddiv" id="idiv1"><div id="div1comp1"><h1 id="tidiv11" style="font-size: 35px; text-align: center; border: 2px solid black; padding-top: 50px; padding-bottom: 50px;">Bienvenue Sur WorkSpace</h1></div></div><div class="builddiv" id="idiv2"><div id="div2comp2"><img id="imadiv22" src="../Image/imagedefaut.png" alt="Image introuvable"></div></div>
