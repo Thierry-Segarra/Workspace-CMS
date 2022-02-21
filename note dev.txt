@@ -67,3 +67,7 @@ Avancer du code par Jours
 
     Note de rajoue
     Rajouter dans les option pour les BOUTON une zone JS pour implementé ces propre fonctionnalité pour cette article ou une zone href pour mettre un lien
+
+21/02/2022
+
+    Petit objectif : rajouter une functionnalité de liste et de tableau avec les option adéquat et rajouter une une partit js pour les Bouton

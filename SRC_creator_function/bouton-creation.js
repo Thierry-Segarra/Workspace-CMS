@@ -29,6 +29,8 @@ function suprime_bouton(dv,i,comp){
     document.getElementById('id_br'+i).remove();
     document.getElementById('up'+i).remove();
     document.getElementById('down'+i).remove();
+    document.getElementById(comp).remove();
+    
     boucle_composans(dv)
 }
 

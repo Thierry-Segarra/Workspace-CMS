@@ -29,6 +29,8 @@ function suprime_titre(dv,i,comp){;
     document.getElementById('id_sup'+i).remove();
     document.getElementById('up'+i).remove();
     document.getElementById('down'+i).remove();
+    document.getElementById(comp).remove();
+
     boucle_composans(dv)
 }
 
