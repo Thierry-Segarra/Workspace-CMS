@@ -1,6 +1,7 @@
 Log progression proget CMS
 
 proget comencer le 23/01/2022
+
 Grand objectif: Faire un CMS complet (création page ,article , formulaire ...);
 
 recap  Petit objectif fini avan l'archivage des modification jours
@@ -95,6 +96,8 @@ Avancer du code par Jours
 
     A Faire:
     rajouter une function pour récuperer séparement les ligne et rajouter pour chaque ligne un bouton pour modifier le contenue, monté et decendre la ligne   
+
+    ajoue du traitement de la ligne, récuperation de l'id et du nom de la ligne
 
 
     
