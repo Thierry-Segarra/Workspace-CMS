@@ -31,6 +31,11 @@
     var op_menu_bouton = '<?php include("../Option_menu/op_menu_bouton.php") ?>';
     var op_menu_image = '<?php include("../Option_menu/op_menu_image.php") ?>';
     var op_menu_liste = '<?php include("../Option_menu/op_menu_liste.php") ?>';
+    var op_menu_ligne_liste = '<?php include("../Option_menu/op_menu_ligne_liste.php") ?>';
+
+
+    var adv_op_ligne_liste = '<?php include("../Option_menu/adv_op_ligne_liste.php") ?>';
+
 </script>
 
 
@@ -43,9 +48,12 @@
 <script type="text/javascript" src="../SRC_creator_function/bouton-creation.js"></script> <!-- Pour crée un bouton --> 
 <script type="text/javascript" src="../SRC_creator_function/image-creation.js"></script> <!-- Pour crée une image -->
 <script type="text/javascript" src="../SRC_creator_function/liste-creation.js"></script> <!-- Pour crée une liste -->
+<script type="text/javascript" src="../SRC_creator_function/ligne-liste-creation.js"></script> <!-- Pour crée une ligne dans une liste -->
 
 <script type="text/javascript" src="../SRC_creator_function/updo_comp.js"></script> <!-- Pour monté ou decendre un composant dans une div -->
 <script type="text/javascript" src="../SRC_creator_function/updo_div.js"></script> <!-- Pour monté ou decendre une div dans la structure -->
+
+<script type="text/javascript" src="../SRC_creator_function/traitement_ligneliste.js"></script> <!-- Permet de traiter l'HTML du l'article pour récuperer les ligne de la liste a modifer -->
 
 
 

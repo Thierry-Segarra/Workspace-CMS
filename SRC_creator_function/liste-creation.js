@@ -16,24 +16,6 @@ function addListeDiv(i){
     boucle_composans(i);
 }
 
-function addLigneListe(i,nbcomp){
-    // i = le numero de la div
-    // compo = le numerot du composan
-    let divcomp = "div"+i+"comp"+compo; // ex: div1comp1
-    console.log(divcomp);
-     let add = '<li id="listdiv'+i+nbcomp+'ligne'+compo+'">Nouvelle ellement</li>';
-     
-     // Permet de créé un text dans une div
-     document.getElementById('listdiv'+i+nbcomp).innerHTML =  document.getElementById('listdiv'+i+nbcomp).innerHTML + add;
-     tablediv["idiv"+i].push(divcomp);
- 
-     tablediv["idiv"+i][divcomp] ='LIGNE LISTE'; // ajouter a divcomp un nom
-     console.log(tablediv);
-     compo = compo + 1;
- 
-     boucle_composans(i)
- }
-
 // option
 function suprime_liste(dv,i,comp){
     
@@ -58,7 +40,10 @@ function suprime_liste(dv,i,comp){
 function option_liste(i){
 
     document.getElementById("menu_option").innerHTML = op_menu_liste; // Permet d'affichet les option disponible a cette element
-    document.getElementById('op_src').value = document.getElementById("listdiv"+i).src; // Permet de selectionné le contenue a modifier
+    //document.getElementById('op_src').value = document.getElementById("listdiv"+i).src; // Permet de selectionné le contenue a modifier
+    let test = document.getElementById("op_plus")
+    test.setAttribute('onclick','contenue_Liste('+i+');');
+    console.log(test.getAttribute('onclick'))
 
     if(document.getElementById('listdiv'+i).style.border){
         let border = document.getElementById('listdiv'+i).style.border;
@@ -112,11 +97,11 @@ function option_liste(i){
 
 function op_update_liste(i){// modifier pour chaque composant car il y a un risque de conflie de fonction
     // permet d'afficher les modification
-    document.getElementById('listdiv'+i).src = document.getElementById('op_src').value; // pour afficher le contenue modifier
+    //document.getElementById('listdiv'+i).src = document.getElementById('op_src').value; // pour afficher le contenue modifier
 
     // la taille de la balise
-    document.getElementById('listdiv'+i).style.width = document.getElementById('op_taille_width').value +"px";
-    document.getElementById('listdiv'+i).style.height = document.getElementById('op_taille_height').value +"px";
+    //document.getElementById('listdiv'+i).style.width = document.getElementById('op_taille_width').value +"px";
+    //document.getElementById('listdiv'+i).style.height = document.getElementById('op_taille_height').value +"px";
 
     document.getElementById('listdiv'+i).style.border = document.getElementById('op_bordure').value +"px solid black";
     

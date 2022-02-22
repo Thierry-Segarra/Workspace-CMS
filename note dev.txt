@@ -74,5 +74,19 @@ Avancer du code par Jours
 
     création de la fonction de la liste plus création de la ligne dans une liste
     il faudra modifier les option Liste et les option de la Ligne dans une liste
+    rajoue de fichier explicative des fichier
 
+
+22/02/2022
+
+    Faire une nouelle partie où la liste des ligne de la liste et afficher a gauche et ces option a droit
+    pour afficher le contenue d'une liste il faudra réflechire a un moyen pour pouvoir traiter plusieur liste different
     
+    pour afficher le contenue faire un traitement, pour savoir quelle liste afficher récuperer l'id de la Liste
+    isoler le contenue en commencant par par la balise <ul> avec l'aide de sont id et faire moins le nombre de caractère de l'id + 10 pour etre sur d'avoir la balise <ul> et ensuite 
+    on le limite par le premier ellement qui commence par </ul>
+
+
+    Ajoue d'une nouvelle partie pour afficher la partie de l'enregistremetn pour eviter d'ecrasser le menucreat
+    Et pour afficher les option des ligne de liste et aussi des tableua mais a Voir
+       

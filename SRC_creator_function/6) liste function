@@ -8,7 +8,7 @@
 
 - liste-creation.js // Pour crée une liste
 
-- ligne-liste-creation.js // Pour rajouter uneligne dans une liste
+- ligne-liste-creation.js // Pour rajouter une ligne dans une liste
 
 - text-creation.js // Pour crée un text
 
@@ -20,7 +20,7 @@
 
 - enregistrement_modification.js // Pour enregistrer un l'article existant
 
-- modification_article_html.php // Pour récuperer le tableua Structure dans la Base de donnée pour modifier l'article
+- modification_article_html.php // Pour récuperer le tableau Structure dans la Base de donnée pour modifier l'article
 
 - modification_article_table.js // trairement du tableau Structure PHP pour convertire en tableua Structure en JS
 

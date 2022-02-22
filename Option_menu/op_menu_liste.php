@@ -1,11 +1,9 @@
 <?php
 echo '<h1>OPTION LISTE</h1>'.
 
-'<p>taille de l`image</p>'.
-'<label for="op_taille_width">Largeur</label>'.'<br>'.
-'<input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px'.'<br>'.
-'<label for="op_taille_height">Hauteur</label>'.'<br>'.
-'<input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px'.'<br>'.
+'<p>Modifer contenue de la liste</p>'.
+'<button id="op_plus" >Option Ligne</button>'.
+
 
 '<p>bordure</p>'.
 '<input name="op_bordure" id="op_bordure" type="text"  placeholder="0 par defaut" value="">px'.
