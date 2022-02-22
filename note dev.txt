@@ -89,4 +89,12 @@ Avancer du code par Jours
 
     Ajoue d'une nouvelle partie pour afficher la partie de l'enregistremetn pour eviter d'ecrasser le menucreat
     Et pour afficher les option des ligne de liste et aussi des tableua mais a Voir
-       
+
+
+    Ajoue de la function de traitemetn pour selectionner uniquement la list voulue
+
+    A Faire:
+    rajouter une function pour récuperer séparement les ligne et rajouter pour chaque ligne un bouton pour modifier le contenue, monté et decendre la ligne   
+
+
+    
