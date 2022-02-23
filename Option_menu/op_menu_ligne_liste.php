@@ -2,7 +2,7 @@
 echo '<h1>OPTION LIGNE</h1>'.
 
 '<p>contenue</p>'.
-'<textarea class="textarea_text" name="op_contenue" id="op_contenue"  value=""></textarea>'.
+'<input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value="">'.
 
 
 '<p>taille du text</p>'.

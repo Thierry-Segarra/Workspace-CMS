@@ -8,7 +8,7 @@
     <body>
     <?php include('../SRC_creator_function/src_function_creator.php');?>
 
-    <section class="menucreat">
+    <section class="menucreat" id="menucreat">
 
     <div id="entregistrer"></div>
     <div class="structure" id="structure">

@@ -33,4 +33,4 @@
 - updo_div.js // Permet de monté ou de décendre une div dans l'article
 
 ## IMPORTANT ##
-- src_function_creator.php // sert a relier la tout les function à la création_article.php .Pour relier tou les appel en un seul fichier
+- src_function_creator.php // sert a relier la tout les function à la création_article.php.Pour relier tou les appel en un seul fichier

@@ -35,6 +35,7 @@ function suprime_bouton(dv,i,comp){
 }
 
 function option_bouton(i){
+    Fermer_op_avancee(); // pour fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
 
     document.getElementById("menu_option").innerHTML = op_menu_bouton; // Permet d'affichet les option disponible a cette element
     document.getElementById('op_contenue').value = document.getElementById("boudiv"+i).innerHTML; // Permet de selectionné le contenue a modifier

@@ -35,6 +35,7 @@ function suprime_text(dv,i,comp){
 
 
 function option_text(i){
+    Fermer_op_avancee(); // pour fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
 
     document.getElementById("menu_option").innerHTML = op_menu_text; // Permet d'affichet les option disponible a cette element
     document.getElementById('op_contenue').value = document.getElementById("texdiv"+i).innerHTML; // Permet de selectionné le contenue a modifier

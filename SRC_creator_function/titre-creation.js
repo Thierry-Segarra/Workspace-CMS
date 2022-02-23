@@ -35,6 +35,7 @@ function suprime_titre(dv,i,comp){;
 }
 
 function option_titre(i){
+    Fermer_op_avancee(); // pour fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
 
     document.getElementById("menu_option").innerHTML = op_menu_titre; // Permet d'affichet les option disponible a cette element
     document.getElementById('op_contenue').value = document.getElementById("tidiv"+i).innerHTML; // Permet de selectionné le contenue a modifier

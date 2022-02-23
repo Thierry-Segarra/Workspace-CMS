@@ -19,6 +19,7 @@ function addImageDiv(i){
 
 // option
 function suprime_image(dv,i,comp){
+    Fermer_op_avancee(); // pour fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
     
     delete tablediv["idiv"+dv][comp]; // suprimer les elements du compsans
     tablediv["idiv"+dv].splice(tablediv["idiv"+dv][comp],1); // suprimer de composans du tableau
