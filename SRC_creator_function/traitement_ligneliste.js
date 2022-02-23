@@ -17,19 +17,15 @@ function traitement_ligneliste(i,divnb,compnb){
 
     article = article.substring(article.search('<ul id="listdiv'+i));
     article = article.substring(0,article.search('</ul>')+5);
-    console.log(article);
     
     while(article.search('<li id="') != -1){
         article = article.substring(article.search('<li id="')+8);
-        console.log(article);
 
         id_ligne = article.substring(0,article.search('"')); // Pour récuperer l'id du la ligne pour identifier la ligne lors de la modification
-        console.log(id_ligne);
 
         // isoler le nom de la lisgne pour l'affichage de la liste
         nom_ligne = article.substring(article.search('">')+2);
         nom_ligne = nom_ligne.substring(0,nom_ligne.search('</li>'));
-        console.log(nom_ligne);
 
         document.getElementById("list_composans").innerHTML = document.getElementById("list_composans").innerHTML + '<button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_ligne_liste('+divnb+compnb+')">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_ligne_liste('+divnb+','+divnb+compnb+')">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+')">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+')">down</button><br id="id_br'+divnb+compnb+'"><p id="trai_'+id_ligne+'">'+nom_ligne+'</p>'
 

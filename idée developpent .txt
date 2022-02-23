@@ -1,0 +1,9 @@
+Dans article ajouter création de code HTML
+cela permet de crée son propre code html pour par exemple un copi colle de site pour l'integrer dans l'article etc
+dans les Option:
+textarea pour incerer du code HTML,CSS,JS
+
+
+Dans Page
+ajouter function de map plus pointeur
+cela permet de mettre des point sur une map pour situer un endroit voulue

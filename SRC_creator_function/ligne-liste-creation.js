@@ -20,7 +20,7 @@ function addLigneListe(i,nbcomp){
 
 // option
 function suprime_ligne_liste(i){
-    
+    Fermer_op_avancee(); // pour fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
 
     document.getElementById("option_compossan").innerHTML = op_menu; // pour remettre a vide le menu
     // Suprimer tout les Bouton Option
