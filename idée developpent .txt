@@ -1,4 +1,4 @@
-Dans article ajouter création de code HTML
+Dans article et page ajouter création de code HTML
 cela permet de crée son propre code html pour par exemple un copi colle de site pour l'integrer dans l'article etc
 dans les Option:
 textarea pour incerer du code HTML,CSS,JS

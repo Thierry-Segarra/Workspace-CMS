@@ -1,11 +1,16 @@
 Log progression proget CMS
 
-proget comencer le 23/01/2022
+Avancer du code par Jours
 
-Grand objectif: Faire un CMS complet (création page ,article , formulaire ...);
+Janvier 2022
 
-recap  Petit objectif l'archivage des modification jours fini
+23/01/2022 Grand objectif: Faire un CMS complet (création page ,article , formulaire ...);
 
+    proget comencer le 23/01/2022
+
+    recap de l'avancée avant mise a jour des activité journalier
+
+    Petit objectif l'archivage des modification jours fini
     création d'article
     enregistrement article dans la bdd 
     création fichier article.php lors de l'enregistrement
@@ -13,9 +18,7 @@ recap  Petit objectif l'archivage des modification jours fini
     ajoue de la supression d'article (article.php + article BDD )
 
 
-Avancer du code par Jours
-
-Janvier 2022
+Février 2022
 
     02/02/2022
 
@@ -71,8 +74,6 @@ Janvier 2022
         Note de rajoue
         Rajouter dans les option pour les BOUTON une zone JS pour implementé ces propre fonctionnalité pour cette article ou une zone href pour mettre un lien
 
-Février 2022
-
     21/02/2022 Nouveau Petit objectif création de liste
 
         Petit objectif : rajouter une functionnalité de liste et de tableau avec les option adéquat et rajouter une une partit js pour les Bouton
@@ -80,7 +81,6 @@ Février 2022
         création de la fonction de la liste plus création de la ligne dans une liste
         il faudra modifier les option Liste et les option de la Ligne dans une liste
         rajoue de fichier explicative des fichier
-
 
     22/02/2022
 
@@ -104,7 +104,6 @@ Février 2022
         ajoue du traitement de la ligne, récuperation de l'id et du nom de la ligne
 
         Supression du docier archive code car il ne sert plus a rien
-
 
     23/02/2022
 
@@ -132,5 +131,9 @@ Février 2022
 
         Verifier a la fin du developpement de la list, si l'enregistrement d'un nouveau article et les article existant fonctionne encore
 
+    24/02/2022
+
+        Ajoue de la functionnalité pour monté les ligne dans une liste
+        Modification et réparation des mauvaises lison des functions option, supression pour les ligne dans une liste
 
 
