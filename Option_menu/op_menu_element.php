@@ -1,15 +1,26 @@
 <?php
-echo '<h1>OPTION IMAGE</h1>'.
-
-'<p>lien de l`image</p>'.
-'<input name="op_src" id="op_src" type="text"  placeholder="../Image/imagedefaut.png" value="">'.
+echo '<h1 id="nom_element"></h1>'.
 
 
-'<p>taille de l`image</p>'.
+'<div id="taille"></div>'.
+
+
+'<p>taille de l`element</p>'.
 '<label for="op_taille_width">Largeur</label>'.'<br>'.
 '<input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px'.'<br>'.
 '<label for="op_taille_height">Hauteur</label>'.'<br>'.
 '<input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px'.'<br>'.
+
+
+'<p>alignement</p>'.
+'<input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked>'.
+'<input type="radio" id="left" name="align" value="left">'.
+'<label for="left">Left</label>'.
+'<input type="radio" id="center" name="align" value="center">'.
+'<label for="center">Center</label>'.
+'<input type="radio" id="right" name="align" value="right">'.
+'<label for="right">Right</label>'.
+
 
 '<p>bordure</p>'.
 '<input name="op_bordure" id="op_bordure" type="text"  placeholder="0 par defaut" value="">px'.

@@ -19,6 +19,7 @@ function addListeDiv(i){
 
 // option
 function suprime_liste(dv,i,comp){
+    Fermer_op_avancee(); // pour fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
     
     delete tablediv["idiv"+dv][comp]; // suprimer les elements du compsans
     tablediv["idiv"+dv].splice(tablediv["idiv"+dv][comp],1); // suprimer de composans du tableau
@@ -26,7 +27,6 @@ function suprime_liste(dv,i,comp){
     document.getElementById("menu_option").innerHTML = op_menu; // pour remettre a vide le menu
     // Suprimer tout les Bouton Option
     document.getElementById('listdiv'+i).remove();
-    //document.getElementById('name_comp'+i).remove();
     document.getElementById('idnomcomp'+i).remove();
     document.getElementById('id_op'+i).remove();
     document.getElementById('id_sup'+i).remove();

@@ -1,5 +1,5 @@
 <?php
-echo '<h1>OPTION LIGNE</h1>'.
+echo '<h1>OPTION LIGNE TEST</h1>'.
 
 '<p>contenue</p>'.
 '<input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value="">'.

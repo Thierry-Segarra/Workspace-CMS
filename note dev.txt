@@ -127,7 +127,7 @@ Février 2022
 
         Reste a faire:
         fonction UP et Down à faire. et pour cela faire un traitement qui récupere la ligne que l'on veut monté des decentre et ensuit regarder a la direction choisi sil il y a un ellement
-        comme sa nous pouvont voir si il est possible de déplacer l'element ou pas  avec un if
+        comme sa nous pouvont voir si il est possible de déplacer l'element ou pas avec un if
 
         Verifier a la fin du developpement de la list, si l'enregistrement d'un nouveau article et les article existant fonctionne encore
 
@@ -135,5 +135,27 @@ Février 2022
 
         Ajoue de la functionnalité pour monté les ligne dans une liste
         Modification et réparation des mauvaises lison des functions option, supression pour les ligne dans une liste
+
+    25/02/2022 Petit objectif liste FINI | Article 70% | Nouveau Petit objectif fichier
+
+        Petit objectif liste FINI
+
+        Moyen Objectif Article 70%
+        Manque juste le bouton est les petit detail comme l'areatext
+
+        verification des probleme d'enregistrement et de modification Fait
+
+        Nouveau Petit objectif fichier:
+        faire un fichier pour tout les option des elements d'un article (art), d'une page (pag), formulaire (form)
+
+
+        A faire mettre pour l'image la modification de la taille dans les option op_menu_element
+
+        ajoue de la création du fichier de modification pour le titre, text, bouton, image, ligne d'une liste
+        la création de liste ne peut pas etre dans le fichier pour le momment
+
+        
+
+
 
 

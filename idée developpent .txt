@@ -7,3 +7,16 @@ textarea pour incerer du code HTML,CSS,JS
 Dans Page
 ajouter function de map plus pointeur
 cela permet de mettre des point sur une map pour situer un endroit voulue
+
+
+
+modifier l'areatext pour mettre un meillieurediteur de text ex: https://nicedit.com/demos.php?demo=1
+
+modifier le bouton pour mette des fonctionnaliter comme changer de page, réseau sociaux, télecharger du contenue (dossier, vidéo etc)
+
+Relier tout les option des element de l'article en un pour avoir un seul fichier MAIS A VOIR !!!
+
+Changer les point de la ligne pour qu'il on des designe de point diffement ou de les mettre en invisible
+
+
+bouton pour slide des produits 
