@@ -6,8 +6,22 @@ function contenue_Liste(i,divnb,compnb){
     traitement_ligneliste(i,divnb,compnb);
 }
 
+function contenue_media(){
+    document.getElementById('affichage_avance').style.visibility = 'visible';
+    document.getElementById("affichage_avance").innerHTML = '<button class="bouton_ligne_list" onclick="Fermer_op_avancee_media()">X</button>';
+    document.getElementById("affichage_avance").innerHTML = document.getElementById("affichage_avance").innerHTML + adv_op_media_liste; // Permet d'affichet la liste des ellements d'une liste ou d'une tableau
+    // modification src de l'image 
+
+    
+}
+
 function Fermer_op_avancee(){
     clearInterval(inter);
+    document.getElementById('affichage_avance').style.visibility = 'hidden';
+    document.getElementById("affichage_avance").innerHTML = '';
+}
+function Fermer_op_avancee_media(){
+    //clearInterval(inter);
     document.getElementById('affichage_avance').style.visibility = 'hidden';
     document.getElementById("affichage_avance").innerHTML = '';
 }

@@ -26,13 +26,15 @@
     var op_menu = '<?php include("../Option_menu/op_menu.php") ?>';
 
     // Les option dans le menu option
-    var op_menu_element = '<?php include("../Option_menu/op_menu_element.php") ?>'; // option pour les element
-    var op_menu_liste = '<?php include("../Option_menu/op_menu_liste.php") ?>'; // option de la liste
+    var op_menu_element = '<?php include("../Option_menu/op_menu_element.php") ?>'; // option pour les element (text, titre, bouton, image, ligne)
+
+    var op_menu_liste = '<?php include("../Option_menu/op_menu_liste.php") ?>'; // option de la liste et ne peut pas etre dans le menu element car il a des parametre different
 
     // Affiche le menu de Modification avancée
     var adv_op_ligne_liste = '<?php include("../Option_menu/adv_op_ligne_liste.php") ?>';
-    // option dans le menu avancée
-    //var op_menu_ligne_liste = '<?php include("../Option_menu/op_menu_ligne_liste.php") ?>';
+
+    var adv_op_media_liste = '<?php include("../Option_menu/adv_op_media_liste.php") ?>';
+
 
 </script>
 
@@ -47,9 +49,10 @@
 
 <script type="text/javascript" src="../SRC_creator_function/composans/bouton.js"></script> <!-- Pour crée une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/image.js"></script> <!-- Pour crée une liste -->
+<script type="text/javascript" src="../SRC_creator_function/composans/titre.js"></script> <!-- Pour crée une liste -->
+<script type="text/javascript" src="../SRC_creator_function/composans/text.js"></script> <!-- Pour crée une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/liste.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/liste.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/liste.js"></script> <!-- Pour crée une liste -->
+<script type="text/javascript" src="../SRC_creator_function/composans/video.js"></script> <!-- Pour crée une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/ligne-liste.js"></script> <!-- Pour crée une ligne dans une liste -->
 
 <!-- Fonction disponible pour les modifications -->

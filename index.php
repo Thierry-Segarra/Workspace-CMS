@@ -11,6 +11,7 @@
             <li class="souslist"><p class="titre">Back Office</p></li>
             <li class="souslist"><button onclick="B1()" class="bouton">Tableau de bort</button></li>
             <li class="souslist"><button onclick="B2()" class="bouton">Article</button></li>
+            <li class="souslist"><button onclick="B3()" class="bouton">media</button></li>
             <li class="souslist"><button class="bouton">Paramètre</button></li>
         </ul>
         </section>
@@ -23,6 +24,7 @@
     <script>
         /* src="Fonction-Requet/menu.js" Bouton B1*/ var linkB1 = `<?php include("Menu-Page/tableau-de-bord.php") ?>`;
         /* src="Fonction-Requet/menu.js" Bouton B2*/ var linkB2 = `<?php include("Menu-Page/article.php") ?>`;
+        /* src="Fonction-Requet/menu.js" Bouton B2*/ var linkB3 = `<?php include("Menu-Page/media.php") ?>`;
         function sup(id){
             if ( confirm( "Voulez vous suprimer cette article" ) ) {
                 // suprime (true)

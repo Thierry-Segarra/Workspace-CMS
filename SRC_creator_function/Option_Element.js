@@ -14,11 +14,32 @@ function option_element(i,nom_element,element){
 
     if(nom_element == 'IMAGE'){
         // option pour modifier le contenue et la taille d'une image
-        document.getElementById("taille").innerHTML = '<p>lien de l`image</p><input name="op_src" id="op_src" type="text"  placeholder="../Image/imagedefaut.png" value="">';
-        console.log('IMAGE');
+        document.getElementById("taille").innerHTML = '<p>lien de l`image</p><button id="op_plus" onclick="contenue_media()" >Option Ligne</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px<br><label for="op_taille_height">Hauteur</label><br><input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px<br>';
+        //document.getElementById('op_src').value = document.getElementById(element+i).src; // Permet de selectionné le contenue a modifier
+
+        if(document.getElementById(element+i).style.width){
+            let width = document.getElementById(element+i).style.width;
+            document.getElementById('op_taille_width').value = width.substring(0,width.length-2);
+        }
+    
+        if(document.getElementById(element+i).style.height){
+            let height = document.getElementById(element+i).style.height;
+            document.getElementById('op_taille_height').value = height.substring(0,height.length-2)
+        } 
+
+    }else if(nom_element == 'VIDEO'){
+        // option pour modifier le contenue et la taille d'une image
+        document.getElementById("taille").innerHTML = '<p>lien de la video</p><input name="op_src" id="op_src" type="text"  placeholder="../Image/imagedefaut.png" value=""><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br>';
+        document.getElementById('op_src').value = document.getElementById(element+i).src;// Permet de selectionné le contenue a modifier
+
+        if(document.getElementById(element+i).style.width){
+            let width = document.getElementById(element+i).style.width;
+            document.getElementById('op_taille_width').value = width;//.substring(0,width.length-2);
+        }
+
     }else{
         // option pour modifier le contenue et la taille d'un text
-        document.getElementById("taille").innerHTML = '<p>contenue</p><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><p>taille</p><input name="op_taille" id="op_taille" type="text" placeholder="18.72 par defaut" value="">px';
+        document.getElementById("taille").innerHTML = '<p>contenue</p><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><p>taille</p><input name="op_taille" id="op_taille" type="text" placeholder="18.72 par defaut" value="">px<p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px<br><label for="op_taille_height">Hauteur</label><br><input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px<br>';
 
         document.getElementById('op_contenue').value = document.getElementById(element+i).innerHTML; // Permet de selectionné le contenue a modifier
         
@@ -26,17 +47,18 @@ function option_element(i,nom_element,element){
             let fontsize = document.getElementById(element+i).style.fontSize;
             document.getElementById('op_taille').value = fontsize.substring(0,fontsize.length-2);
         }
-    }
 
-    if(document.getElementById(element+i).style.width){
-        let width = document.getElementById(element+i).style.width;
-        document.getElementById('op_taille_width').value = width.substring(0,width.length-2);
+        if(document.getElementById(element+i).style.width){
+            let width = document.getElementById(element+i).style.width;
+            document.getElementById('op_taille_width').value = width.substring(0,width.length-2);
+        }
+    
+        if(document.getElementById(element+i).style.height){
+            let height = document.getElementById(element+i).style.height;
+            document.getElementById('op_taille_height').value = height.substring(0,height.length-2)
+        } 
     }
-
-    if(document.getElementById(element+i).style.height){
-        let height = document.getElementById(element+i).style.height;
-        document.getElementById('op_taille_height').value = height.substring(0,height.length-2)
-    }    
+   
 
     if(document.getElementById(element+i).style.border){
         let border = document.getElementById(element+i).style.border;
@@ -93,12 +115,27 @@ function option_element(i,nom_element,element){
 
 
 
-function op_update_element(i,nom_element,element){ // modifier pour chaque composant car il y a un risque de conflie de fonction
+function op_update_element(i,nom_element,element){ // modifier pour chaque composant car il y a un risque de conflie de fonction    
     // permet d'afficher les modification
     
     // la taille de la balise
     if(nom_element == 'IMAGE'){
-        document.getElementById('imadiv'+i).src = document.getElementById('op_src').value; // pour afficher le contenue modifier
+        //document.getElementById(element+i).src = document.getElementById('op_src').value; // pour afficher le contenue modifier
+        if(document.getElementById("switch")){
+            if(document.getElementById("switch").src){
+                document.getElementById(element+i).src = document.getElementById("switch").src;
+            }
+        } 
+        document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value +"px";
+        document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value +"px"; 
+
+    }else if(nom_element == 'VIDEO'){
+        
+        if(document.getElementById(element+i).src != document.getElementById('op_src').value){ // pour eviter que la vidéo ce reloard a chaque fois
+        document.getElementById(element+i).src = document.getElementById('op_src').value; // pour afficher le contenue modifier
+        }
+        
+        document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value;
 
     }else{
 
@@ -111,11 +148,12 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
         // Modification contenue dans liste des ligne dans une liste
         if (nom_element == 'LIGNE') {
             document.getElementById('trai_'+element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
+        
+            document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value +"px";
+            document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value +"px";
         }
     }
 
-    document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value +"px";
-    document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value +"px";
 
     // Alignement du text
     document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
@@ -135,4 +173,9 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
     document.getElementById(element+i).style.paddingBottom = document.getElementById('op_padding_bas').value;// +"px";
     document.getElementById(element+i).style.paddingLeft = document.getElementById('op_padding_gauche').value;// +"px";
 
+}
+
+
+function media_image(nom){
+        document.getElementById('switch').src = '../Image/'+nom;
 }

@@ -20,3 +20,6 @@ Changer les point de la ligne pour qu'il on des designe de point diffement ou de
 
 
 bouton pour slide des produits 
+
+
+FAIRE LES COMMENTAIRE POUR LES ARTICLES (dans la page)

@@ -154,8 +154,23 @@ Février 2022
         ajoue de la création du fichier de modification pour le titre, text, bouton, image, ligne d'une liste
         la création de liste ne peut pas etre dans le fichier pour le momment
 
-        
+    26/02/2022 Nouveau Petit objectif Upload
 
+        Nouveau Petit objectif Upload
+        faire une interface pour selectionner l'image ou la vidéo souhaite dans les elements disposans de ces option  
+
+        rajoue de la function vidéo
+
+        commencement du developpement de l'interface de Upload
+
+    27/02/2022 Fin Petit objectif Upload
+
+        Fin du Petit objectif Upload pour l'image
+
+        relier les image upload au option de l'image
+
+        A faire: cherhcer pour mettre des vidéo youtube sur le site (peut etre un traitement a faire)
+        export de la base de donnée
 
 
 

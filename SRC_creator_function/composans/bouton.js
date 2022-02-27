@@ -37,3 +37,9 @@ function suprime_bouton(dv,i,comp){
     
     boucle_composans(dv)
 }
+/*
+function opion_bouton()
+
+
+
+*/

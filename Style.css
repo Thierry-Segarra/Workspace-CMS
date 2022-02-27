@@ -187,3 +187,33 @@ article .builddiv{
     overflow-y:scroll;
     
 }
+
+
+iframe {
+    width:854px;
+    height:480px;
+}
+
+
+
+.media_size{
+    margin-top: 25px;
+    margin-left: 15px;
+    width: 250px;
+    border: solid black 1px;
+}
+
+
+
+.media_liste{
+    width: 100%;
+    height: 95%;
+    border: solid rgb(107, 107, 107) 1px;
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    
+}

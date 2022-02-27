@@ -5,13 +5,6 @@ echo '<h1 id="nom_element"></h1>'.
 '<div id="taille"></div>'.
 
 
-'<p>taille de l`element</p>'.
-'<label for="op_taille_width">Largeur</label>'.'<br>'.
-'<input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px'.'<br>'.
-'<label for="op_taille_height">Hauteur</label>'.'<br>'.
-'<input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px'.'<br>'.
-
-
 '<p>alignement</p>'.
 '<input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked>'.
 '<input type="radio" id="left" name="align" value="left">'.
