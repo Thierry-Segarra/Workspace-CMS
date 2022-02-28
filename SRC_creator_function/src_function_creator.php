@@ -25,17 +25,11 @@
     // option sans selection (aucune option séléctionner)
     var op_menu = '<?php include("../Option_menu/op_menu.php") ?>';
 
-    // Les option dans le menu option
-    var op_menu_element = '<?php include("../Option_menu/op_menu_element.php") ?>'; // option pour les element (text, titre, bouton, image, ligne)
-
-    var op_menu_liste = '<?php include("../Option_menu/op_menu_liste.php") ?>'; // option de la liste et ne peut pas etre dans le menu element car il a des parametre different
-
-    // Affiche le menu de Modification avancée
-    var adv_op_ligne_liste = '<?php include("../Option_menu/adv_op_ligne_liste.php") ?>';
-
-    var adv_op_media_liste = '<?php include("../Option_menu/adv_op_media_liste.php") ?>';
-
-
+    // Les option de chaque composans
+    var op_menu_titre = '<?php include("../Option_menu/op_menu_titre.php") ?>';
+    var op_menu_text = '<?php include("../Option_menu/op_menu_text.php") ?>';
+    var op_menu_bouton = '<?php include("../Option_menu/op_menu_bouton.php") ?>';
+    var op_menu_image = '<?php include("../Option_menu/op_menu_image.php") ?>';
 </script>
 
 
@@ -43,22 +37,13 @@
 <!-- Création de la div -->
 <script type="text/javascript" src="../SRC_creator_function/div-creation.js"></script> <!-- Pour crée une div -->
 <!-- Composans dans une div -->
+<script type="text/javascript" src="../SRC_creator_function/titre-creation.js"></script> <!-- Pour crée un titre -->
+<script type="text/javascript" src="../SRC_creator_function/text-creation.js"></script> <!-- Pour crée un text --> 
+<script type="text/javascript" src="../SRC_creator_function/bouton-creation.js"></script> <!-- Pour crée un bouton --> 
+<script type="text/javascript" src="../SRC_creator_function/image-creation.js"></script> <!-- Pour crée une image -->
 
-<script type="text/javascript" src="../SRC_creator_function/Option_Element.js"></script> <!-- Pour crée un titre, text, image, bouton-->
-
-
-<script type="text/javascript" src="../SRC_creator_function/composans/bouton.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/image.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/titre.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/text.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/liste.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/video.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/ligne-liste.js"></script> <!-- Pour crée une ligne dans une liste -->
-
-<!-- Fonction disponible pour les modifications -->
 <script type="text/javascript" src="../SRC_creator_function/updo_comp.js"></script> <!-- Pour monté ou decendre un composant dans une div -->
 <script type="text/javascript" src="../SRC_creator_function/updo_div.js"></script> <!-- Pour monté ou decendre une div dans la structure -->
-<script type="text/javascript" src="../SRC_creator_function/traitement_ligneliste.js"></script> <!-- Permet de traiter l'HTML de l'article pour récuperer les ligne de la liste a modifer -->
 
 
 

@@ -7,10 +7,6 @@
         echo '<script type="text/javascript">B2()</script>';
         // Pour aller dans le menu "Article"
     }
-    else if(isset($_GET['media'])){
-        echo '<script type="text/javascript">B3()</script>';
-        // Pour aller dans le menu "Article"
-    }
     else {
         echo '<script type="text/javascript">B1()</script>';
     }

@@ -1,16 +1,10 @@
 Log progression proget CMS
 
-Avancer du code par Jours
+proget comencer le 23/01/2022
+Grand objectif: Faire un CMS complet (création page ,article , formulaire ...);
 
-Janvier 2022
+recap  Petit objectif fini avan l'archivage des modification jours
 
-23/01/2022 Grand objectif: Faire un CMS complet (création page ,article , formulaire ...);
-
-    proget comencer le 23/01/2022
-
-    recap de l'avancée avant mise a jour des activité journalier
-
-    Petit objectif l'archivage des modification jours fini
     création d'article
     enregistrement article dans la bdd 
     création fichier article.php lors de l'enregistrement
@@ -18,159 +12,58 @@ Janvier 2022
     ajoue de la supression d'article (article.php + article BDD )
 
 
-Février 2022
+Avancer du code par Jours
 
-    02/02/2022
+02/02/2022
 
-        Faire du changement sur les option de création pour mettre au centre des element 
+    Faire du changement sur les option de création pour mettre au centre des element 
 
-        Enlever les px pour la marge et le padding | Fait
-        mettre en commentaire les mesure a la fin de chaque option | Fait
+    Enlever les px pour la marge et le padding | Fait
+    mettre en commentaire les mesure a la fin de chaque option | Fait
 
-        faire une option pour la div
-        ex: changer de couleur au background, border ...
+    faire une option pour la div
+    ex: changer de couleur au background, border ...
 
-        ajoue du création de fichier et archivache des fichier et reangement de fichier
+    ajoue du création de fichier et archivache des fichier et reangement de fichier
 
-    03/02/2022  Nouveau Petit objectif : enregistrement et modification
-        modification des appel de fichier du a cause du reangement, les fichier ne se trouver plus
+03/02/2022  Nouveau Petit objectif
+    modification des appel de fichier du a cause du reangement, les fichier ne se trouver plus
 
-        compsans modifier:
-        Titre
-        Text
-        Image
-        Bouton
+    compsans modifier:
+    Titre
+    Text
+    Image
+    Bouton
 
-        developpement de la partie de la modification des article
-        A faire:
-        Faire un traitement de tableau php pour JS (faire l'inverse de l'enregistrement)
-        récuperer les donnée avec un substring et utiliser pour regarder [idivX] [divXcompX] et string(x)"XXXX"
-        Les X c'est pour les element a récuperer et de le remètre dans un tableau js
+    developpement de la partie de la modification des article
+    A faire:
+    Faire un traitement de tableau php pour JS (faire l'inverse de l'enregistrement)
+    récuperer les donnée avec un substring et utiliser pour regarder [idivX] [divXcompX] et string(x)"XXXX"
+    Les X c'est pour les element a récuperer et de le remètre dans un tableau js
 
-        ajoue de code pour la modification :
-        ajoue du traitement  plus de la reconstruction du tableuauStructure
+    ajoue de code pour la modification :
+    ajoue du traitement  plus de la reconstruction du tableuauStructure
 
-        avoir pour la fontion affichage_Structure car ne veut pas s'affichage_Structure
+    avoir pour la fontion affichage_Structure car ne veut pas s'affichage_Structure
 
-        Petit objectif: finir les modification avec tout les detail fini (l'enregistrement avec la modification etc ...) voila
+    Petit objectif: finir les modification avec tout les detail fini (l'enregistrement avec la modification etc ...) voila
 
-    04/02/2022
+04/02/2022
 
-        Rajour de la fontion de modification mais a verfier si tout les autre fonctionnaliter marche
-        comme par exemple la supression des composans, div etc
+    Rajour de la fontion de modification mais a verfier si tout les autre fonctionnaliter marche
+    comme par exemple la ssupression des composans, div etc
 
-        Vérifier si l'enregistremetn de la nouvelle Table de Structure marche correctemnt
+    Vérifier si l'enregistremetn de la nouvelle Table de Structure marche correctemnt
 
-        Petit objectif fini a 90% (manque verification complet)
+    Petit objectif fini a 90% (manque verification complet)
 
-    05/02/2022  Fin Petit objectif: enregistrement et modification d'article | Note de rajoue
+05/02/2022  Petit objectif Fini | Note de rajoue
 
-        Verification du code d'enregistrement des modification d'un article sur le fichiçer et sur la BDD
-        Fixe du probleme de bdd sur l'enregistrement des modification 
-        // Voir plus souvent les requete SQL pour pas avoir des caractère en trop qui nui au bon fonctionnement
+    Verification du code d'enregistrement des modification d'un article sur le fichiçer et sur la BDD
+    Fixe du probleme de bdd sur l'enregistrement des modification 
+    // Voir plus souvent les requete SQL pour pas avoir des caractère en trop qui nui au bon fonctionnement
 
-        Petit objectif : ajouter les modification d'article fini
+    Petit objectif : ajouter les modification d'article fini
 
-        Note de rajoue
-        Rajouter dans les option pour les BOUTON une zone JS pour implementé ces propre fonctionnalité pour cette article ou une zone href pour mettre un lien
-
-    21/02/2022 Nouveau Petit objectif création de liste
-
-        Petit objectif : rajouter une functionnalité de liste et de tableau avec les option adéquat et rajouter une une partit js pour les Bouton
-
-        création de la fonction de la liste plus création de la ligne dans une liste
-        il faudra modifier les option Liste et les option de la Ligne dans une liste
-        rajoue de fichier explicative des fichier
-
-    22/02/2022
-
-        Faire une nouelle partie où la liste des ligne de la liste et afficher a gauche et ces option a droit
-        pour afficher le contenue d'une liste il faudra réflechire a un moyen pour pouvoir traiter plusieur liste different
-        
-        pour afficher le contenue faire un traitement, pour savoir quelle liste afficher récuperer l'id de la Liste
-        isoler le contenue en commencant par par la balise <ul> avec l'aide de sont id et faire moins le nombre de caractère de l'id + 10 pour etre sur d'avoir la balise <ul> et ensuite 
-        on le limite par le premier ellement qui commence par </ul>
-
-
-        Ajoue d'une nouvelle partie pour afficher la partie de l'enregistremetn pour eviter d'ecrasser le menucreat
-        Et pour afficher les option des ligne de liste et aussi des tableau mais a Voir
-
-
-        Ajoue de la function de traitemetn pour selectionner uniquement la list voulue
-
-        A Faire:
-        rajouter une function pour récuperer séparement les ligne et rajouter pour chaque ligne un bouton pour modifier le contenue, monté et decendre la ligne   
-
-        ajoue du traitement de la ligne, récuperation de l'id et du nom de la ligne
-
-        Supression du docier archive code car il ne sert plus a rien
-
-    23/02/2022
-
-        rajoue de l'affichage des ligne de la liste
-
-        A faire:
-        Rajouter un bouton pour crée une nouvelle ligne dans la liste
-        Pour chaque ligne afficher ajouter 4 boutons: option, suprimer, monté et decendre l'ellement
-        relier les option ligne à la ligne selectionner, relier les function des bouton au ligne conserner
-
-        
-        Petit objectif liste 75%
-        fin traitement
-        affichage des ligne de la liste séletionée
-        ajoue de la création de nouvelle ligne
-        ajoue de l'option
-        ajoue de la supression
-        Liaison des function option et supressino sur les ligne défini
-        ajoue de la fonction Fermer_op_avancee() sur tout les autre fichier de création (text,titre,image ...), cela permet de fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
-        pour eviter des probleme avec les modification des elements   
-
-        Reste a faire:
-        fonction UP et Down à faire. et pour cela faire un traitement qui récupere la ligne que l'on veut monté des decentre et ensuit regarder a la direction choisi sil il y a un ellement
-        comme sa nous pouvont voir si il est possible de déplacer l'element ou pas avec un if
-
-        Verifier a la fin du developpement de la list, si l'enregistrement d'un nouveau article et les article existant fonctionne encore
-
-    24/02/2022
-
-        Ajoue de la functionnalité pour monté les ligne dans une liste
-        Modification et réparation des mauvaises lison des functions option, supression pour les ligne dans une liste
-
-    25/02/2022 Petit objectif liste FINI | Article 70% | Nouveau Petit objectif fichier
-
-        Petit objectif liste FINI
-
-        Moyen Objectif Article 70%
-        Manque juste le bouton est les petit detail comme l'areatext
-
-        verification des probleme d'enregistrement et de modification Fait
-
-        Nouveau Petit objectif fichier:
-        faire un fichier pour tout les option des elements d'un article (art), d'une page (pag), formulaire (form)
-
-
-        A faire mettre pour l'image la modification de la taille dans les option op_menu_element
-
-        ajoue de la création du fichier de modification pour le titre, text, bouton, image, ligne d'une liste
-        la création de liste ne peut pas etre dans le fichier pour le momment
-
-    26/02/2022 Nouveau Petit objectif Upload
-
-        Nouveau Petit objectif Upload
-        faire une interface pour selectionner l'image ou la vidéo souhaite dans les elements disposans de ces option  
-
-        rajoue de la function vidéo
-
-        commencement du developpement de l'interface de Upload
-
-    27/02/2022 Fin Petit objectif Upload
-
-        Fin du Petit objectif Upload pour l'image
-
-        relier les image upload au option de l'image
-
-        A faire: cherhcer pour mettre des vidéo youtube sur le site (peut etre un traitement a faire)
-        export de la base de donnée
-
-
-
+    Note de rajoue
+    Rajouter dans les option pour les BOUTON une zone JS pour implementé ces propre fonctionnalité pour cette article ou une zone href pour mettre un lien

@@ -5,7 +5,3 @@ function B1(){
 function B2(){
     document.getElementById("info").innerHTML= linkB2; 
 }
-
-function B3(){
-    document.getElementById("info").innerHTML= linkB3; 
-}

@@ -101,7 +101,6 @@ text-align: right;
     margin-top: 0px;
     margin-left: -9px;
     position: fixed;
-    overflow: hidden;
     
 }
 
@@ -147,73 +146,4 @@ article .builddiv{
     width: 250px;
     height: 100px;
     resize: none;
-}
-
-.menu_avancee{
-    width: 40vw;
-    height: 50vh;
-    border: solid rgb(107, 107, 107);
-    background-color: white;
-    margin-top: 25vh;
-    margin-left: 40vw;
-    position: fixed;
-    visibility:hidden;
-    overflow: auto;
-    overflow: hidden;   
-    
-}
-
-.option_ligne{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-}
-
-
-.option_ligne .list_composans{
-    width: 49.5%;
-    height: 99%;
-    background-color: white;
-    border: solid black 2px;
-    overflow-y:scroll;
-    
-}
-.option_ligne .option_compossan{
-    width: 49.5%;
-    height: 99%;
-    background-color: white;
-    border: solid black 2px;
-    overflow-y:scroll;
-    
-}
-
-
-iframe {
-    width:854px;
-    height:480px;
-}
-
-
-
-.media_size{
-    margin-top: 25px;
-    margin-left: 15px;
-    width: 250px;
-    border: solid black 1px;
-}
-
-
-
-.media_liste{
-    width: 100%;
-    height: 95%;
-    border: solid rgb(107, 107, 107) 1px;
-    background-color: white;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-    
 }

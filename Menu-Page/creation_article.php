@@ -7,33 +7,27 @@
     </head>
     <body>
     <?php include('../SRC_creator_function/src_function_creator.php');?>
-
-    <section class="menucreat" id="menucreat">
-
-    <div id="entregistrer"></div>
-    <div class="structure" id="structure">
-    <button onclick="enregistrer()">Enregistrer</button><button onclick="quitter()">Quitter</button>
-        
-    <h1>Structure</h1>
-    <button onclick="adddiv()">div</button>
-
-    </div>
-    <div class="option" id="menu_option">
-    <h1>OPTION</h1>
-    <p>aucun option à été selectionné</p>
-    </div>
-
-    </section>
-
-    <section class="menu_avancee" id='affichage_avance'>
+    <section class="menucreat">
+    <form action="../Fonction-Requet/enregistrer_article.php" method="post" id="enregistre">
     
+    </form>
+        <div id="entregistrer"></div>
+        <div class="structure" id="structure">
+        <button onclick="enregistrer()">Enregistrer</button><button onclick="quitter()">Quitter</button>
+            
+        <h1>Structure</h1>
+        <button onclick="adddiv()">div</button>
+
+        </div>
+        <div class="option" id="menu_option">
+        <h1>OPTION</h1>
+        <p>aucun option à été selectionné</p>
+        </div>
     </section>
 
     <section class="apercreat" name="apercu" id="apercu">
-
     <article id="article">
     </article>
-    
     </section>
 
     <section name="bc_option">

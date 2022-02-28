@@ -1,1 +1,0 @@
-    <div class="builddiv" id="idiv1">    <div id="div1comp2"></div><div id="div1comp1"><h1 id="tidiv11">Titre</h1></div><div id="div1comp3"><img id="imadiv13" src="../Image/imagedefaut.png" alt="Image introuvable"></div></div>
