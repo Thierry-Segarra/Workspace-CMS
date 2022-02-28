@@ -195,9 +195,12 @@ iframe {
 }
 
 
-
 .media_size_affiche{
     width: 100%;
+}
+.media_size_affiche_video{
+    width: 100%;
+    height: 100%;
 }
 .media_bouton{
     margin-top: 25px;
@@ -207,7 +210,9 @@ iframe {
     background: none;
 
 }
-
+.affiche_media_liste{
+    border: solid 2px black;
+}
 
 
 .media_size{
@@ -229,4 +234,10 @@ iframe {
     grid-template-columns: 1fr 1fr;
     gap: 5px;
     
+}
+
+.categorie_media{
+    width: 150px;
+    height: 40px;
+    margin-right: 10px;
 }

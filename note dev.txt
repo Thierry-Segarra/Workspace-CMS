@@ -182,5 +182,5 @@ Février 2022
         juste en dessous de celle-ci, se trouvent un lien nommé "PARTAGER".
         Cliquer sur ce lien, puis, cliquer sur "INTEGRER". Copier le code HTML qui s'affiche.
  
-        Rajouter une categorie pour l'enregistrement des liens des vidéo dans la page media
+        Rajoute des categorie image et video pour l'enregistrement des liens des vidéo et des image dans la page media
         
