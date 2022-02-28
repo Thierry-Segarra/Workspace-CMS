@@ -1,0 +1,232 @@
+.bodd{
+    display: inline-block;
+    overflow-x: hidden;
+}
+
+.menu{
+    width: 25vw;
+    height: 99vh;
+    border: solid rgb(107, 107, 107);
+    margin-top: -9px;
+    margin-left: -9px;
+    position: absolute
+    
+}
+.menu .list{
+    list-style: none;
+    padding: 0px;
+    margin-top: 0px;
+    
+}
+.menu .titre{
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    border: solid 0px;
+    border-bottom: solid gray 1px;
+    background-color: white;
+    margin:0px;
+    padding-top: 10px;
+}
+
+.menu .bouton{
+    width: 100%;
+    height: 50px;
+    border: solid 0px;
+    border-bottom: solid gray 1px;
+    background-color: white;
+
+}
+.menu .bouton:hover {
+    background-color: rgb(207, 207, 207);
+    font-size: 15px;
+  }
+
+.panneau{
+    width: 73vw;
+    height: 100%;
+    border: solid rgb(107, 107, 107);
+    margin-left: 24.7vw;
+    margin-top: -9px;
+    
+}
+
+.panneau .titre{
+    margin-left: 10px;
+}
+.panneau .statistique{
+    border: solid rgb(107, 107, 107);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.panneau .text{
+    margin-left: 10px;
+}
+.panneau .boutton{
+    margin-left: 10px;
+}
+.panneau .ligne{
+    border: solid 1px rgb(185, 185, 185);
+    padding: 5px;
+    padding-left: 20px;
+    display: inline-flex;
+    list-style: none;
+    /* haut | droit | bas | gauche */
+    margin: 0px 10px 0px 10px ;
+}
+.panneau .ligne .L1{
+    width: 18vw;
+}
+.panneau .ligne .L2{
+    width: 25vw;
+    text-align: center;
+}
+.panneau .ligne .L3{
+    width: 17vw;
+text-align: right;
+}
+.panneau .apercu{
+    width: 500px;
+    height: 300px;
+    border: solid gray 2px;
+}
+
+
+.menucreat{
+    width: 25vw;
+    height: 100%;
+    border: solid rgb(107, 107, 107);
+    margin-top: 0px;
+    margin-left: -9px;
+    position: fixed;
+    overflow: hidden;
+    
+}
+
+.apercreat{
+    width: 74.3vw;
+    height: 100%;
+    border: solid rgb(107, 107, 107);
+    margin-left: 24.7vw;
+    margin-top: -9px;
+    
+}
+
+.menucreat .zonehtml{
+    margin-top: 15px;
+    width: 98.5%;
+    height: 25vh;
+}
+
+article .builddiv{
+    margin: 0 0 0 0 ;
+    border: solid 5px green;
+    width: 99%;
+    height: 100%;
+}
+.structure{
+    width: 99%;
+    height: 50%;
+    border: solid black 3px;
+    background-color: white;
+    overflow-y:scroll;
+    
+}
+
+.option{
+    width: 99%;
+    height: 50%;
+    border: solid black 3px;
+    background-color: white;
+    overflow-y:scroll;
+    
+}
+.option .textarea_text{
+    width: 250px;
+    height: 100px;
+    resize: none;
+}
+
+.menu_avancee{
+    width: 40vw;
+    height: 50vh;
+    border: solid rgb(107, 107, 107);
+    background-color: white;
+    margin-top: 25vh;
+    margin-left: 40vw;
+    position: fixed;
+    visibility:hidden;
+    overflow: auto;
+    overflow: hidden;   
+    
+}
+
+.option_ligne{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.option_ligne .list_composans{
+    width: 49.5%;
+    height: 99%;
+    background-color: white;
+    border: solid black 2px;
+    overflow-y:scroll;
+    
+}
+.option_ligne .option_compossan{
+    width: 49.5%;
+    height: 99%;
+    background-color: white;
+    border: solid black 2px;
+    overflow-y:scroll;
+    
+}
+
+
+iframe {
+    width:854px;
+    height:480px;
+}
+
+
+
+.media_size_affiche{
+    width: 100%;
+}
+.media_bouton{
+    margin-top: 25px;
+    margin-left: 15px;
+    width: 250px;
+    border: solid 0px;
+    background: none;
+
+}
+
+
+
+.media_size{
+    width: 100%;
+}
+.media_size_defaul{
+    width: 500px;
+}
+
+
+.media_liste{
+    width: 100%;
+    height: 95%;
+    border: solid rgb(107, 107, 107) 1px;
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    
+}

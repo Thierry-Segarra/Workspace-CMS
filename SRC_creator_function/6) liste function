@@ -1,0 +1,36 @@
+## PARTIE CREATION ##
+
+- div-creation.js // Pour crée une div
+
+- bouton-creation.js // Pour crée un Bouton
+
+- image-creation.js // Pour crée une image
+
+- liste-creation.js // Pour crée une liste
+
+- ligne-liste-creation.js // Pour rajouter une ligne dans une liste
+
+- text-creation.js // Pour crée un text
+
+- titre-creation.js // pour crée un titre
+
+## PARTIE AUTRE ##
+
+- enregistrement.js // Pour enregistrer un article qui n'existe pas
+
+- enregistrement_modification.js // Pour enregistrer un l'article existant
+
+- modification_article_html.php // Pour récuperer le tableau Structure dans la Base de donnée pour modifier l'article
+
+- modification_article_table.js // trairement du tableau Structure PHP pour convertire en tableua Structure en JS
+
+- quitter.js // Pour quitter la création ou la modification d'un article
+
+- structure_menu.js // Permet d'afficher les modification dans la partit des menu et des options
+
+- updo_comp.js // Permet de monté ou de décendre un composans dans une div et le changer aussi dans le tableau Structure
+
+- updo_div.js // Permet de monté ou de décendre une div dans l'article
+
+## IMPORTANT ##
+- src_function_creator.php // sert a relier la tout les function à la création_article.php.Pour relier tou les appel en un seul fichier
