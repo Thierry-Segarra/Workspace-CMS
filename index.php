@@ -23,6 +23,7 @@
     <?php include('Fonction-Requet/connectionBDD.php'); ?>
     <script>
         var mode_supimage = 0;
+        var categorie_media = 0;
         /* src="Fonction-Requet/menu.js" Bouton B1*/ var linkB1 = `<?php include("Menu-Page/tableau-de-bord.php") ?>`;
         /* src="Fonction-Requet/menu.js" Bouton B2*/ var linkB2 = `<?php include("Menu-Page/article.php") ?>`;
         /* src="Fonction-Requet/menu.js" Bouton B2*/ var linkB3 = `<?php include("Menu-Page/media.php") ?>`;
@@ -45,22 +46,54 @@
         }
         function suprim_image(id){
             if(mode_supimage == 1){
-            if ( confirm( "Voulez vous suprimer cette image" ) ) {
-                // suprime (true)
-               window.location = "./Fonction-Requet/suprimer_image.php?id="+id;
-            } else {
-                // rien (false)
-            }
+                if ( confirm( "Voulez vous suprimer cette image" ) ) {
+                    categorie_media = 0;
+                    // suprime (true)
+                window.location = "./Fonction-Requet/suprimer_image.php?id="+id;
+                } else {
+                    // rien (false)
+                }
             }
         }
 
+        function suprim_video(id){
+            if(mode_supimage == 1){
+                if ( confirm( "Voulez vous suprimer cette video" ) ) {
+                    categorie_media = 1;
+                    // suprime (true)
+                window.location = "./Fonction-Requet/suprimer_video.php?id="+id;
+                } else {
+                    
+                }
+            }else if(mode_supimage == 0){
+                    window.open("https://youtu.be/"+document.getElementById("video"+id).name);
+            }
+            
+        }
+
         function media_categorie_Image(){
+            categorie_media = 0;
             document.getElementById("upload_media_liste").innerHTML= `<?php include("./Fonction-Requet/upload_image.php")?>`; 
             document.getElementById("affiche_media_liste").innerHTML= `<?php include("./Fonction-Requet/media_image.php") ?>`; 
         }
         function media_categorie_Video(){
+            categorie_media = 1;
+            console.log(categorie_media);
             document.getElementById("upload_media_liste").innerHTML= `<?php include("./Fonction-Requet/upload_video.php")?>`; 
             document.getElementById("affiche_media_liste").innerHTML= `<?php include("./Fonction-Requet/media_video.php") ?>`; 
+        }
+
+
+        function categorie(){
+            console.log(categorie_media);
+            if(categorie_media == 0){ // IMAGE
+                document.getElementById("upload_media_liste").innerHTML= `<?php include("./Fonction-Requet/upload_image.php")?>`; 
+                document.getElementById("affiche_media_liste").innerHTML= `<?php include("./Fonction-Requet/media_image.php") ?>`; 
+            }
+            if(categorie_media == 1){ // VIDEO
+                document.getElementById("upload_media_liste").innerHTML= `<?php include("./Fonction-Requet/upload_video.php")?>`; 
+                document.getElementById("affiche_media_liste").innerHTML= `<?php include("./Fonction-Requet/media_video.php") ?>`;
+            } 
         }
 
     </script>

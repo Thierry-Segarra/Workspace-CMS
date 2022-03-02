@@ -33,7 +33,8 @@
     // Affiche le menu de Modification avancée
     var adv_op_ligne_liste = '<?php include("../Option_menu/adv_op_ligne_liste.php") ?>';
 
-    var adv_op_media_liste = '<?php include("../Option_menu/adv_op_media_liste.php") ?>';
+    var adv_op_media_image = '<?php include("../Option_menu/adv_op_media_image.php") ?>';
+    var adv_op_media_video = '<?php include("../Option_menu/adv_op_media_video.php") ?>';
 
 
 </script>

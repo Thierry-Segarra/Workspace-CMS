@@ -25,7 +25,7 @@ function ADD_Video_bdd($URL){
                 include("connectionBDD.php");
                 $requete1 = "INSERT INTO `media`(`nom`,`type`,`date`) VALUES ('".$URL."','VIDEO','".$date."')";
                 $exec_requete1 = mysqli_query($db,$requete1);
-                header('location:../index.php?media'); // redirige vers la page media
+                header('location:../index.php?media=1'); // redirige vers la page media
 
 }
 ?>

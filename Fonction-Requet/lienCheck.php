@@ -8,8 +8,10 @@
         // Pour aller dans le menu "Article"
     }
     else if(isset($_GET['media'])){
-        echo '<script type="text/javascript">B3()</script>';
+        $media = $_GET['media'];
+        echo '<script type="text/javascript">B3();categorie_media='.$media.';categorie();</script>';
         // Pour aller dans le menu "Article"
+        
     }
     else {
         echo '<script type="text/javascript">B1()</script>';

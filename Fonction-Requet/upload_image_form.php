@@ -27,13 +27,12 @@ if (isset($_FILES['monfichier'])) {
 
                 $date = date("YmdHis");
 
-                include("Fonction-Requet/connectionBDD.php");
                 $requete1 = "INSERT INTO `media`(`nom`,`type`,`date`) VALUES ('".$nomDestination."','IMAGE','".$date."')";
                 $exec_requete1 = mysqli_query($db,$requete1);
 
                 move_uploaded_file($myFile["tmp_name"][$i],$repertoireDestination.$myFile["name"][$i]);
 
-                header('location:index.php?media'); // redirige vers la page media
+                header('location:../index.php?media=0'); // redirige vers la page media
 
 
             } else {

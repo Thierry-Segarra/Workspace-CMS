@@ -6,14 +6,20 @@ function contenue_Liste(i,divnb,compnb){
     traitement_ligneliste(i,divnb,compnb);
 }
 
-function contenue_media(){
+function contenue_media_image(){
     document.getElementById('affichage_avance').style.visibility = 'visible';
     document.getElementById("affichage_avance").innerHTML = '<button class="bouton_ligne_list" onclick="Fermer_op_avancee_media()">X</button>';
-    document.getElementById("affichage_avance").innerHTML = document.getElementById("affichage_avance").innerHTML + adv_op_media_liste; // Permet d'affichet la liste des ellements d'une liste ou d'une tableau
+    document.getElementById("affichage_avance").innerHTML = document.getElementById("affichage_avance").innerHTML + adv_op_media_image; // Permet d'affichet la liste des ellements d'une liste ou d'une tableau
     // modification src de l'image 
-
-    
 }
+
+function contenue_media_video(){
+    document.getElementById('affichage_avance').style.visibility = 'visible';
+    document.getElementById("affichage_avance").innerHTML = '<button class="bouton_ligne_list" onclick="Fermer_op_avancee_media()">X</button>';
+    document.getElementById("affichage_avance").innerHTML = document.getElementById("affichage_avance").innerHTML + adv_op_media_video; // Permet d'affichet la liste des ellements d'une liste ou d'une tableau
+    // modification src de l'image 
+}
+
 
 function Fermer_op_avancee(){
     clearInterval(inter);

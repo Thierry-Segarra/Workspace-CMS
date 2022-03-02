@@ -184,3 +184,13 @@ Février 2022
  
         Rajoute des categorie image et video pour l'enregistrement des liens des vidéo et des image dans la page media
         
+Mars 2022
+
+    01/03/2022
+
+        menu avancée des vidéo fait + supression des vidéo
+
+    02/03/2022
+
+        rajoue d'une fonction qui permet sur la caregorie lors d'un ajoue ou de supression d'image ou de video 
+
