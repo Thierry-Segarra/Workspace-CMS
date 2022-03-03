@@ -4,7 +4,7 @@ Avancer du code par Jours
 
 Janvier 2022
 
-23/01/2022 Grand objectif: Faire un CMS complet (création page ,article , formulaire ...);
+    23/01/2022 Grand objectif: Faire un CMS complet (création page ,article , formulaire ...);
 
     proget comencer le 23/01/2022
 
@@ -194,3 +194,6 @@ Mars 2022
 
         rajoue d'une fonction qui permet sur la caregorie lors d'un ajoue ou de supression d'image ou de video 
 
+    03/03/2022
+
+        Ajoue des categories dans la création d'article

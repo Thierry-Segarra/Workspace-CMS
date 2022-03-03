@@ -10,9 +10,11 @@
         <ul class="list">
             <li class="souslist"><p class="titre">Back Office</p></li>
             <li class="souslist"><button onclick="B1()" class="bouton">Tableau de bort</button></li>
+            <li class="souslist"><button onclick="" class="bouton">Page</button></li>
             <li class="souslist"><button onclick="B2()" class="bouton">Article</button></li>
-            <li class="souslist"><button onclick="B3()" class="bouton">media</button></li>
-            <li class="souslist"><button class="bouton">Paramètre</button></li>
+            <li class="souslist"><button onclick="" class="bouton">Formulaire</button></li>
+            <li class="souslist"><button onclick="B3()" class="bouton">Media</button></li>
+            <li class="souslist"><button onclick="" class="bouton">Paramètre</button></li>
         </ul>
         </section>
         <section class="panneau" id="info">

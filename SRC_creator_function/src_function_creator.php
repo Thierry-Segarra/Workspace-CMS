@@ -36,6 +36,12 @@
     var adv_op_media_image = '<?php include("../Option_menu/adv_op_media_image.php") ?>';
     var adv_op_media_video = '<?php include("../Option_menu/adv_op_media_video.php") ?>';
 
+    // parti option dans le menu
+
+    var op_contenue = '<?php include("../Option_menu/composant_menu/contenue.php") ?>';
+    var op_bordure = '<?php include("../Option_menu/composant_menu/bordure.php") ?>';
+    var op_position = '<?php include("../Option_menu/composant_menu/position.php") ?>';
+
 
 </script>
 

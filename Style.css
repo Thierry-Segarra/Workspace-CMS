@@ -241,3 +241,13 @@ iframe {
     height: 40px;
     margin-right: 10px;
 }
+
+.section_menu{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
