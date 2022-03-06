@@ -7,6 +7,6 @@ echo '<p>Alignement</p>'.
 '<input type="radio" id="center" name="align" value="center">'.
 '<label for="center">Center</label>'.
 '<input type="radio" id="right" name="align" value="right">'.
-'<label for="right">Right</label>';
+'<label for="right">Right</label>'.'<br><br>';
 
 ?>

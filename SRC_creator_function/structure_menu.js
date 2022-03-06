@@ -8,7 +8,7 @@ function affiche_structure(){
         let table = tablediv[d]; // récupère la valeur d dans tablediv
         let tablecomp = tablediv[table] // via la valeur de table transferer les donnée de table de tablediv  dans tablecomp
         let divnb = table.substring(4);
-        document.getElementById('structure').innerHTML = document.getElementById('structure').innerHTML + '<p>DIV '+divnb+'</p><div id="div'+divnb+'"><button onclick="menu_add_fermer('+divnb+','+tablecomp+')">↓</button><br><button onclick="addTitreDiv('+divnb+')">titre</button><button onclick="addTextDiv('+divnb+')">text</button><button onclick="addBoutonDiv('+divnb+')">bouton</button><button onclick="addImageDiv('+divnb+')">image</button><br><button onclick="addListeDiv('+divnb+')">liste</button><br><button onclick="suprime_Div('+divnb+')">suprimer</button><button onclick="up_div('+divnb+')">up</button><button onclick="down_div('+divnb+')">down</button></div>'
+        document.getElementById('structure').innerHTML = document.getElementById('structure').innerHTML + '<p>DIV '+divnb+'</p><div id="div'+divnb+'"><button onclick="menu_add_fermer('+divnb+','+tablecomp+')">↓</button><br><button onclick="addTitreDiv('+divnb+')">titre</button><button onclick="addTextDiv('+divnb+')">text</button><button onclick="addBoutonDiv('+divnb+')">bouton</button><button onclick="addImageDiv('+divnb+')">image</button><button onclick="addVideoDiv('+divnb+')">video</button><button onclick="addListeDiv('+divnb+')">liste</button><br><button onclick="suprime_Div('+divnb+')">suprimer</button><button onclick="up_div('+divnb+')">up</button><button onclick="down_div('+divnb+')">down</button></div>'
         // pour parcourir les different composans dans une div
         boucle_composans(divnb)
     };

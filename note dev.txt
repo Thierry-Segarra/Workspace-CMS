@@ -6,17 +6,16 @@ Janvier 2022
 
     23/01/2022 Grand objectif: Faire un CMS complet (création page ,article , formulaire ...);
 
-    proget comencer le 23/01/2022
+        proget comencer le 23/01/2022
 
-    recap de l'avancée avant mise a jour des activité journalier
+        recap de l'avancée avant mise a jour des activité journalier
 
-    Petit objectif l'archivage des modification jours fini
-    création d'article
-    enregistrement article dans la bdd 
-    création fichier article.php lors de l'enregistrement
-    affichage de list d'article
-    ajoue de la supression d'article (article.php + article BDD )
-
+        Petit objectif l'archivage des modification jours fini
+        création d'article
+        enregistrement article dans la bdd 
+        création fichier article.php lors de l'enregistrement
+        affichage de list d'article
+        ajoue de la supression d'article (article.php + article BDD )
 
 Février 2022
 
@@ -197,3 +196,20 @@ Mars 2022
     03/03/2022
 
         Ajoue des categories dans la création d'article
+
+    04/03/2022 Nouvelle Objectif Couleur des bordure
+        Nouvelle Objectif Couleur des bordure
+
+        réflection pour rajouter des couleur pour les border
+
+    06/03/2022 Fin Objectif Couleur des bordure
+
+        Fin Objectif Couleur des bordure
+
+        Rajoue des couleur pour les bordures, rajoue de function de traitement de convertiseur RGB en Hexa
+        Modification du menue pour afficher correctement lees données souhaiter
+
+        A noté, la fonction des couleurs ne se fait pas pour le menue des liste car trop de variable en paramètre a voir pour le mettre comme les autres
+
+        
+        

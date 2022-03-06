@@ -18,5 +18,5 @@ echo '<p>Marge</p>'.
 '<label for="op_padding_bas">Bas</label>'.'<br>'.
 '<input name="op_padding_bas" id="op_padding_bas" type="text" placeholder="0 par defaut" value="">'.'<br>'.
 '<label for="op_padding_gauche">Gauhe</label>'.'<br>'.
-'<input name="op_padding_gauche" id="op_padding_gauche" type="text" placeholder="0 par defaut" value="">';
+'<input name="op_padding_gauche" id="op_padding_gauche" type="text" placeholder="0 par defaut" value="">'.'<br><br>';
 ?>
