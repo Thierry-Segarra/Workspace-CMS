@@ -16,7 +16,7 @@ echo '<h1>OPTION LISTE</h1>'.
 '<input name="op_marge_droit" id="op_marge_droit" type="text" placeholder="0 par defaut" value="">'.'<br>'.
 '<label for="op_marge_bas">Bas</label>'.'<br>'.
 '<input name="op_marge_bas" id="op_marge_bas" type="text" placeholder="18 par defaut" value="">'.'<br>'.
-'<label for="op_marge_gauche">Gauhe</label>'.'<br>'.
+'<label for="op_marge_gauche">Gauche</label>'.'<br>'.
 '<input name="op_marge_gauche" id="op_marge_gauche" type="text" placeholder="0 par defaut" value="">'.
 
 

@@ -4,15 +4,23 @@ var stock_nom_element = '';
 var stock_element = '';
 
 
-function option_element(i,nom_element,element){
-stock_i = i;
-stock_nom_element = nom_element;
-stock_element = element;
+function option_element(i,nom_element,element,divnb,compnb){
+    stock_divnb = divnb;
+    stock_compnb = compnb;
+// i = numerot du composans
+// nom_ellement = nom de l'ellement ex TITRE, TEXT, LISTE ...
+// element = l'identifiant de l'ellement ex imadiv ...
+
+    stock_i = i;
+    stock_nom_element = nom_element;
+    stock_element = element;
 
     if(nom_element == 'LIGNE'){
+
         document.getElementById("option_compossan").innerHTML = op_menu_element; // Permet d'afficher les options disponible à cette element
         document.getElementById("menu_option").innerHTML = op_menu; // pour eviter un conflie avec les paramettre
     }else{
+
         Fermer_op_avancee(); // pour fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
         document.getElementById("menu_option").innerHTML = op_menu_element; // Permet d'affichet les option disponible à cette element
     }
@@ -43,6 +51,26 @@ stock_element = element;
                 let width = document.getElementById(element+i).style.width;
                 document.getElementById('op_taille_width').value = width;//.substring(0,width.length-2);
             }
+
+        }else if(nom_element == 'LISTE'){
+
+            document.getElementById("text").innerHTML = '<p>Modifer contenue de la liste</p><button id="op_plus" onclick="clearInterval(inter),contenue_Liste('+i+','+stock_divnb+','+stock_compnb+')">Option Ligne</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br><br>';
+
+            if(document.getElementById(element+i).style.fontSize){
+                let fontsize = document.getElementById(element+i).style.fontSize;
+                document.getElementById('op_taille').value = fontsize.substring(0,fontsize.length-2);
+            }
+
+            if(document.getElementById(element+i).style.width){
+                let width = document.getElementById(element+i).style.width;
+                document.getElementById('op_taille_width').value = width.substring(0,width.length-2);
+            }
+        
+            if(document.getElementById(element+i).style.height){
+                let height = document.getElementById(element+i).style.height;
+                document.getElementById('op_taille_height').value = height.substring(0,height.length-2)
+            } 
+
 
         }else{
             // option pour modifier le contenue et la taille d'un text
@@ -133,17 +161,8 @@ stock_element = element;
             let paddingLeft = document.getElementById(element+i).style.paddingLeft;
             document.getElementById('op_padding_bas').value = paddingLeft;//.substring(0,paddingLeft.length-2);
         } 
-    }  
-    
-    inter = setInterval(op_update_element,250,i,nom_element,element); // permet de changer les ellement en eem temps que l'on ecrit
-
-    /* MARCHE A MOITIER
-    document.getElementsByName('op_contenue')[0].addEventListener('change', function (){
-        document.getElementById('tidiv'+i).innerHTML = document.getElementById('op_contenue').value;
-        
-    });
-    */
-
+    }
+    inter = setInterval(op_update_element,250,i,nom_element,element);
 }
 
 
@@ -169,7 +188,7 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
         }else{document.getElementById(element+i).style.width = null}
         
 
-    }else{
+    }else if(nom_element == 'TITRE' || nom_element == 'TEXT' || nom_element == 'LIGNE'){
 
         // Le contenue de la balise
         document.getElementById(element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
@@ -183,7 +202,21 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
         if (nom_element == 'LIGNE') {
 
             document.getElementById('trai_'+element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
-        
+
+            if(document.getElementById('op_taille').value){
+                document.getElementById(element+i).style.fontSize = document.getElementById('op_taille').value +"px"; // pour afficher la taille modifier
+            }else{document.getElementById(element+i).style.fontSize = null}
+
+            if(document.getElementById('op_taille_width').value){
+                document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value +"px";
+            }else{document.getElementById(element+i).style.width = null}
+
+            if(document.getElementById('op_taille_height').value){
+                document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value +"px";
+            }else{document.getElementById(element+i).style.height = null}
+
+        }else{
+
             if(document.getElementById('op_taille_width').value){
                 document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value +"px";
             }else{document.getElementById(element+i).style.width = null}
@@ -195,8 +228,10 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
     }
 
     // Alignement du text
+    if(document.querySelector('input[name=align]:checked').value){
     document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
     }
+}
 
     if(parcour_menu == 2){
         // Bordure
@@ -281,8 +316,7 @@ function option_contenue(){
         option_defaul();
     }else{
         parcour_menu = 1;
-
-        option_element(stock_i,stock_nom_element,stock_element);
+        option_element(stock_i,stock_nom_element,stock_element,stock_divnb,stock_compnb);
 
         document.getElementById('bt_contenue').innerHTML = '↑';
         document.getElementById('bt_bordure').innerHTML = '↓';
@@ -295,7 +329,6 @@ function option_bordure(){
         option_defaul();
     }else{
         parcour_menu = 2;
-
         option_element(stock_i,stock_nom_element,stock_element);
 
         document.getElementById('bt_contenue').innerHTML = '↓';
@@ -310,7 +343,6 @@ function option_position(){
         option_defaul();
     }else{
         parcour_menu = 3;
-
         option_element(stock_i,stock_nom_element,stock_element);
 
         document.getElementById('bt_contenue').innerHTML = '↓';
@@ -352,3 +384,24 @@ function ColorToHex(color) {
     var hexadecimal = color.toString(16);
     return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
   }
+
+
+  function suprime_element(dv,i,comp,element){
+    Fermer_op_avancee(); // pour fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
+
+    delete tablediv["idiv"+dv][comp]; // suprimer les elements du compsans
+    tablediv["idiv"+dv].splice(tablediv["idiv"+dv].indexOf(comp),1); // suprimer de composans du tableau
+    
+    document.getElementById("menu_option").innerHTML = op_menu; // pour remettre a vide le menu
+    // Suprimer tout les Bouton Option
+    document.getElementById(element+i).remove();
+    document.getElementById('idnomcomp'+i).remove();
+    document.getElementById('id_op'+i).remove();
+    document.getElementById('id_sup'+i).remove();
+    document.getElementById('id_br'+i).remove();
+    document.getElementById('up'+i).remove();
+    document.getElementById('down'+i).remove();
+    document.getElementById(comp).remove();
+
+    boucle_composans(dv)
+}
