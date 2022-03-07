@@ -8,12 +8,43 @@ echo '<p>Taille de la bordure</p>'.
     '<br><br>'.
     '<input type="color" id="op_border_couleur" name="couleur" value="#000000">'.
     '<br><br>'.
-    '<label >Bordure séparer</label>'.
-    '<br><br>'.
-    '<input name="op_bordure_haut" id="op_bordure_haut" type="text"  placeholder="0 par defaut" value="">px'.
-    '<input name="op_bordure_droit" id="op_bordure_droit" type="text"  placeholder="0 par defaut" value="">px'.
-    '<input name="op_bordure_bas" id="op_bordure_bas" type="text"  placeholder="0 par defaut" value="">px'.
-    '<input name="op_bordure_gauche" id="op_bordure_gauche" type="text"  placeholder="0 par defaut" value="">px'.
+    '<p>Bordure séparer</p>'.
+    '<label for="op_bordure_haut">Haut</label>'.'<br>'.
+    '<input name="op_bordure_haut" id="op_bordure_haut" type="text"  placeholder="0 par defaut" value="">px'.'<br>'.
+
+    '<label for="op_bordure_droit">Droit</label>'.'<br>'.
+    '<input name="op_bordure_droit" id="op_bordure_droit" type="text"  placeholder="0 par defaut" value="">px'.'<br>'.
+
+    '<label for="op_bordure_bas">Bas</label>'.'<br>'.
+    '<input name="op_bordure_bas" id="op_bordure_bas" type="text"  placeholder="0 par defaut" value="">px'.'<br>'.
+
+    '<label for="op_bordure_gauche">Gauche</label>'.'<br>'.
+    '<input name="op_bordure_gauche" id="op_bordure_gauche" type="text"  placeholder="0 par defaut" value="">px'.'<br>'.
+
+    '<p>Type de bordure</p>'.
+
+    '<select id="op_bordure_type">'.
+        '<option value="solid">Solid</option>'.
+        '<option value="dotted">Dotted</option>'.
+        '<option value="dashed">Dashed</option>'.
+        '<option value="double">Double</option>'.
+    '</select>'.
+
+    '<p>Bordure arrondi</p>'.
+
+    '<label for="op_bordure_hg">bordure Haut Gauche</label>'.
+    '<input type="range" id="op_bordure_hg" name="op_bordure_hg" min="0" max="100" value="0" step="1">%'.
+
+    '<label for="op_bordure_hd">bordure Haut Droit</label>'.
+    '<input type="range" id="op_bordure_hd" name="op_bordure_hd" min="0" max="100" value="0" step="1">%'.
+    
+    '<label for="op_bordure_bg">bordure Bas Gauche</label>'.
+    '<input type="range" id="op_bordure_bg" name="op_bordure_bg" min="0" max="100" value="0" step="1">%'.
+
+    '<label for="op_bordure_bd">bordure Bas Droit</label>'.
+    '<input type="range" id="op_bordure_bd" name="op_bordure_bd" min="0" max="100" value="0" step="1">%'.
+    
+
 '</div>'.
 '<br><br>';
 

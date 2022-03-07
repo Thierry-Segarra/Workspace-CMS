@@ -229,6 +229,13 @@ Mars 2022
         Pregression Article 75%
 
         ajoue des boudure séparer (border haut, border gauche ...)
+
+        Ajoue de different type de bordure (solid, dotted ...)
+
+        A Faire:
+        rajouter les bordure arrondi avec un input range. Pour l'arrondi en haut a gauche fait mais a verif pour des modification est autre
+
+    
         
     
     

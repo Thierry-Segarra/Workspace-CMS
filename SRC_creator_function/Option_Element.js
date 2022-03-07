@@ -249,7 +249,7 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
 
     // Alignement du text
     if(document.querySelector('input[name=align]:checked').value){
-    document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
+        document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
     }
 }
 
@@ -257,26 +257,41 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
         // Bordure
         
         if(document.getElementById('op_bordure').value){
-            document.getElementById(element+i).style.border = document.getElementById('op_bordure').value +"px solid "+document.getElementById('op_border_couleur').value; // document.getElementById('op_border_couleur').value = borderColor
+            document.getElementById(element+i).style.border = document.getElementById('op_bordure').value +"px "+document.getElementById('op_bordure_type').value+" "+document.getElementById('op_border_couleur').value; // document.getElementById('op_border_couleur').value = borderColor
         }else{document.getElementById(element+i).style.border = null}
         
         // Partie Bordure séparer
         if(document.getElementById('op_bordure_haut').value){
-            document.getElementById(element+i).style.borderTop = document.getElementById('op_bordure_haut').value +"px solid"+document.getElementById('op_border_couleur').value;
+            document.getElementById(element+i).style.borderTop = document.getElementById('op_bordure_haut').value +"px "+document.getElementById('op_bordure_type').value+" "+document.getElementById('op_border_couleur').value;
         }//else{document.getElementById(element+i).style.borderTop = null}
 
         if(document.getElementById('op_bordure_droit').value){
-            document.getElementById(element+i).style.borderRight = document.getElementById('op_bordure_droit').value +"px solid"+document.getElementById('op_border_couleur').value;
+            document.getElementById(element+i).style.borderRight = document.getElementById('op_bordure_droit').value +"px "+document.getElementById('op_bordure_type').value+" "+document.getElementById('op_border_couleur').value;
         }//else{document.getElementById(element+i).style.borderRight = null}
 
         if(document.getElementById('op_bordure_bas').value){
-            document.getElementById(element+i).style.borderBottom = document.getElementById('op_bordure_bas').value +"px solid"+document.getElementById('op_border_couleur').value;
+            document.getElementById(element+i).style.borderBottom = document.getElementById('op_bordure_bas').value +"px "+document.getElementById('op_bordure_type').value+" "+document.getElementById('op_border_couleur').value;
         }//else{document.getElementById(element+i).style.borderBottom = null}
 
         if(document.getElementById('op_bordure_gauche').value){
-            document.getElementById(element+i).style.borderLeft = document.getElementById('op_bordure_gauche').value +"px solid"+document.getElementById('op_border_couleur').value;
-        }//else{document.getElementById(element+i).style.borderLeft = null}
+            document.getElementById(element+i).style.borderLeft = document.getElementById('op_bordure_gauche').value +"px "+document.getElementById('op_bordure_type').value+" "+document.getElementById('op_border_couleur').value;
+        }//else{document.getElementById(element+i).style.borderLeft = null}    
         
+
+        // on verifi si il y a des donnée dans ces input
+        if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
+            
+            document.getElementById(element+i).style.borderStyle = document.getElementById('op_bordure_type').value;
+
+        }else{document.getElementById(element+i).style.borderStyle = null}
+
+
+        if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
+            
+            document.getElementById(element+i).style.borderTopLeftRadius = document.getElementById('op_bordure_hg').value+'%';
+
+        }else{document.getElementById(element+i).style.borderTopLeftRadius = null}
+
     }
 
     if(parcour_menu == 3){
