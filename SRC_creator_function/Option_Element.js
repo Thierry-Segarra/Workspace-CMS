@@ -19,10 +19,12 @@ function option_element(i,nom_element,element,divnb,compnb){
 
         document.getElementById("option_compossan").innerHTML = op_menu_element; // Permet d'afficher les options disponible à cette element
         document.getElementById("menu_option").innerHTML = op_menu; // pour eviter un conflie avec les paramettre
+    
     }else{
 
         Fermer_op_avancee(); // pour fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
         document.getElementById("menu_option").innerHTML = op_menu_element; // Permet d'affichet les option disponible à cette element
+    
     }
     // Information pour differentier les element comme le nom de l'element
     document.getElementById("nom_element").innerHTML = 'OPTION '+nom_element;
@@ -116,6 +118,24 @@ function option_element(i,nom_element,element,divnb,compnb){
             let couleur = CouleurBorder(borderColor); // traitement des donnée de la variable borderColor + convertiseur RGB en HEX
 
             document.getElementById('op_border_couleur').value = couleur;//.substring(0,border.length-8) // voir pour la modification de couleur de la border
+        }
+
+        // Partie border séparer
+        if(document.getElementById(element+i).style.borderTop){
+            let borderTop = document.getElementById(element+i).style.borderTop;
+            document.getElementById('op_bordure_haut').value = borderTop.substring(border.search('px'),0);
+        }
+        if(document.getElementById(element+i).style.borderRight){
+            let borderRight = document.getElementById(element+i).style.borderRight;
+            document.getElementById('op_bordure_droit').value = borderRight.substring(border.search('px'),0);
+        }
+        if(document.getElementById(element+i).style.borderBottom){
+            let borderBottom = document.getElementById(element+i).style.borderBottom;
+            document.getElementById('op_bordure_bas').value = borderBottom.substring(border.search('px'),0);
+        }
+        if(document.getElementById(element+i).style.borderLeft){
+            let borderLeft = document.getElementById(element+i).style.borderLeft;
+            document.getElementById('op_bordure_gauche').value = borderLeft.substring(border.search('px'),0);
         }
 
         
@@ -235,10 +255,28 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
 
     if(parcour_menu == 2){
         // Bordure
+        
         if(document.getElementById('op_bordure').value){
             document.getElementById(element+i).style.border = document.getElementById('op_bordure').value +"px solid "+document.getElementById('op_border_couleur').value; // document.getElementById('op_border_couleur').value = borderColor
         }else{document.getElementById(element+i).style.border = null}
+        
+        // Partie Bordure séparer
+        if(document.getElementById('op_bordure_haut').value){
+            document.getElementById(element+i).style.borderTop = document.getElementById('op_bordure_haut').value +"px solid"+document.getElementById('op_border_couleur').value;
+        }//else{document.getElementById(element+i).style.borderTop = null}
 
+        if(document.getElementById('op_bordure_droit').value){
+            document.getElementById(element+i).style.borderRight = document.getElementById('op_bordure_droit').value +"px solid"+document.getElementById('op_border_couleur').value;
+        }//else{document.getElementById(element+i).style.borderRight = null}
+
+        if(document.getElementById('op_bordure_bas').value){
+            document.getElementById(element+i).style.borderBottom = document.getElementById('op_bordure_bas').value +"px solid"+document.getElementById('op_border_couleur').value;
+        }//else{document.getElementById(element+i).style.borderBottom = null}
+
+        if(document.getElementById('op_bordure_gauche').value){
+            document.getElementById(element+i).style.borderLeft = document.getElementById('op_bordure_gauche').value +"px solid"+document.getElementById('op_border_couleur').value;
+        }//else{document.getElementById(element+i).style.borderLeft = null}
+        
     }
 
     if(parcour_menu == 3){
@@ -280,128 +318,4 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
         
         
     }
-}
-
-
-
-
-
-// ############################################################################################
-
-function media_image(nom){
-        document.getElementById('switch').src = '../Image/'+nom;
-}
-
-function media_video(nom){
-    document.getElementById('switch').src = 'https://www.youtube.com/embed/'+nom;
-}
-
-
-//  Parcour dans le menu
-function option_defaul(){
-    
-    document.getElementById('bt_contenue').innerHTML = '↓';
-    document.getElementById('bt_bordure').innerHTML = '↓';
-    document.getElementById('bt_position').innerHTML = '↓';
-    parcour_menu = 0;
-
-    document.getElementById('text').innerHTML = '';
-    document.getElementById('contenue').innerHTML = '';
-    document.getElementById('bordure').innerHTML = '';
-    document.getElementById('position').innerHTML = '';
-
-}
-function option_contenue(){
-    if(parcour_menu == 1){
-        option_defaul();
-    }else{
-        parcour_menu = 1;
-        option_element(stock_i,stock_nom_element,stock_element,stock_divnb,stock_compnb);
-
-        document.getElementById('bt_contenue').innerHTML = '↑';
-        document.getElementById('bt_bordure').innerHTML = '↓';
-        document.getElementById('bt_position').innerHTML = '↓';
-
-    }
-}
-function option_bordure(){
-    if(parcour_menu == 2){
-        option_defaul();
-    }else{
-        parcour_menu = 2;
-        option_element(stock_i,stock_nom_element,stock_element);
-
-        document.getElementById('bt_contenue').innerHTML = '↓';
-        document.getElementById('bt_bordure').innerHTML = '↑';
-        document.getElementById('bt_position').innerHTML = '↓';
-
-    }
-}
-
-function option_position(){
-    if(parcour_menu == 3){
-        option_defaul();
-    }else{
-        parcour_menu = 3;
-        option_element(stock_i,stock_nom_element,stock_element);
-
-        document.getElementById('bt_contenue').innerHTML = '↓';
-        document.getElementById('bt_bordure').innerHTML = '↓';
-        document.getElementById('bt_position').innerHTML = '↑';
-    }
-}
-
-
-//  convertir RGB en Hexa
-
-function CouleurBorder(Color){
-    // Ce traitement permet d'enlever rgb( 
-    Color = Color.substring(Color.search('rgb')+4);
-    // donnes a la variable red le premier numerot qui vois jusqu'a la virgule
-    let red = Color.substring(Color.search(','),0);
-
-    // On enlève jusqu'a la première virgule
-    Color = Color.substring(Color.search(',')+2);
-    // donnes a la variable green les premier numerot qui vois jusqu'a la virgule
-    let green = Color.substring(Color.search(','),0);
-
-    // On enlève jusqu'a la première virgule
-    Color = Color.substring(Color.search(',')+2);
-    // donnes a la variable red le premier numerot qui vois jusqu'a la parenthèse
-    let blue = Color.substring(0,Color.length - 1);
-
-    // On convertie les varaible ne numerot et on le traite pour qu'il puisse nous donnée la donnée en HEXA
-    Color = ConvertRGBtoHex(Number(red), Number(green), Number(blue));
-
-    return Color;
-}
-
-function ConvertRGBtoHex(red, green, blue) {
-    return "#" + ColorToHex(red) + ColorToHex(green) + ColorToHex(blue);
-  }
-
-function ColorToHex(color) {
-    var hexadecimal = color.toString(16);
-    return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
-  }
-
-
-  function suprime_element(dv,i,comp,element){
-    Fermer_op_avancee(); // pour fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
-
-    delete tablediv["idiv"+dv][comp]; // suprimer les elements du compsans
-    tablediv["idiv"+dv].splice(tablediv["idiv"+dv].indexOf(comp),1); // suprimer de composans du tableau
-    
-    document.getElementById("menu_option").innerHTML = op_menu; // pour remettre a vide le menu
-    // Suprimer tout les Bouton Option
-    document.getElementById(element+i).remove();
-    document.getElementById('idnomcomp'+i).remove();
-    document.getElementById('id_op'+i).remove();
-    document.getElementById('id_sup'+i).remove();
-    document.getElementById('id_br'+i).remove();
-    document.getElementById('up'+i).remove();
-    document.getElementById('down'+i).remove();
-    document.getElementById(comp).remove();
-
-    boucle_composans(dv)
 }

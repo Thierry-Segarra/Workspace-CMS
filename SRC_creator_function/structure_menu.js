@@ -30,7 +30,7 @@ function boucle_composans(divnb){
         for(let c=0;c < tablecomp.length;c++){
             let table2 = tablecomp[c]; // récuperer un par un
             let nom = tablecomp[table2] // récuperer le nom du composans
-            console.log(c,table2,nom)
+            //console.log(c,table2,nom)
 
             // divnb = numero de la div
             // table2 = nom du composans ex div1comp1
@@ -39,32 +39,35 @@ function boucle_composans(divnb){
             //console.log(table2.substring(3,table2.search('comp'))); // Pour récuperer le nb de la div
             compnb = table2.substring(table2.search('comp')+4)  // Pour récuperer le nb du composans
             //console.log(nom)
-            
+            let type_element = '';
             if(nom == 'IMAGE'){
-                let type_element = "imadiv";
-                document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`)">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_image('+divnb+','+divnb+compnb+',`'+table2+'`,)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
+                type_element = "imadiv";
+                //document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`)">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_image('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
             }
             else if(nom == 'VIDEO'){
-                let type_element = "viddiv";
-                document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`)">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_video('+divnb+','+divnb+compnb+',`'+table2+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
+                type_element = "viddiv";
+                //document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`)">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
             }
             else if(nom == 'TEXT'){
-                let type_element = "texdiv";
-                document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`)">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,'+type_element+')">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
+                type_element = "texdiv";
+                //document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`)">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
             }
             else if(nom == 'TITRE'){
-                let type_element = "tidiv";
-                document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`)">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_titre('+divnb+','+divnb+compnb+',`'+table2+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
+                type_element = "tidiv";
+                //document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`)">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
             }
             else if(nom == 'BOUTON'){
-                let type_element = "boudiv";
-                document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`)">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_bouton('+divnb+','+divnb+compnb+',`'+table2+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
+                type_element = "boudiv";
+                //document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`)">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
             }
             else if(nom == 'LISTE'){
-                let type_element = "listdiv";
-                document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`,'+divnb+','+compnb+')">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_liste('+divnb+','+divnb+compnb+',`'+table2+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
+                type_element = "listdiv";
+                //document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`,'+divnb+','+compnb+')">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
+            }
+            if(type_element != ''){
+                document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`,'+divnb+','+compnb+')">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
             }else{
-                console.log('NOp');
+                console.log('Probleme mineur');
             }
         }
     }

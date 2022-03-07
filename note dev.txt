@@ -211,5 +211,24 @@ Mars 2022
 
         A noté, la fonction des couleurs ne se fait pas pour le menue des liste car trop de variable en paramètre a voir pour le mettre comme les autres
 
+    07/03/2022 Pregression Article 75%
+
+        modification du code d'affichage pour reparer le probleme de supression
+
+        ajoue d'un seul meme code de supression sauf pour la ligne d'une liste car il a des element de supression different
+        supression des fonction de supression des elements qui ne sert plus a rien
+
+        verifiaction de code:
+
+        supression : OK
+        up / down : OK
+        création : NON -> probleme de création des ligne de liste
+
+        reparation creation ligne dans une liste (manquer juste des paramètre essenciel)
+
+        Pregression Article 75%
+
+        ajoue des boudure séparer (border haut, border gauche ...)
         
-        
+    
+    

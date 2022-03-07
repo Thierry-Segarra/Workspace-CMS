@@ -18,6 +18,7 @@ function addLigneListe(i,nbcomp){
  }  
 
 // option
+// Il faut le laisser car il y as des element a suprimer different au composans comme e texte, titre, ...
 function suprime_ligne_liste(i){
    
     document.getElementById("option_compossan").innerHTML = op_menu; // pour remettre a vide le menu
