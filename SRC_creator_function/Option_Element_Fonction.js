@@ -13,12 +13,14 @@ function option_defaul(){
 document.getElementById('bt_contenue').innerHTML = '↓';
 document.getElementById('bt_bordure').innerHTML = '↓';
 document.getElementById('bt_position').innerHTML = '↓';
+document.getElementById('bt_autre').innerHTML = '↓';
 parcour_menu = 0;
 
 document.getElementById('text').innerHTML = '';
 document.getElementById('contenue').innerHTML = '';
 document.getElementById('bordure').innerHTML = '';
 document.getElementById('position').innerHTML = '';
+document.getElementById('autre').innerHTML = '';
 
 }
 function option_contenue(){
@@ -31,6 +33,7 @@ if(parcour_menu == 1){
     document.getElementById('bt_contenue').innerHTML = '↑';
     document.getElementById('bt_bordure').innerHTML = '↓';
     document.getElementById('bt_position').innerHTML = '↓';
+    document.getElementById('bt_autre').innerHTML = '↓';
 
 }
 }
@@ -44,6 +47,7 @@ if(parcour_menu == 2){
     document.getElementById('bt_contenue').innerHTML = '↓';
     document.getElementById('bt_bordure').innerHTML = '↑';
     document.getElementById('bt_position').innerHTML = '↓';
+    document.getElementById('bt_autre').innerHTML = '↓';
 
 }
 }
@@ -58,9 +62,26 @@ if(parcour_menu == 3){
     document.getElementById('bt_contenue').innerHTML = '↓';
     document.getElementById('bt_bordure').innerHTML = '↓';
     document.getElementById('bt_position').innerHTML = '↑';
+    document.getElementById('bt_autre').innerHTML = '↓';
 }
 }
 
+function option_autre(){
+    if(parcour_menu == 4){
+        option_defaul();
+    }else{
+        parcour_menu = 4;
+        option_element(stock_i,stock_nom_element,stock_element);
+    
+        document.getElementById('bt_contenue').innerHTML = '↓';
+        document.getElementById('bt_bordure').innerHTML = '↓';
+        document.getElementById('bt_position').innerHTML = '↓';
+        document.getElementById('bt_autre').innerHTML = '↑';
+    }
+    }
+
+
+    
 
 //  convertir RGB en Hexa
 
@@ -115,4 +136,23 @@ document.getElementById('down'+i).remove();
 document.getElementById(comp).remove();
 
 boucle_composans(dv)
+}
+
+function text_gras(){
+    if(gras == 0){
+        gras = 1
+    }else {gras = 0}
+
+}
+
+function text_italique(){
+    if(italique == 0){
+        italique = 1
+    }else {italique = 0}
+}
+
+function text_ligne(){
+    if(ligne == 0){
+        ligne = 1
+    }else {ligne = 0}
 }

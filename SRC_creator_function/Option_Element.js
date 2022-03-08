@@ -10,10 +10,20 @@ function option_element(i,nom_element,element,divnb,compnb){
 // i = numerot du composans
 // nom_ellement = nom de l'ellement ex TITRE, TEXT, LISTE ...
 // element = l'identifiant de l'ellement ex imadiv ...
+// divnb = numero de la div
+// compnb = numero du composans
 
     stock_i = i;
     stock_nom_element = nom_element;
     stock_element = element;
+
+    gras = 0;
+    italique = 0;
+    ligne = 0;
+
+    
+
+
 
     if(nom_element == 'LIGNE'){
 
@@ -34,6 +44,7 @@ function option_element(i,nom_element,element,divnb,compnb){
         document.getElementById('contenue').innerHTML = op_contenue;
         document.getElementById('bordure').innerHTML = '';
         document.getElementById('position').innerHTML = '';
+        document.getElementById('autre').innerHTML = '';
 
         if(nom_element == 'IMAGE'){
             // option pour modifier le contenue et la taille d'une image
@@ -76,7 +87,7 @@ function option_element(i,nom_element,element,divnb,compnb){
 
         }else{
             // option pour modifier le contenue et la taille d'un text
-            document.getElementById("text").innerHTML = '<p>contenue dans le texte</p><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><p>taille</p><input name="op_taille" id="op_taille" type="text" placeholder="18.72 par defaut" value="">px<p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px<br><label for="op_taille_height">Hauteur</label><br><input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px<br>';
+            document.getElementById("text").innerHTML = '<p>contenue dans le texte</p><button onclick="text_gras()">B</button><button onclick="text_italique()">I</button><button onclick="text_ligne()">U</button><input type="color" id="op_text_couleur" name="couleur" value="#000000"><br><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><p>taille</p><input name="op_taille" id="op_taille" type="text" placeholder="18.72 par defaut" value="">px<p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px<br><label for="op_taille_height">Hauteur</label><br><input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px<br>';
 
             document.getElementById('op_contenue').value = document.getElementById(element+i).innerHTML; // Permet de selectionné le contenue a modifier
             
@@ -94,6 +105,28 @@ function option_element(i,nom_element,element,divnb,compnb){
                 let height = document.getElementById(element+i).style.height;
                 document.getElementById('op_taille_height').value = height.substring(0,height.length-2)
             } 
+
+            if(document.getElementById(element+i).style.fontWeight){
+                gras = 1;
+            }
+        
+            if(document.getElementById(element+i).style.fontStyle){
+                italique = 1;
+            }
+        
+            if(document.getElementById(element+i).style.textDecoration){
+                ligne = 1;
+            }
+
+            if(document.getElementById(element+i).style.color){
+            
+                let textColor = document.getElementById(element+i).style.color;
+    
+                let couleur = CouleurBorder(textColor); // traitement des donnée de la variable borderColor + convertiseur RGB en HEX
+    
+                document.getElementById('op_text_couleur').value = couleur;//.substring(0,border.length-8) // voir pour la modification de couleur de la border
+            }
+
         }
     }
    
@@ -102,6 +135,7 @@ function option_element(i,nom_element,element,divnb,compnb){
         document.getElementById('contenue').innerHTML = '';
         document.getElementById('bordure').innerHTML = op_bordure;
         document.getElementById('position').innerHTML = '';
+        document.getElementById('autre').innerHTML = '';
 
 
 
@@ -109,8 +143,25 @@ function option_element(i,nom_element,element,divnb,compnb){
             let border = document.getElementById(element+i).style.border;
             //console.log(border.substring(border.search('px'),0));
             document.getElementById('op_bordure').value = border.substring(border.search('px'),0);// Permet de récuperer la taille de la bordure
+        }else{
+        // Partie border séparer
+            if(document.getElementById(element+i).style.borderTop){
+                let borderTop = document.getElementById(element+i).style.borderTop;
+                document.getElementById('op_bordure_haut').value = borderTop.substring(borderTop.search('px'),0);
+            }
+            if(document.getElementById(element+i).style.borderRight){
+                let borderRight = document.getElementById(element+i).style.borderRight;
+                document.getElementById('op_bordure_droit').value = borderRight.substring(borderRight.search('px'),0);
+            }
+            if(document.getElementById(element+i).style.borderBottom){
+                let borderBottom = document.getElementById(element+i).style.borderBottom;
+                document.getElementById('op_bordure_bas').value = borderBottom.substring(borderBottom.search('px'),0);
+            }
+            if(document.getElementById(element+i).style.borderLeft){
+                let borderLeft = document.getElementById(element+i).style.borderLeft;
+                document.getElementById('op_bordure_gauche').value = borderLeft.substring(borderLeft.search('px'),0);
+            }
         }
-        
         if(document.getElementById(element+i).style.borderColor){
             
             let borderColor = document.getElementById(element+i).style.borderColor;
@@ -119,25 +170,29 @@ function option_element(i,nom_element,element,divnb,compnb){
 
             document.getElementById('op_border_couleur').value = couleur;//.substring(0,border.length-8) // voir pour la modification de couleur de la border
         }
+        if(document.getElementById(element+i).style.borderStyle){
+            let borderStyle = document.getElementById(element+i).style.borderStyle;
+            document.getElementById('op_bordure_type').value = borderStyle;//.substring(borderTopLeftRadius.search('%'),0);
+        }
+        
 
-        // Partie border séparer
-        if(document.getElementById(element+i).style.borderTop){
-            let borderTop = document.getElementById(element+i).style.borderTop;
-            document.getElementById('op_bordure_haut').value = borderTop.substring(border.search('px'),0);
+        // partie bordure arrondi
+        if(document.getElementById(element+i).style.borderTopLeftRadius){
+            let borderTopLeftRadius = document.getElementById(element+i).style.borderTopLeftRadius;
+            document.getElementById('op_bordure_hg').value = borderTopLeftRadius.substring(borderTopLeftRadius.search('%'),0);
         }
-        if(document.getElementById(element+i).style.borderRight){
-            let borderRight = document.getElementById(element+i).style.borderRight;
-            document.getElementById('op_bordure_droit').value = borderRight.substring(border.search('px'),0);
+        if(document.getElementById(element+i).style.borderTopRightRadius){
+            let borderTopRightRadius = document.getElementById(element+i).style.borderTopRightRadius;
+            document.getElementById('op_bordure_hd').value = borderTopRightRadius.substring(borderTopRightRadius.search('%'),0);
         }
-        if(document.getElementById(element+i).style.borderBottom){
-            let borderBottom = document.getElementById(element+i).style.borderBottom;
-            document.getElementById('op_bordure_bas').value = borderBottom.substring(border.search('px'),0);
+        if(document.getElementById(element+i).style.borderBottomLeftRadius){
+            let borderBottomLeftRadius = document.getElementById(element+i).style.borderBottomLeftRadius;
+            document.getElementById('op_bordure_bg').value = borderBottomLeftRadius.substring(borderBottomLeftRadius.search('%'),0);
         }
-        if(document.getElementById(element+i).style.borderLeft){
-            let borderLeft = document.getElementById(element+i).style.borderLeft;
-            document.getElementById('op_bordure_gauche').value = borderLeft.substring(border.search('px'),0);
+        if(document.getElementById(element+i).style.borderBottomRightRadius){
+            let borderBottomRightRadius = document.getElementById(element+i).style.borderBottomRightRadius;
+            document.getElementById('op_bordure_bd').value = borderBottomRightRadius.substring(borderBottomRightRadius.search('%'),0);
         }
-
         
     }
     if(parcour_menu == 3){
@@ -145,8 +200,9 @@ function option_element(i,nom_element,element,divnb,compnb){
         document.getElementById('contenue').innerHTML = '';
         document.getElementById('bordure').innerHTML = '';
         document.getElementById('position').innerHTML = op_position;
+        document.getElementById('autre').innerHTML = '';
 
-    // Partie margin
+        // Partie margin
         if(document.getElementById(element+i).style.marginTop){
             let marginTop = document.getElementById(element+i).style.marginTop;
             document.getElementById('op_marge_haut').value = marginTop;//.substring(0,marginTop.length-2);
@@ -182,6 +238,15 @@ function option_element(i,nom_element,element,divnb,compnb){
             document.getElementById('op_padding_bas').value = paddingLeft;//.substring(0,paddingLeft.length-2);
         } 
     }
+
+    if(parcour_menu == 4){
+        // Affichage du module souhaiter
+        document.getElementById('contenue').innerHTML = '';
+        document.getElementById('bordure').innerHTML = '';
+        document.getElementById('position').innerHTML = '';
+        document.getElementById('autre').innerHTML = op_autre;
+    }
+
     inter = setInterval(op_update_element,250,i,nom_element,element);
 }
 
@@ -251,6 +316,22 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
     if(document.querySelector('input[name=align]:checked').value){
         document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
     }
+
+    if(gras == 1){
+        document.getElementById(element+i).style.fontWeight = 'bold';
+    }else if(gras == 0){document.getElementById(element+i).style.fontWeight = null}
+
+    if(italique == 1){
+        document.getElementById(element+i).style.fontStyle = 'italic';
+    }else if(italique == 0){document.getElementById(element+i).style.fontStyle = null}
+
+    if(ligne == 1){
+        document.getElementById(element+i).style.textDecoration = 'underline';
+    }else if(ligne == 0){document.getElementById(element+i).style.textDecoration = null}
+
+    if(document.getElementById('op_text_couleur').value != '#000000'){
+        document.getElementById(element+i).style.color = document.getElementById('op_text_couleur').value;
+    }else{document.getElementById(element+i).style.color = null}
 }
 
     if(parcour_menu == 2){
@@ -280,17 +361,31 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
 
         // on verifi si il y a des donnée dans ces input
         if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
-            
+            // Different Type de bordure
             document.getElementById(element+i).style.borderStyle = document.getElementById('op_bordure_type').value;
-
         }else{document.getElementById(element+i).style.borderStyle = null}
 
 
+        // Partie bordure arrondie
         if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
-            
+            document.getElementById('af_op_bordure_hg').innerHTML = document.getElementById('op_bordure_hg').value+'%';
             document.getElementById(element+i).style.borderTopLeftRadius = document.getElementById('op_bordure_hg').value+'%';
-
         }else{document.getElementById(element+i).style.borderTopLeftRadius = null}
+        
+        if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
+            document.getElementById('af_op_bordure_hd').innerHTML = document.getElementById('op_bordure_hd').value+'%';
+            document.getElementById(element+i).style.borderTopRightRadius = document.getElementById('op_bordure_hd').value+'%';
+        }else{document.getElementById(element+i).style.borderTopRightRadius = null}
+        
+        if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
+            document.getElementById('af_op_bordure_bg').innerHTML = document.getElementById('op_bordure_bg').value+'%';
+            document.getElementById(element+i).style.borderBottomLeftRadius = document.getElementById('op_bordure_bg').value+'%';
+        }else{document.getElementById(element+i).style.borderBottomLeftRadius = null}
+        
+        if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
+            document.getElementById('af_op_bordure_bd').innerHTML = document.getElementById('op_bordure_bd').value+'%';
+            document.getElementById(element+i).style.borderBottomRightRadius = document.getElementById('op_bordure_bd').value+'%';
+        }else{document.getElementById(element+i).style.borderBottomRightRadius = null}
 
     }
 

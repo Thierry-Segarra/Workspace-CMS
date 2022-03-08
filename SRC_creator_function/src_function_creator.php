@@ -39,6 +39,7 @@
     var op_contenue = '<?php include("../Option_menu/composant_menu/contenue.php") ?>';
     var op_bordure = '<?php include("../Option_menu/composant_menu/bordure.php") ?>';
     var op_position = '<?php include("../Option_menu/composant_menu/position.php") ?>';
+    var op_autre = '<?php include("../Option_menu/composant_menu/autre.php") ?>';
 
 
 </script>

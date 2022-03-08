@@ -32,17 +32,17 @@ echo '<p>Taille de la bordure</p>'.
 
     '<p>Bordure arrondi</p>'.
 
-    '<label for="op_bordure_hg">bordure Haut Gauche</label>'.
-    '<input type="range" id="op_bordure_hg" name="op_bordure_hg" min="0" max="100" value="0" step="1">%'.
+    '<label for="op_bordure_hg">Bordure Haut Gauche</label>'.'<br>'.
+    '<input type="range" id="op_bordure_hg" name="op_bordure_hg" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_hg">0%</span>'.'<br>'.
 
-    '<label for="op_bordure_hd">bordure Haut Droit</label>'.
-    '<input type="range" id="op_bordure_hd" name="op_bordure_hd" min="0" max="100" value="0" step="1">%'.
+    '<label for="op_bordure_hd">Bordure Haut Droit</label>'.'<br>'.
+    '<input type="range" id="op_bordure_hd" name="op_bordure_hd" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_hd">0%</span>'.'<br>'.
     
-    '<label for="op_bordure_bg">bordure Bas Gauche</label>'.
-    '<input type="range" id="op_bordure_bg" name="op_bordure_bg" min="0" max="100" value="0" step="1">%'.
+    '<label for="op_bordure_bg">Bordure Bas Gauche</label>'.'<br>'.
+    '<input type="range" id="op_bordure_bg" name="op_bordure_bg" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_bg">0%</span>'.'<br>'.
 
-    '<label for="op_bordure_bd">bordure Bas Droit</label>'.
-    '<input type="range" id="op_bordure_bd" name="op_bordure_bd" min="0" max="100" value="0" step="1">%'.
+    '<label for="op_bordure_bd">Bordure Bas Droit</label>'.'<br>'.
+    '<input type="range" id="op_bordure_bd" name="op_bordure_bd" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_bd">0%</sapn>'.'<br>'.
     
 
 '</div>'.

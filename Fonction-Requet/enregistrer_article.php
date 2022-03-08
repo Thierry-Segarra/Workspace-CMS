@@ -5,8 +5,10 @@ echo '<br>############# Partie Article ###############<br>';
 
 $titre = $_POST['titre'];
 $div = $_POST['div'];
+if(isset($_POST['composans'])){
 $composans = $_POST['composans'];
 $nom_composans = $_POST['nom_composans'];
+}
 $HTML = $_POST['HTML'];
 //$HTML = htmlspecialchars($HTML, ENT_QUOTES);
 echo $HTML;
@@ -30,20 +32,22 @@ if(isset($_POST['Modif'])){
             //array_push($Table_Structure, $div[$i]);
             $tablediv = [];
             $tablecompo = [];
-            for($j = 0; $j< count($composans[$i]);$j++){
-                $verifnb_div_comp = substr($composans[$i][$j], 3, strlen('comp')-3);
-                $verifnb_div = substr($div[$i],4);  
-                if($verifnb_div_comp == $verifnb_div){
-                    // mettre le nom du composans dans un tableau
-                    $tablenom = [
-                        $composans[$i][$j] => $nom_composans[$i][$j]
-                    ];
-                    // ajoute le nom de composans a sont composans
-                    array_push($tablecompo, $tablenom);
-                    //array_push($tablediv[$i], $tablecompo);
-                    
-                }
-            };
+            if(isset($composans)){
+                for($j = 0; $j< count($composans[$i]);$j++){
+                    $verifnb_div_comp = substr($composans[$i][$j], 3, strlen('comp')-3);
+                    $verifnb_div = substr($div[$i],4);  
+                    if($verifnb_div_comp == $verifnb_div){
+                        // mettre le nom du composans dans un tableau
+                        $tablenom = [
+                            $composans[$i][$j] => $nom_composans[$i][$j]
+                        ];
+                        // ajoute le nom de composans a sont composans
+                        array_push($tablecompo, $tablenom);
+                        //array_push($tablediv[$i], $tablecompo);
+                        
+                    }
+                };
+            }
             $tablenbdiv = [
                 $div[$i] => $tablecompo,
             ];
@@ -57,12 +61,12 @@ if(isset($_POST['Modif'])){
     
         // Pour transformer la table en donnée
         $Structure = serialize($Table_Structure);
-        echo "<br>". $Structure . "<br><br><br>";
+        //echo "<br>". $Structure . "<br><br><br>";
     
         // Pour retransformer les donnée en table
         $test = unserialize($Structure);
-        var_dump($test);
-        
+        //var_dump($test);
+         
         echo '<br>';
         echo '<br>############# Partie Base de donnée ###############<br>';
         echo '<br>';
@@ -72,15 +76,15 @@ if(isset($_POST['Modif'])){
         $Chemain = "./Article/".$titre.".php";
 
         $requete = "UPDATE `article` SET `Structure` = '".$Structure."' WHERE `Chemain` = '".$Chemain."'";
-            $exec_requete = mysqli_query($db,$requete);
-            if($exec_requete){
-                echo 'REQUETE REUSSIS';
-            }
-            echo '<br>';
-            echo $Chemain;
-            echo '<br>';
-            echo $requete;
-            header('Location: ../index.php?article');
+        $exec_requete = mysqli_query($db,$requete);
+        if($exec_requete){
+            echo 'REQUETE REUSSIS';
+        }
+        echo '<br>';
+        echo $Chemain;
+        echo '<br>';
+        //echo $requete;
+        header('Location: ../index.php?article');
 
 
 }else{
@@ -102,20 +106,22 @@ if(isset($_POST['Modif'])){
         //array_push($Table_Structure, $div[$i]);
         $tablediv = [];
         $tablecompo = [];
-        for($j = 0; $j< count($composans[$i]);$j++){
-            $verifnb_div_comp = substr($composans[$i][$j], 3, strlen('comp')-3);
-            $verifnb_div = substr($div[$i],4);  
-            if($verifnb_div_comp == $verifnb_div){
-                // mettre le nom du composans dans un tableau
-                $tablenom = [
-                    $composans[$i][$j] => $nom_composans[$i][$j]
-                ];
-                // ajoute le nom de composans a sont composans
-                array_push($tablecompo, $tablenom);
-                //array_push($tablediv[$i], $tablecompo);
-                
-            }
-        };
+        if(isset($composans)){
+            for($j = 0; $j< count($composans[$i]);$j++){
+                $verifnb_div_comp = substr($composans[$i][$j], 3, strlen('comp')-3);
+                $verifnb_div = substr($div[$i],4);  
+                if($verifnb_div_comp == $verifnb_div){
+                    // mettre le nom du composans dans un tableau
+                    $tablenom = [
+                        $composans[$i][$j] => $nom_composans[$i][$j]
+                    ];
+                    // ajoute le nom de composans a sont composans
+                    array_push($tablecompo, $tablenom);
+                    //array_push($tablediv[$i], $tablecompo);
+                    
+                }
+            };
+        }
         $tablenbdiv = [
             $div[$i] => $tablecompo,
         ];

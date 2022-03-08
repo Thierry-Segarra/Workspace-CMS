@@ -235,7 +235,19 @@ Mars 2022
         A Faire:
         rajouter les bordure arrondi avec un input range. Pour l'arrondi en haut a gauche fait mais a verif pour des modification est autre
 
-    
+    08/03/2022 
+
+        Ajoue fonctionnaliter arrondie des bordures 
         
-    
-    
+        modification du code pour ficher les modification lors de l'ouverture ou la réouverture du module bordure
+
+        ajoue des fonctionnalite pour le text: mettre en gras, italique, a ligne plus la couleur
+
+        Rajoue du module AUTRE
+
+        A rajouter dans le module AUTRE:
+        background avec une couleur si ce n'est pas une div et mettre la posibilité de mettre une image si c'est la les modifiaction d'une div
+        opacité de l'ellement
+
+        PROBLEME:
+        sauvegarde avec div vide : régler;
