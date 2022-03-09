@@ -21,9 +21,6 @@ function option_element(i,nom_element,element,divnb,compnb){
     italique = 0;
     ligne = 0;
 
-    
-
-
 
     if(nom_element == 'LIGNE'){
 
@@ -87,9 +84,19 @@ function option_element(i,nom_element,element,divnb,compnb){
 
         }else if(nom_element == 'MAP'){
 
-            document.getElementById("text").innerHTML = '<p>Modifer adresse sur a map</p><input name="op_adresse_map" id="op_adresse_map" type="text" placeholder="marseille" value=""><br><p>Modifer pays sur a map</p><input name="op_pays_map" id="op_pays_map" type="text" placeholder="france" value="france"><br>';
+            document.getElementById("text").innerHTML = '<p>Modifer adresse sur a map</p><button onclick="apercu_map(`div'+divnb+'comp'+compnb+'`,`'+element+i+'`)">Aperçus de la localisation</button><br><input name="op_adresse_map" id="op_adresse_map" type="text" placeholder="marseille" value=""><br><br><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px<br><label for="op_taille_height">Hauteur</label><br><input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px<br>';
 
+            document.getElementById('op_adresse_map').value = adresse(document.getElementById(element+i).attributes.src.value);
 
+            if(document.getElementById(element+i).style.width){
+                let width = document.getElementById(element+i).style.width;
+                document.getElementById('op_taille_width').value = width.substring(0,width.length-2);
+            }
+        
+            if(document.getElementById(element+i).style.height){
+                let height = document.getElementById(element+i).style.height;
+                document.getElementById('op_taille_height').value = height.substring(0,height.length-2)
+            } 
 
         }else{
             // option pour modifier le contenue et la taille d'un text
@@ -367,17 +374,15 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
         }
 
     }else if(nom_element == 'MAP'){
-        /*
+        
         if(document.getElementById('op_taille_width').value){
-            document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value;
+            document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value +"px";
         }else{document.getElementById(element+i).style.width = null}
-*/      
-        let lieux = adresse(document.getElementById(element+i).attributes.src.value);
-        if(document.getElementById('op_adresse_map').value != lieux){
-            console.log(document.getElementById('op_adresse_map').value);
-            document.getElementById(element+i).setAttribute("src","https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q="+document.getElementById('op_adresse_map').value+"+("+document.getElementById('op_pays_map').value+")&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=B&amp;output=embed");
-            console.log(document.getElementById(element+i).attributes.src);
-        }
+
+        if(document.getElementById('op_taille_height').value){
+            document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value +"px";
+        }else{document.getElementById(element+i).style.height = null}
+
     }
 
     // Alignement du text

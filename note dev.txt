@@ -254,4 +254,8 @@ Mars 2022
     
     09/03/2022
 
-        ajoue d'une map mais c'est pas fini
+        rajoue du background couleur pour tout les ellement et de l'opacité mis dans le module AUTRE
+
+        ajoue d'une fonctionnalite de map, là oû nous pouvons mettre un point avec une adresse
+
+        function map relier a tout les autre type de modification (taille, bordure, position ...)

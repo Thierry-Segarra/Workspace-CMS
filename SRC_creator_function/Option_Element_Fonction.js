@@ -159,9 +159,18 @@ function text_ligne(){
 }
 
 function adresse(lieux){
-    lieux = lieux.substring(lieux.search(';q=')+3);
-    lieux = lieux.substring(lieux.search('&amp')-1,0);
-    lieux = lieux.substring(lieux.indexOf("+("),0);
+    lieux = lieux.substring(lieux.search('&q=')+3);
+    lieux = lieux.substring(lieux.search('&t'),0);
+    if(lieux.indexOf("+(") != -1){
+        lieux = lieux.substring(lieux.indexOf("+("),0);
+    }
     //console.log(lieux);
     return lieux;
+}
+
+function apercu_map(div,element){
+    //document.getElementById(element).innerHTML = "";
+    document.getElementById(div).innerHTML = '<iframe id="'+element+'"width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q='+document.getElementById('op_adresse_map').value+'&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>';
+    //document.getElementById(element).setAttribute("src","https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q="+document.getElementById('op_adresse_map').value+"+("+document.getElementById('op_pays_map').value+")&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=B&amp;output=embed");
+    //console.log(document.getElementById(element).attributes.src.value);
 }
