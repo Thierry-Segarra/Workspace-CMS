@@ -60,6 +60,7 @@
 <script type="text/javascript" src="../SRC_creator_function/composans/liste.js"></script> <!-- Pour crée une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/video.js"></script> <!-- Pour crée une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/ligne-liste.js"></script> <!-- Pour crée une ligne dans une liste -->
+<script type="text/javascript" src="../SRC_creator_function/composans/map.js"></script> <!-- Pour crée une map -->
 
 <!-- Fonction disponible pour les modifications -->
 <script type="text/javascript" src="../SRC_creator_function/updo_comp.js"></script> <!-- Pour monté ou decendre un composant dans une div -->

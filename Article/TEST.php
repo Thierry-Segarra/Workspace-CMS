@@ -1,1 +1,1 @@
-    <div class="builddiv" id="idiv1"><div id="div1comp1"><h1 id="tidiv11">Titre</h1></div></div>
+    <div class="builddiv" id="idiv1"><div id="div1comp1"><iframe id="mapdiv11" width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=france+(france)&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div></div>

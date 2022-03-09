@@ -31,3 +31,6 @@ faire une selection entre une création d'article a vide ou avec un model de bas
 rajouter la couleru en arrière plan ou une image en arrière plan
 changer la couleur du text 
 faire une option pour la div
+
+
+rajouter un slide, un map, html, compteur (temps et autre),

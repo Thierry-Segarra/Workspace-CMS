@@ -1,13 +1,9 @@
 <?php
 
-echo '<p>Alignement</p>'.
-'<input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked>'.
+echo '<p>Couleur backgrouwn</p>'.
+'<input type="color" id="op_backgrouwn_couleur" name="couleur" value="#ffffff">'.'<br><br>'.
 
-'<input type="radio" id="left" name="align" value="left">'.
-'<label for="left">Left</label>'.
-'<input type="radio" id="center" name="align" value="center">'.
-'<label for="center">Center</label>'.
-'<input type="radio" id="right" name="align" value="right">'.
-'<label for="right">Right</label>'.'<br><br>';
+'<label for="op_opacite">Opacité</label>'.'<br>'.
+'<input type="range" id="op_opacite" name="op_opacite" min="0" max="100" value="100" step="1">'.'<span id="af_op_opacite">100%</span>'.'<br><br>';
 
 ?>

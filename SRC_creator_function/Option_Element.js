@@ -48,7 +48,7 @@ function option_element(i,nom_element,element,divnb,compnb){
 
         if(nom_element == 'IMAGE'){
             // option pour modifier le contenue et la taille d'une image
-            document.getElementById("text").innerHTML = '<p>lien de l`image</p><button id="op_plus" onclick="contenue_media_image()" >Option Ligne</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br><br>';
+            document.getElementById("text").innerHTML = '<p>lien de l`image</p><button id="op_plus" onclick="contenue_media_image()" >Option Image</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br><br>';
             //document.getElementById('op_src').value = document.getElementById(element+i).src; // Permet de selectionné le contenue a modifier
 
             if(document.getElementById(element+i).style.width){
@@ -83,6 +83,12 @@ function option_element(i,nom_element,element,divnb,compnb){
                 let height = document.getElementById(element+i).style.height;
                 document.getElementById('op_taille_height').value = height.substring(0,height.length-2)
             } 
+
+
+        }else if(nom_element == 'MAP'){
+
+            document.getElementById("text").innerHTML = '<p>Modifer adresse sur a map</p><input name="op_adresse_map" id="op_adresse_map" type="text" placeholder="marseille" value=""><br><p>Modifer pays sur a map</p><input name="op_pays_map" id="op_pays_map" type="text" placeholder="france" value="france"><br>';
+
 
 
         }else{
@@ -245,6 +251,21 @@ function option_element(i,nom_element,element,divnb,compnb){
         document.getElementById('bordure').innerHTML = '';
         document.getElementById('position').innerHTML = '';
         document.getElementById('autre').innerHTML = op_autre;
+
+        if(document.getElementById(element+i).style.backgroundColor){
+            
+            let textColor = document.getElementById(element+i).style.backgroundColor;
+
+            let couleur = CouleurBorder(textColor); // traitement des donnée de la variable borderColor + convertiseur RGB en HEX
+
+            document.getElementById('op_backgrouwn_couleur').value = couleur;//.substring(0,border.length-8) // voir pour la modification de couleur de la border
+        }
+
+        if(document.getElementById(element+i).style.opacity){
+            let opacity = document.getElementById(element+i).style.opacity;
+            document.getElementById('op_opacite').value = opacity;//.substring(opacity.search('%'),0);
+        }
+
     }
 
     inter = setInterval(op_update_element,250,i,nom_element,element);
@@ -300,6 +321,23 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
                 document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value +"px";
             }else{document.getElementById(element+i).style.height = null}
 
+            if(gras == 1){
+                document.getElementById(element+i).style.fontWeight = 'bold';
+            }else if(gras == 0){document.getElementById(element+i).style.fontWeight = null}
+        
+            if(italique == 1){
+                document.getElementById(element+i).style.fontStyle = 'italic';
+            }else if(italique == 0){document.getElementById(element+i).style.fontStyle = null}
+        
+            if(ligne == 1){
+                document.getElementById(element+i).style.textDecoration = 'underline';
+            }else if(ligne == 0){document.getElementById(element+i).style.textDecoration = null}
+        
+            if(document.getElementById('op_text_couleur').value != '#000000'){
+                document.getElementById(element+i).style.color = document.getElementById('op_text_couleur').value;
+            }else{document.getElementById(element+i).style.color = null}
+        
+
         }else{
 
             if(document.getElementById('op_taille_width').value){
@@ -309,6 +347,36 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
             if(document.getElementById('op_taille_height').value){
                 document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value +"px";
             }else{document.getElementById(element+i).style.height = null}
+
+            if(gras == 1){
+                document.getElementById(element+i).style.fontWeight = 'bold';
+            }else if(gras == 0){document.getElementById(element+i).style.fontWeight = null}
+        
+            if(italique == 1){
+                document.getElementById(element+i).style.fontStyle = 'italic';
+            }else if(italique == 0){document.getElementById(element+i).style.fontStyle = null}
+        
+            if(ligne == 1){
+                document.getElementById(element+i).style.textDecoration = 'underline';
+            }else if(ligne == 0){document.getElementById(element+i).style.textDecoration = null}
+        
+            if(document.getElementById('op_text_couleur').value != '#000000'){
+                document.getElementById(element+i).style.color = document.getElementById('op_text_couleur').value;
+            }else{document.getElementById(element+i).style.color = null}
+        
+        }
+
+    }else if(nom_element == 'MAP'){
+        /*
+        if(document.getElementById('op_taille_width').value){
+            document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value;
+        }else{document.getElementById(element+i).style.width = null}
+*/      
+        let lieux = adresse(document.getElementById(element+i).attributes.src.value);
+        if(document.getElementById('op_adresse_map').value != lieux){
+            console.log(document.getElementById('op_adresse_map').value);
+            document.getElementById(element+i).setAttribute("src","https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q="+document.getElementById('op_adresse_map').value+"+("+document.getElementById('op_pays_map').value+")&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=B&amp;output=embed");
+            console.log(document.getElementById(element+i).attributes.src);
         }
     }
 
@@ -317,21 +385,6 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
         document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
     }
 
-    if(gras == 1){
-        document.getElementById(element+i).style.fontWeight = 'bold';
-    }else if(gras == 0){document.getElementById(element+i).style.fontWeight = null}
-
-    if(italique == 1){
-        document.getElementById(element+i).style.fontStyle = 'italic';
-    }else if(italique == 0){document.getElementById(element+i).style.fontStyle = null}
-
-    if(ligne == 1){
-        document.getElementById(element+i).style.textDecoration = 'underline';
-    }else if(ligne == 0){document.getElementById(element+i).style.textDecoration = null}
-
-    if(document.getElementById('op_text_couleur').value != '#000000'){
-        document.getElementById(element+i).style.color = document.getElementById('op_text_couleur').value;
-    }else{document.getElementById(element+i).style.color = null}
 }
 
     if(parcour_menu == 2){
@@ -368,25 +421,29 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
 
         // Partie bordure arrondie
         if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
-            document.getElementById('af_op_bordure_hg').innerHTML = document.getElementById('op_bordure_hg').value+'%';
+            
             document.getElementById(element+i).style.borderTopLeftRadius = document.getElementById('op_bordure_hg').value+'%';
         }else{document.getElementById(element+i).style.borderTopLeftRadius = null}
         
         if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
-            document.getElementById('af_op_bordure_hd').innerHTML = document.getElementById('op_bordure_hd').value+'%';
+            
             document.getElementById(element+i).style.borderTopRightRadius = document.getElementById('op_bordure_hd').value+'%';
         }else{document.getElementById(element+i).style.borderTopRightRadius = null}
         
         if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
-            document.getElementById('af_op_bordure_bg').innerHTML = document.getElementById('op_bordure_bg').value+'%';
+            
             document.getElementById(element+i).style.borderBottomLeftRadius = document.getElementById('op_bordure_bg').value+'%';
         }else{document.getElementById(element+i).style.borderBottomLeftRadius = null}
         
         if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
-            document.getElementById('af_op_bordure_bd').innerHTML = document.getElementById('op_bordure_bd').value+'%';
+            
             document.getElementById(element+i).style.borderBottomRightRadius = document.getElementById('op_bordure_bd').value+'%';
         }else{document.getElementById(element+i).style.borderBottomRightRadius = null}
 
+        document.getElementById('af_op_bordure_hg').innerHTML = document.getElementById('op_bordure_hg').value+'%';
+        document.getElementById('af_op_bordure_hd').innerHTML = document.getElementById('op_bordure_hd').value+'%';
+        document.getElementById('af_op_bordure_bg').innerHTML = document.getElementById('op_bordure_bg').value+'%';
+        document.getElementById('af_op_bordure_bd').innerHTML = document.getElementById('op_bordure_bd').value+'%';
     }
 
     if(parcour_menu == 3){
@@ -425,6 +482,20 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
         if(document.getElementById('op_padding_gauche').value){
             document.getElementById(element+i).style.paddingLeft = document.getElementById('op_padding_gauche').value;// +"px";
         }else{document.getElementById(element+i).style.paddingLeft = null}
+        
+        
+    }
+    if(parcour_menu == 4){
+        
+        if(document.getElementById('op_backgrouwn_couleur').value != '#ffffff'){
+            document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;
+        }else{document.getElementById(element+i).style.backgroundColor = null}
+        
+        if(document.getElementById('op_opacite').value != '100'){
+            document.getElementById(element+i).style.opacity = document.getElementById('op_opacite').value+'%';
+        }else{document.getElementById(element+i).style.opacity = null}
+
+        document.getElementById('af_op_opacite').innerHTML = document.getElementById('op_opacite').value+'%';
         
         
     }

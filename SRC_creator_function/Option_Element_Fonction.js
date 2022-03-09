@@ -24,46 +24,47 @@ document.getElementById('autre').innerHTML = '';
 
 }
 function option_contenue(){
-if(parcour_menu == 1){
-    option_defaul();
-}else{
-    parcour_menu = 1;
-    option_element(stock_i,stock_nom_element,stock_element,stock_divnb,stock_compnb);
+    if(parcour_menu == 1){
+        option_defaul();
+    }else{
+        parcour_menu = 1;
+        option_element(stock_i,stock_nom_element,stock_element,stock_divnb,stock_compnb);
 
-    document.getElementById('bt_contenue').innerHTML = '↑';
-    document.getElementById('bt_bordure').innerHTML = '↓';
-    document.getElementById('bt_position').innerHTML = '↓';
-    document.getElementById('bt_autre').innerHTML = '↓';
+        document.getElementById('bt_contenue').innerHTML = '↑';
+        document.getElementById('bt_bordure').innerHTML = '↓';
+        document.getElementById('bt_position').innerHTML = '↓';
+        document.getElementById('bt_autre').innerHTML = '↓';
 
+    }
 }
-}
+
 function option_bordure(){
-if(parcour_menu == 2){
-    option_defaul();
-}else{
-    parcour_menu = 2;
-    option_element(stock_i,stock_nom_element,stock_element);
+    if(parcour_menu == 2){
+        option_defaul();
+    }else{
+        parcour_menu = 2;
+        option_element(stock_i,stock_nom_element,stock_element);
 
-    document.getElementById('bt_contenue').innerHTML = '↓';
-    document.getElementById('bt_bordure').innerHTML = '↑';
-    document.getElementById('bt_position').innerHTML = '↓';
-    document.getElementById('bt_autre').innerHTML = '↓';
+        document.getElementById('bt_contenue').innerHTML = '↓';
+        document.getElementById('bt_bordure').innerHTML = '↑';
+        document.getElementById('bt_position').innerHTML = '↓';
+        document.getElementById('bt_autre').innerHTML = '↓';
 
-}
+    }
 }
 
 function option_position(){
-if(parcour_menu == 3){
-    option_defaul();
-}else{
-    parcour_menu = 3;
-    option_element(stock_i,stock_nom_element,stock_element);
+    if(parcour_menu == 3){
+        option_defaul();
+    }else{
+        parcour_menu = 3;
+        option_element(stock_i,stock_nom_element,stock_element);
 
-    document.getElementById('bt_contenue').innerHTML = '↓';
-    document.getElementById('bt_bordure').innerHTML = '↓';
-    document.getElementById('bt_position').innerHTML = '↑';
-    document.getElementById('bt_autre').innerHTML = '↓';
-}
+        document.getElementById('bt_contenue').innerHTML = '↓';
+        document.getElementById('bt_bordure').innerHTML = '↓';
+        document.getElementById('bt_position').innerHTML = '↑';
+        document.getElementById('bt_autre').innerHTML = '↓';
+    }
 }
 
 function option_autre(){
@@ -78,10 +79,10 @@ function option_autre(){
         document.getElementById('bt_position').innerHTML = '↓';
         document.getElementById('bt_autre').innerHTML = '↑';
     }
-    }
+}
 
 
-    
+
 
 //  convertir RGB en Hexa
 
@@ -155,4 +156,12 @@ function text_ligne(){
     if(ligne == 0){
         ligne = 1
     }else {ligne = 0}
+}
+
+function adresse(lieux){
+    lieux = lieux.substring(lieux.search(';q=')+3);
+    lieux = lieux.substring(lieux.search('&amp')-1,0);
+    lieux = lieux.substring(lieux.indexOf("+("),0);
+    //console.log(lieux);
+    return lieux;
 }
