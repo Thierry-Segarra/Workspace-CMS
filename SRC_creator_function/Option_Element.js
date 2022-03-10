@@ -102,8 +102,10 @@ function option_element(i,nom_element,element,divnb,compnb){
             // option pour modifier le contenue et la taille d'un text
             document.getElementById("contenue").innerHTML = '<p>contenue dans le texte</p><button onclick="text_gras()">B</button><button onclick="text_italique()">I</button><button onclick="text_ligne()">U</button><input type="color" id="op_text_couleur" name="couleur" value="#000000"><br><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><p>taille</p><input name="op_taille" id="op_taille" type="text" placeholder="18.72 par defaut" value="">px<p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px<br><label for="op_taille_height">Hauteur</label><br><input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px<br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
 
-            document.getElementById('op_contenue').value = document.getElementById(element+i).innerHTML; // Permet de selectionné le contenue a modifier
-            
+            if(document.getElementById(element+i).innerHTML){
+                document.getElementById('op_contenue').value = document.getElementById(element+i).innerHTML; // Permet de selectionné le contenue a modifier
+            }
+
             if(document.getElementById(element+i).style.fontSize){
                 let fontsize = document.getElementById(element+i).style.fontSize;
                 document.getElementById('op_taille').value = fontsize.substring(0,fontsize.length-2);
@@ -154,7 +156,11 @@ function option_element(i,nom_element,element,divnb,compnb){
             }
 
         }else if(nom_element == 'BOUTON'){
-            document.getElementById("contenue").innerHTML = '<p>Lien</p><input type="text" name="op_lien" id="op_lien"></input><br><br>';
+            document.getElementById("contenue").innerHTML = '<p>contenue dans le texte</p><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><br><p>Lien</p><input type="text" name="op_lien" id="op_lien"></input><br><br>';
+
+            if(document.getElementById(element+i).innerHTML){
+                document.getElementById('op_contenue').value = document.getElementById(element+i).innerHTML;
+            }
 
             if(document.getElementById(element+i).attributes.onclick){
                 
@@ -394,10 +400,12 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
             document.getElementById(element+i+'css').innerHTML = document.getElementById('op_css').value;
 
         }else if(nom_element == 'BOUTON'){
+
+            document.getElementById(element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
             
             if(document.getElementById('op_lien').value){
                 let lien = document.getElementById('op_lien').value;
-                document.getElementById(element+i).setAttribute("onclick","window.location = '"+lien+"'");
+                document.getElementById(element+i).setAttribute("onclick","window.location = `"+lien+"`");
             }
         }
 

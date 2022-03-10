@@ -173,7 +173,7 @@ function apercu_map(div,element){
 
 function lien(url){
     url = url.substring(url.search("window.location = ")+19);
-    url = url.substring(url.indexOf("'"),0);
+    url = url.substring(url.indexOf("`"),0);
     console.log(url);
     return url;
 }
