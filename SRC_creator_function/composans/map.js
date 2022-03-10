@@ -14,4 +14,4 @@ function addMapDiv(i){
      compo = compo + 1;
  
      boucle_composans(i)
- }
+}

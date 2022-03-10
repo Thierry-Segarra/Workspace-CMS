@@ -38,14 +38,14 @@ function option_element(i,nom_element,element,divnb,compnb){
 
     if(parcour_menu == 1){
         // Affichage du module souhaiter
-        document.getElementById('contenue').innerHTML = op_contenue;
+        //document.getElementById('contenue').innerHTML = op_contenue;
         document.getElementById('bordure').innerHTML = '';
         document.getElementById('position').innerHTML = '';
         document.getElementById('autre').innerHTML = '';
 
         if(nom_element == 'IMAGE'){
             // option pour modifier le contenue et la taille d'une image
-            document.getElementById("text").innerHTML = '<p>lien de l`image</p><button id="op_plus" onclick="contenue_media_image()" >Option Image</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br><br>';
+            document.getElementById("contenue").innerHTML = '<p>lien de l`image</p><button id="op_plus" onclick="contenue_media_image()" >Option Image</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br><br>';
             //document.getElementById('op_src').value = document.getElementById(element+i).src; // Permet de selectionné le contenue a modifier
 
             if(document.getElementById(element+i).style.width){
@@ -55,7 +55,7 @@ function option_element(i,nom_element,element,divnb,compnb){
 
         }else if(nom_element == 'VIDEO'){
             // option pour modifier le contenue et la taille d'une image
-            document.getElementById("text").innerHTML = '<p>lien de la video</p><button id="op_plus" onclick="contenue_media_video()" >Option Ligne</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br>';
+            document.getElementById("contenue").innerHTML = '<p>lien de la video</p><button id="op_plus" onclick="contenue_media_video()" >Option Ligne</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br>';
 
             if(document.getElementById(element+i).style.width){
                 let width = document.getElementById(element+i).style.width;
@@ -64,7 +64,7 @@ function option_element(i,nom_element,element,divnb,compnb){
 
         }else if(nom_element == 'LISTE'){
 
-            document.getElementById("text").innerHTML = '<p>Modifer contenue de la liste</p><button id="op_plus" onclick="clearInterval(inter),contenue_Liste('+i+','+stock_divnb+','+stock_compnb+')">Option Ligne</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br><br>';
+            document.getElementById("contenue").innerHTML = '<p>Modifer contenue de la liste</p><button id="op_plus" onclick="clearInterval(inter),contenue_Liste('+i+','+stock_divnb+','+stock_compnb+')">Option Ligne</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br><br>';
 
             if(document.getElementById(element+i).style.fontSize){
                 let fontsize = document.getElementById(element+i).style.fontSize;
@@ -84,7 +84,7 @@ function option_element(i,nom_element,element,divnb,compnb){
 
         }else if(nom_element == 'MAP'){
 
-            document.getElementById("text").innerHTML = '<p>Modifer adresse sur a map</p><button onclick="apercu_map(`div'+divnb+'comp'+compnb+'`,`'+element+i+'`)">Aperçus de la localisation</button><br><input name="op_adresse_map" id="op_adresse_map" type="text" placeholder="marseille" value=""><br><br><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px<br><label for="op_taille_height">Hauteur</label><br><input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px<br>';
+            document.getElementById("contenue").innerHTML = '<p>Modifer adresse sur a map</p><button onclick="apercu_map(`div'+divnb+'comp'+compnb+'`,`'+element+i+'`)">Aperçus de la localisation</button><br><input name="op_adresse_map" id="op_adresse_map" type="text" placeholder="marseille" value=""><br><br><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px<br><label for="op_taille_height">Hauteur</label><br><input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px<br>';
 
             document.getElementById('op_adresse_map').value = adresse(document.getElementById(element+i).attributes.src.value);
 
@@ -98,9 +98,9 @@ function option_element(i,nom_element,element,divnb,compnb){
                 document.getElementById('op_taille_height').value = height.substring(0,height.length-2)
             } 
 
-        }else{
+        }else if(nom_element == 'TITRE' || nom_element == 'TEXT' || nom_element == 'LIGNE'){
             // option pour modifier le contenue et la taille d'un text
-            document.getElementById("text").innerHTML = '<p>contenue dans le texte</p><button onclick="text_gras()">B</button><button onclick="text_italique()">I</button><button onclick="text_ligne()">U</button><input type="color" id="op_text_couleur" name="couleur" value="#000000"><br><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><p>taille</p><input name="op_taille" id="op_taille" type="text" placeholder="18.72 par defaut" value="">px<p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px<br><label for="op_taille_height">Hauteur</label><br><input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px<br>';
+            document.getElementById("contenue").innerHTML = '<p>contenue dans le texte</p><button onclick="text_gras()">B</button><button onclick="text_italique()">I</button><button onclick="text_ligne()">U</button><input type="color" id="op_text_couleur" name="couleur" value="#000000"><br><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><p>taille</p><input name="op_taille" id="op_taille" type="text" placeholder="18.72 par defaut" value="">px<p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value="">px<br><label for="op_taille_height">Hauteur</label><br><input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value="">px<br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
 
             document.getElementById('op_contenue').value = document.getElementById(element+i).innerHTML; // Permet de selectionné le contenue a modifier
             
@@ -139,6 +139,32 @@ function option_element(i,nom_element,element,divnb,compnb){
     
                 document.getElementById('op_text_couleur').value = couleur;//.substring(0,border.length-8) // voir pour la modification de couleur de la border
             }
+
+        }else if(nom_element == 'HTML'){
+            document.getElementById("contenue").innerHTML = '<p>code HTML</p><textarea name="op_html" id="op_html"></textarea><br><br><p>code CSS</p><textarea name="op_css" id="op_css"></textarea>';
+
+            if(document.getElementById(element+i).innerHTML){
+                let html = document.getElementById(element+i).innerHTML;
+                document.getElementById('op_html').value = html;
+            }
+
+            if(document.getElementById(element+i+'css').innerHTML){
+                let html = document.getElementById(element+i+'css').innerHTML;
+                document.getElementById('op_css').value = html;
+            }
+
+        }else if(nom_element == 'BOUTON'){
+            document.getElementById("contenue").innerHTML = '<p>Lien</p><input type="text" name="op_lien" id="op_lien"></input><br><br>';
+
+            if(document.getElementById(element+i).attributes.onclick){
+                
+                let url = lien(document.getElementById(element+i).attributes.onclick.value);
+                console.log(url);
+                document.getElementById('op_lien').value = url;
+            }
+
+        }else{
+            document.getElementById("contenue").innerHTML = '<p>Aucun contenue est disponible pour cette element</p>';
 
         }
     }
@@ -208,6 +234,7 @@ function option_element(i,nom_element,element,divnb,compnb){
         }
         
     }
+
     if(parcour_menu == 3){
         // Affichage du module souhaiter
         document.getElementById('contenue').innerHTML = '';
@@ -284,68 +311,38 @@ function option_element(i,nom_element,element,divnb,compnb){
 function op_update_element(i,nom_element,element){ // modifier pour chaque composant car il y a un risque de conflie de fonction    
     // permet d'afficher les modification
     
-    // la taille de la balise
     if(parcour_menu == 1){
-    if(nom_element == 'IMAGE' || nom_element == 'VIDEO'){
-        //document.getElementById(element+i).src = document.getElementById('op_src').value; // pour afficher le contenue modifier
-        if(document.getElementById("switch")){
-            if(document.getElementById("switch").src){
-                if(document.getElementById("switch").src != document.getElementById(element+i).src){
-                    document.getElementById(element+i).src = document.getElementById("switch").src;
+
+        if(nom_element == 'IMAGE' || nom_element == 'VIDEO'){
+            // Modifiaction possible pour les element IMAGE et VIDEO
+            if(document.getElementById("switch")){ // c'est une balise tempom pour récuperer les information en php pour js
+                if(document.getElementById("switch").src){
+                    if(document.getElementById("switch").src != document.getElementById(element+i).src){
+                        document.getElementById(element+i).src = document.getElementById("switch").src;
+                    }
                 }
             }
-        }
 
-        if(document.getElementById('op_taille_width').value){
-            document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value;
-        }else{document.getElementById(element+i).style.width = null}
-        
+            if(document.getElementById('op_taille_width').value){
+                document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value;
+            }else{document.getElementById(element+i).style.width = null}
+            
 
-    }else if(nom_element == 'TITRE' || nom_element == 'TEXT' || nom_element == 'LIGNE'){
+        }else if(nom_element == 'TITRE' || nom_element == 'TEXT' || nom_element == 'LIGNE'){
 
-        // Le contenue de la balise
-        document.getElementById(element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
+            // Modifiaction possible pour les element TITRE TEXTE et LIGNE
+            // Le contenue de la balise
+            document.getElementById(element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
 
-        // la taille du text
-        if(document.getElementById('op_taille').value){
-            document.getElementById(element+i).style.fontSize = document.getElementById('op_taille').value +"px"; // pour afficher la taille modifier
-        }else{document.getElementById(element+i).style.fontSize = null}
-
-        // Modification contenue dans liste des ligne dans une liste
-        if (nom_element == 'LIGNE') {
-
-            document.getElementById('trai_'+element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
-
+            // la taille du text
             if(document.getElementById('op_taille').value){
                 document.getElementById(element+i).style.fontSize = document.getElementById('op_taille').value +"px"; // pour afficher la taille modifier
             }else{document.getElementById(element+i).style.fontSize = null}
 
-            if(document.getElementById('op_taille_width').value){
-                document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value +"px";
-            }else{document.getElementById(element+i).style.width = null}
-
-            if(document.getElementById('op_taille_height').value){
-                document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value +"px";
-            }else{document.getElementById(element+i).style.height = null}
-
-            if(gras == 1){
-                document.getElementById(element+i).style.fontWeight = 'bold';
-            }else if(gras == 0){document.getElementById(element+i).style.fontWeight = null}
-        
-            if(italique == 1){
-                document.getElementById(element+i).style.fontStyle = 'italic';
-            }else if(italique == 0){document.getElementById(element+i).style.fontStyle = null}
-        
-            if(ligne == 1){
-                document.getElementById(element+i).style.textDecoration = 'underline';
-            }else if(ligne == 0){document.getElementById(element+i).style.textDecoration = null}
-        
-            if(document.getElementById('op_text_couleur').value != '#000000'){
-                document.getElementById(element+i).style.color = document.getElementById('op_text_couleur').value;
-            }else{document.getElementById(element+i).style.color = null}
-        
-
-        }else{
+            // Alignement du text
+            if(document.querySelector('input[name=align]:checked').value){
+                document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
+            }
 
             if(document.getElementById('op_taille_width').value){
                 document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value +"px";
@@ -370,30 +367,45 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
             if(document.getElementById('op_text_couleur').value != '#000000'){
                 document.getElementById(element+i).style.color = document.getElementById('op_text_couleur').value;
             }else{document.getElementById(element+i).style.color = null}
-        
+
+
+            // On verrive si c'est une ligne, si oui on donne dans 'trai_'+element+i le contenue pour qu'il puisse etre modifier en meme temps
+            if (nom_element == 'LIGNE') {
+
+                document.getElementById('trai_'+element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
+
+            }
+
+
+        }else if(nom_element == 'MAP'){
+            
+            if(document.getElementById('op_taille_width').value){
+                document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value +"px";
+            }else{document.getElementById(element+i).style.width = null}
+
+            if(document.getElementById('op_taille_height').value){
+                document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value +"px";
+            }else{document.getElementById(element+i).style.height = null}
+
+        }else if(nom_element == 'HTML'){
+            
+            document.getElementById(element+i).innerHTML = document.getElementById('op_html').value;
+
+            document.getElementById(element+i+'css').innerHTML = document.getElementById('op_css').value;
+
+        }else if(nom_element == 'BOUTON'){
+            
+            if(document.getElementById('op_lien').value){
+                let lien = document.getElementById('op_lien').value;
+                document.getElementById(element+i).setAttribute("onclick","window.location = '"+lien+"'");
+            }
         }
 
-    }else if(nom_element == 'MAP'){
-        
-        if(document.getElementById('op_taille_width').value){
-            document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value +"px";
-        }else{document.getElementById(element+i).style.width = null}
-
-        if(document.getElementById('op_taille_height').value){
-            document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value +"px";
-        }else{document.getElementById(element+i).style.height = null}
+    
 
     }
 
-    // Alignement du text
-    if(document.querySelector('input[name=align]:checked').value){
-        document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
-    }
-
-}
-
-    if(parcour_menu == 2){
-        // Bordure
+    if(parcour_menu == 2){ // Module Bordure
         
         if(document.getElementById('op_bordure').value){
             document.getElementById(element+i).style.border = document.getElementById('op_bordure').value +"px "+document.getElementById('op_bordure_type').value+" "+document.getElementById('op_border_couleur').value; // document.getElementById('op_border_couleur').value = borderColor
@@ -451,7 +463,7 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
         document.getElementById('af_op_bordure_bd').innerHTML = document.getElementById('op_bordure_bd').value+'%';
     }
 
-    if(parcour_menu == 3){
+    if(parcour_menu == 3){ // Module Position
 
         // Partie Marging
         if(document.getElementById('op_marge_haut').value){
@@ -490,7 +502,8 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
         
         
     }
-    if(parcour_menu == 4){
+
+    if(parcour_menu == 4){ // Module autre
         
         if(document.getElementById('op_backgrouwn_couleur').value != '#ffffff'){
             document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;

@@ -4,7 +4,6 @@ echo '<h1 id="nom_element"></h1>'.
 '<div class="section_menu">'.
 '<p>CONTENUE</p><button id="bt_contenue" onclick="clearInterval(inter),option_contenue()">↓</button><br>'.
 '</div>'.
-'<div id="text"></div>'.
 '<div id="contenue"></div>'.
 
 

@@ -34,3 +34,5 @@ faire une option pour la div
 
 
 rajouter un slide, un map, html, compteur (temps et autre),
+
+mettre un lectur de clavier pour récuperer l'input control+R pour afaire une alert si il veut refresh la page ou pas

@@ -259,3 +259,9 @@ Mars 2022
         ajoue d'une fonctionnalite de map, là oû nous pouvons mettre un point avec une adresse
 
         function map relier a tout les autre type de modification (taille, bordure, position ...)
+
+    10/03/2022
+
+        ajoue de la fonction HTML pour écrire sont propre code html et code CSS
+
+        ajoue du hyperlien pour l'element BOUTON plus traitement pour récuperer le lien incérer
