@@ -33,6 +33,7 @@
     // media
     var adv_op_media_image = '<?php include("../Option_menu/adv_op_media_image.php") ?>';
     var adv_op_media_video = '<?php include("../Option_menu/adv_op_media_video.php") ?>';
+    var adv_op_media_contenue = '<?php include("../Option_menu/adv_op_media_contenue.php") ?>';
 
     
     // partie module du menu

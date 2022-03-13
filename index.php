@@ -24,7 +24,7 @@
     <!-- PARTI SCRIPT ET INCLUDE PHP -->
     <?php include('Fonction-Requet/connectionBDD.php'); ?>
     <script>
-        var mode_supimage = 0;
+        var mode_supression = 0;
         var categorie_media = 0;
         /* src="Fonction-Requet/menu.js" Bouton B1*/ var linkB1 = `<?php include("Menu-Page/tableau-de-bord.php") ?>`;
         /* src="Fonction-Requet/menu.js" Bouton B2*/ var linkB2 = `<?php include("Menu-Page/article.php") ?>`;

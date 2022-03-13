@@ -11,13 +11,13 @@ if (isset($_FILES['monfichier'])) {
         $nomOrigine =  $myFile["name"][$i];//$_FILES['monfichier']['name'];
         $elementsChemin = pathinfo($nomOrigine);
         $extensionFichier = $elementsChemin['extension'];
-        $extensionsAutorisees = array("png", "jpg", "gif", "pdf");
+        $extensionsAutorisees = array("png", "jpg", "gif");
         if (!(in_array($extensionFichier, $extensionsAutorisees))) {
             echo "Le fichier n'a pas l'extension attendue";
         } else {    
             // Copie dans le repertoire du script avec un nom
             // incluant l'heure a la seconde pres 
-            $repertoireDestination = dirname(__FILE__)."/Image"."/";
+            $repertoireDestination = "../Image"."/";
             $nomDestination = $myFile["name"][$i];//$_FILES['monfichier']['name'];
             echo $nomDestination;
 
@@ -27,10 +27,12 @@ if (isset($_FILES['monfichier'])) {
 
                 $date = date("YmdHis");
 
-                $requete1 = "INSERT INTO `media`(`nom`,`type`,`date`) VALUES ('".$nomDestination."','IMAGE','".$date."')";
+                $requete1 = "INSERT INTO `media`(`nom`,`type`,`date`) VALUES ('".$date.$nomDestination."','IMAGE','".$date."')";
                 $exec_requete1 = mysqli_query($db,$requete1);
 
-                move_uploaded_file($myFile["tmp_name"][$i],$repertoireDestination.$myFile["name"][$i]);
+                $nomfichier = $date.$nomDestination;
+
+                move_uploaded_file($myFile["tmp_name"][$i],$repertoireDestination.$nomfichier);
 
                 header('location:../index.php?media=0'); // redirige vers la page media
 

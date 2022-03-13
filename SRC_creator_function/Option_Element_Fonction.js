@@ -6,6 +6,9 @@ function media_video(nom){
 document.getElementById('switch').src = 'https://www.youtube.com/embed/'+nom;
 }
 
+function media_contenue(nom){
+    document.getElementById('switch').src = '../Document/'+nom;
+}
 
 //  Parcour dans le menu
 function option_defaul(){

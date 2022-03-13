@@ -1,1 +1,0 @@
-    <div class="builddiv" id="idiv1"><div id="div1comp3"><h1 id="tidiv13" style="border: 50px solid rgb(0, 238, 255); margin-top: 50px;">Titre</h1></div></div>

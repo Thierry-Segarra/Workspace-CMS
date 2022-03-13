@@ -141,6 +141,7 @@ article .builddiv{
     border: solid black 3px;
     background-color: white;
     overflow-y:scroll;
+    overflow-x: hidden;
     
 }
 .option .textarea_text{
@@ -193,7 +194,14 @@ iframe {
     width:854px;
     height:480px;
 }
+.media_bouton_pdf{
+    margin-top: 25px;
+    margin-left: 15px;
+    width: 250px;
+    border: solid 0px;
+    background: none;
 
+}
 
 .media_size_affiche{
     width: 100%;
@@ -208,6 +216,8 @@ iframe {
     width: 250px;
     border: solid 0px;
     background: none;
+    border: solid 2px gray;
+    cursor: pointer;
 
 }
 .affiche_media_liste{

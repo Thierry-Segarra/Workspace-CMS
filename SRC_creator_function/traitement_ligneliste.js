@@ -17,7 +17,14 @@ function contenue_media_video(){
     document.getElementById('affichage_avance').style.visibility = 'visible';
     document.getElementById("affichage_avance").innerHTML = '<button class="bouton_ligne_list" onclick="Fermer_op_avancee_media()">X</button>';
     document.getElementById("affichage_avance").innerHTML = document.getElementById("affichage_avance").innerHTML + adv_op_media_video; // Permet d'affichet la liste des ellements d'une liste ou d'une tableau
-    // modification src de l'image 
+    // modification src de la vidéo
+}
+
+function contenue_media_contenue(){
+    document.getElementById('affichage_avance').style.visibility = 'visible';
+    document.getElementById("affichage_avance").innerHTML = '<button class="bouton_ligne_list" onclick="Fermer_op_avancee_media()">X</button>';
+    document.getElementById("affichage_avance").innerHTML = document.getElementById("affichage_avance").innerHTML + adv_op_media_contenue; // Permet d'affichet la liste des ellements d'une liste ou d'une tableau
+    // modification src du conpetue a télécharger 
 }
 
 

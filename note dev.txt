@@ -268,4 +268,27 @@ Mars 2022
 
         ajoue du changement de titre pour le bouton
 
-    
+    11/02/2022
+
+        Ajoue de la catégorie Document
+
+        Ajoue de la supression des fichier dans pour la catégorie Image et Document
+        Ajoue de création de fichier dans Document et d'Image
+
+        A faire rajouter fonctuion pour télécharger un fichier
+
+    12/03/2022
+
+        amélioration des option de la bordure
+
+        ajoue de la fontionnaliter de téléchargement de document avec un bouton
+
+        améliorer la fontion du bouton pour mettre un lien de site au lieux d'un lien de téléchargement d'un des contenue
+
+    13/03/2022
+
+        Upload des fichier sur Guithub
+
+        A faire modifier le Upload image par uplaod fichier dans le fichier upload_doc.php
+
+        A faire les modifiaction pour sois mettre un lien pour un autre site internet soit un fichier a téléchargé

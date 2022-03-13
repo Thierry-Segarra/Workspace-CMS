@@ -1,1 +1,0 @@
-    <div class="builddiv" id="idiv1"><div id="div1comp1"><button id="boudiv11" onclick="window.location = `https://www.youtube.com/`">Hello you can click on me</button></div></div>
