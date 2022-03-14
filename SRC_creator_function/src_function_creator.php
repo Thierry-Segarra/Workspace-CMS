@@ -26,7 +26,7 @@
     var op_menu = '<?php include("../Option_menu/op_menu.php") ?>';
     // Les option dans le menu option
     var op_menu_element = '<?php include("../Option_menu/op_menu_element.php") ?>'; // option pour les element (text, titre, bouton, image, ligne)
-
+    var op_menu_div = '<?php include("../Option_menu/op_menu_div.php") ?>'; // option pour les element (text, titre, bouton, image, ligne)
 
     // Affiche le menu de Modification avancée
     var adv_op_ligne_liste = '<?php include("../Option_menu/adv_op_ligne_liste.php") ?>';
@@ -37,7 +37,7 @@
 
     
     // partie module du menu
-    //var op_contenue = '<?php include("../Option_menu/composant_menu/contenue.php") ?>';
+    //var op_contenue = '<?php include("../Option_menu/composant_menu/contenue.php") ?>'; menuu qui ne sert plus
     var op_bordure = '<?php include("../Option_menu/composant_menu/bordure.php") ?>';
     var op_position = '<?php include("../Option_menu/composant_menu/position.php") ?>';
     var op_autre = '<?php include("../Option_menu/composant_menu/autre.php") ?>';
@@ -52,7 +52,7 @@
 <!-- Composans dans une div -->
 
 <script type="text/javascript" src="../SRC_creator_function/Option_Element.js"></script> <!-- Pour modifier le css d'un titre, text, image, bouton, liste-->
-
+<script type="text/javascript" src="../SRC_creator_function/Option_Div.js"></script> <!-- Pour modifier le css d'une div-->
 
 <script type="text/javascript" src="../SRC_creator_function/composans/bouton.js"></script> <!-- Pour crée une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/image.js"></script> <!-- Pour crée une liste -->

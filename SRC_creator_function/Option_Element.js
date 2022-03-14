@@ -156,17 +156,18 @@ function option_element(i,nom_element,element,divnb,compnb){
             }
 
         }else if(nom_element == 'BOUTON'){
-            document.getElementById("contenue").innerHTML = '<p>contenue dans le texte</p><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><br><p>Lien</p><input type="text" name="op_lien" id="op_lien"></input><br><br><p>Contenue téléchargeable</p><button id="op_plus" onclick="contenue_media_contenue()" >Option Document</button><br>';
+            document.getElementById("contenue").innerHTML = '<p>contenue dans le texte</p><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><br><p>Lien</p><input type="text" name="op_lien" id="op_lien"></input><br><p>Contenue téléchargeable</p><button id="op_plus" onclick="contenue_media_contenue()" >Option Document</button><br>';
 
             if(document.getElementById(element+i).innerHTML){
                 document.getElementById('op_contenue').value = document.getElementById(element+i).innerHTML;
-            }else if(document.getElementById(element+i).attributes.onclick){
+            }
+            if(document.getElementById(element+i).attributes.onclick){
                 
                 let url = lien(document.getElementById(element+i).attributes.onclick.value);
                 console.log(url);
                 document.getElementById('op_lien').value = url;
             }
-
+            
         }else{
             document.getElementById("contenue").innerHTML = '<p>Aucun contenue est disponible pour cette element</p>';
 
@@ -356,7 +357,7 @@ function option_element(i,nom_element,element,divnb,compnb){
 
             document.getElementById('op_backgrouwn_couleur').value = couleur;//.substring(0,border.length-8) // voir pour la modification de couleur de la border
         }
-
+ 
         if(document.getElementById(element+i).style.opacity){
             let opacity = document.getElementById(element+i).style.opacity;
             document.getElementById('op_opacite').value = opacity;//.substring(opacity.search('%'),0);
@@ -364,15 +365,14 @@ function option_element(i,nom_element,element,divnb,compnb){
 
     }
 
-    inter = setInterval(op_update_element,250,i,nom_element,element);
+    inter = setInterval(op_update_element,250,i,nom_element,element,stock_divnb);
 }
 
 
 
 
-function op_update_element(i,nom_element,element){ // modifier pour chaque composant car il y a un risque de conflie de fonction    
+function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque composant car il y a un risque de conflie de fonction    
     // permet d'afficher les modification
-    
     if(parcour_menu == 1){ // Module Contenue
 
         if(nom_element == 'IMAGE' || nom_element == 'VIDEO'){
@@ -391,12 +391,21 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
             
 
         }else if(nom_element == 'BOUTON'){
+            if(document.getElementById('op_contenue').value){
+                document.getElementById(element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
+            }
             // Modifiaction possible pour les element IMAGE et VIDEO
             if(document.getElementById("switch")){ // c'est une balise tempom pour récuperer les information en php pour js
                 if(document.getElementById("switch").src){
-                    document.getElementById(element+i).setAttribute("onclick","window.open=`"+document.getElementById("switch").src+"`");
+                    document.getElementById(element+i).setAttribute("onclick","window.open(`"+document.getElementById("switch").src+"`)");
+                    document.getElementById('op_lien').value = document.getElementById("switch").src;
                 }
-            }else {document.getElementById(element+i).setAttribute("onclick","window.open=`"+document.getElementById("op_lien").value+"`");}
+            }
+
+            if(document.getElementById('op_lien').value){
+                let lien = document.getElementById('op_lien').value;
+                document.getElementById(element+i).setAttribute("onclick","window.open(`"+lien+"`)");
+            }
 
         }else if(nom_element == 'TITRE' || nom_element == 'TEXT' || nom_element == 'LIGNE'){
 
@@ -463,14 +472,6 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
 
             document.getElementById(element+i+'css').innerHTML = document.getElementById('op_css').value;
 
-        }else if(nom_element == 'BOUTON'){
-
-            document.getElementById(element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
-            
-            if(document.getElementById('op_lien').value){
-                let lien = document.getElementById('op_lien').value;
-                document.getElementById(element+i).setAttribute("onclick","window.location = `"+lien+"`");
-            }
         }
 
     
@@ -598,8 +599,10 @@ function op_update_element(i,nom_element,element){ // modifier pour chaque compo
     }
 
     if(parcour_menu == 4){ // Module autre
-        
-        if(document.getElementById('op_backgrouwn_couleur').value != '#ffffff'){
+        if(document.getElementById('idiv'+divnb).style.backgroundColor){
+            document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;
+
+        }else if(document.getElementById('op_backgrouwn_couleur').value != '#ffffff'){
 
             document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;
 

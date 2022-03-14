@@ -292,3 +292,7 @@ Mars 2022
         A faire modifier le Upload image par uplaod fichier dans le fichier upload_doc.php
 
         A faire les modifiaction pour sois mettre un lien pour un autre site internet soit un fichier a téléchargé
+
+    14/03/2022
+
+        Ajoue de la modifiaction du bouton pour les fichier et les site

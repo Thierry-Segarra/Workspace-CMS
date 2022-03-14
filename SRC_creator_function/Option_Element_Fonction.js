@@ -9,7 +9,7 @@ document.getElementById('switch').src = 'https://www.youtube.com/embed/'+nom;
 function media_contenue(nom){
     document.getElementById('switch').src = '../Document/'+nom;
 }
-
+// Partie Element
 //  Parcour dans le menu
 function option_defaul(){
 
@@ -83,6 +83,82 @@ function option_autre(){
     }
 }
 
+
+// Partie Div
+
+//  Parcour dans le menu
+function option_defaul_div(){
+
+    document.getElementById('bt_contenue').innerHTML = '↓';
+    document.getElementById('bt_bordure').innerHTML = '↓';
+    document.getElementById('bt_position').innerHTML = '↓';
+    document.getElementById('bt_autre').innerHTML = '↓';
+    parcour_menu = 0;
+    
+    document.getElementById('contenue').innerHTML = '';
+    document.getElementById('bordure').innerHTML = '';
+    document.getElementById('position').innerHTML = '';
+    document.getElementById('autre').innerHTML = '';
+    
+    }
+    function option_contenue_div(){
+        if(parcour_menu == 1){
+            option_defaul_div();
+        }else{
+            parcour_menu = 1;
+            option_div(stock_divnb);
+    
+            document.getElementById('bt_contenue').innerHTML = '↑';
+            document.getElementById('bt_bordure').innerHTML = '↓';
+            document.getElementById('bt_position').innerHTML = '↓';
+            document.getElementById('bt_autre').innerHTML = '↓';
+    
+        }
+    }
+    
+    function option_bordure_div(){
+        if(parcour_menu == 2){
+            option_defaul_div();
+        }else{
+            parcour_menu = 2;
+            option_div(stock_divnb);
+    
+            document.getElementById('bt_contenue').innerHTML = '↓';
+            document.getElementById('bt_bordure').innerHTML = '↑';
+            document.getElementById('bt_position').innerHTML = '↓';
+            document.getElementById('bt_autre').innerHTML = '↓';
+    
+        }
+    }
+    
+    function option_position_div(){
+        if(parcour_menu == 3){
+            option_defaul_div();
+        }else{
+            parcour_menu = 3;
+            option_div(stock_divnb);
+    
+            document.getElementById('bt_contenue').innerHTML = '↓';
+            document.getElementById('bt_bordure').innerHTML = '↓';
+            document.getElementById('bt_position').innerHTML = '↑';
+            document.getElementById('bt_autre').innerHTML = '↓';
+        }
+    }
+    
+    function option_autre_div(){
+        if(parcour_menu == 4){
+            option_defaul_div();
+        }else{
+            parcour_menu = 4;
+            option_div(stock_divnb);
+        
+            document.getElementById('bt_contenue').innerHTML = '↓';
+            document.getElementById('bt_bordure').innerHTML = '↓';
+            document.getElementById('bt_position').innerHTML = '↓';
+            document.getElementById('bt_autre').innerHTML = '↑';
+        }
+    }
+    
 
 
 
@@ -175,8 +251,8 @@ function apercu_map(div,element){
 }
 
 function lien(url){
-    url = url.substring(url.search("window.location = ")+19);
-    url = url.substring(url.indexOf("`"),0);
+    url = url.substring(url.search("window.open")+13);
+    url = url.substring(url.indexOf("`")+1,0);
     console.log(url);
     return url;
 }
