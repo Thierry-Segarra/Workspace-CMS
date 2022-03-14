@@ -296,3 +296,9 @@ Mars 2022
     14/03/2022
 
         Ajoue de la modifiaction du bouton pour les fichier et les site
+
+        Ajoue des modification de la div
+
+        A faire:
+
+        modifier le code pour permettre a lutilisateur choisi si il veut mettrede la couleur sur les composans ou pas en backgrouwnd
