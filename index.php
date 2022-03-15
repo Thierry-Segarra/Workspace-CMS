@@ -10,7 +10,7 @@
         <ul class="list">
             <li class="souslist"><p class="titre">Back Office</p></li>
             <li class="souslist"><button onclick="B1()" class="bouton">Tableau de bort</button></li>
-            <li class="souslist"><button onclick="" class="bouton">Page</button></li>
+            <li class="souslist"><button onclick="B4()" class="bouton">Page</button></li>
             <li class="souslist"><button onclick="B2()" class="bouton">Article</button></li>
             <li class="souslist"><button onclick="" class="bouton">Formulaire</button></li>
             <li class="souslist"><button onclick="B3()" class="bouton">Media</button></li>
@@ -28,7 +28,8 @@
         var categorie_media = 0;
         /* src="Fonction-Requet/menu.js" Bouton B1*/ var linkB1 = `<?php include("Menu-Page/tableau-de-bord.php") ?>`;
         /* src="Fonction-Requet/menu.js" Bouton B2*/ var linkB2 = `<?php include("Menu-Page/article.php") ?>`;
-        /* src="Fonction-Requet/menu.js" Bouton B2*/ var linkB3 = `<?php include("Menu-Page/media.php") ?>`;
+        /* src="Fonction-Requet/menu.js" Bouton B3*/ var linkB3 = `<?php include("Menu-Page/media.php") ?>`;
+        /* src="Fonction-Requet/menu.js" Bouton B4*/ var linkB4 = `<?php include("Menu-Page/page.php") ?>`;
 
         // Permet de suprimer un article
         function sup(id){

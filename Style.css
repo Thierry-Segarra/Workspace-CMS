@@ -126,6 +126,14 @@ article .builddiv{
     width: 99%;
     height: 100%;
 }
+
+page .builddiv{
+    margin: 0 0 0 0 ;
+    border: solid 5px green;
+    width: 99%;
+    height: 100%;
+}
+
 .structure{
     width: 99%;
     height: 50%;

@@ -14,6 +14,8 @@ function option_div(divnb){
         document.getElementById('position').innerHTML = '';
         document.getElementById('autre').innerHTML = '';
 
+        document.getElementById("contenue").innerHTML = '<p>Image en Arrière plan</p><button id="op_plus" onclick="contenue_media_image()" >Select Image</button><br><br>';
+
     }
    
     if(parcour_menu == 2){
@@ -192,10 +194,10 @@ function option_div(divnb){
         if(document.getElementById('idiv'+divnb).style.backgroundColor){
             
             let textColor = document.getElementById('idiv'+divnb).style.backgroundColor;
-            console.log(textColor);
+            //console.log(textColor);
 
             let couleur = CouleurBorder(textColor); // traitement des donnée de la variable borderColor + convertiseur RGB en HEX
-            console.log(couleur);
+            //console.log(couleur);
 
             document.getElementById('op_backgrouwn_couleur').value = couleur;//.substring(0,border.length-8) // voir pour la modification de couleur de la border
         }
@@ -218,10 +220,14 @@ function op_update_div(divnb){ // modifier pour chaque composant car il y a un r
     
     if(parcour_menu == 1){ // Module Contenue
 
-        
-
-    
-
+        if(document.getElementById("switch")){ // c'est une balise tempom pour récuperer les information en php pour js
+            if(document.getElementById("switch").src){
+                if(document.getElementById("switch").src != document.getElementById('idiv'+divnb).style.backgroundImage){
+                    document.getElementById('idiv'+divnb).style.backgroundImage = 'url('+document.getElementById("switch").src+')';
+                    document.getElementById('idiv'+divnb).style.backgroundSize = 'cover';
+                }
+            }
+        }
     }
 
     if(parcour_menu == 2){ // Module Bordure
@@ -345,19 +351,28 @@ function op_update_div(divnb){ // modifier pour chaque composant car il y a un r
     }
 
     if(parcour_menu == 4){ // Module autre
-        
-        if(document.getElementById('op_backgrouwn_couleur').value != '#ffffff'){
+        if(onoff == 0){
+            if(document.getElementById('op_opacite_couleur').value != '255'){
+                let opaciteCouleur = xdecimal(document.getElementById('op_opacite_couleur').value);
+                //console.log(document.getElementById('op_opacite_couleur').value);
+                //console.log(document.getElementById('op_backgrouwn_couleur').value);
+                document.getElementById('idiv'+divnb).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value+opaciteCouleur;
 
-            document.getElementById('idiv'+divnb).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;
+            }else if(document.getElementById('op_backgrouwn_couleur').value != '#ffffff'){
 
-        }else{document.getElementById('idiv'+divnb).style.backgroundColor = null}
-        
+                document.getElementById('idiv'+divnb).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;
+
+            }else{document.getElementById('idiv'+divnb).style.backgroundColor = null}
+        }else{
+            document.getElementById('idiv'+divnb).style.backgroundColor = null;
+        }
+
         if(document.getElementById('op_opacite').value != '100'){
             document.getElementById('idiv'+divnb).style.opacity = document.getElementById('op_opacite').value+'%';
         }else{document.getElementById('idiv'+divnb).style.opacity = null}
-
-        document.getElementById('af_op_opacite').innerHTML = document.getElementById('op_opacite').value+'%';
         
+        document.getElementById('af_op_opacite_couleur').innerHTML = document.getElementById('op_opacite_couleur').value;
+        document.getElementById('af_op_opacite').innerHTML = document.getElementById('op_opacite').value+'%';
         
     }
 }

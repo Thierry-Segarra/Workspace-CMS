@@ -2,6 +2,7 @@ var parcour_menu = 0;
 var stock_i = 0;
 var stock_nom_element = '';
 var stock_element = '';
+var onoff = 0;
 
 
 function option_element(i,nom_element,element,divnb,compnb){
@@ -20,6 +21,7 @@ function option_element(i,nom_element,element,divnb,compnb){
     gras = 0;
     italique = 0;
     ligne = 0;
+    
 
 
     if(nom_element == 'LIGNE'){
@@ -350,10 +352,11 @@ function option_element(i,nom_element,element,divnb,compnb){
         if(document.getElementById(element+i).style.backgroundColor){
             
             let textColor = document.getElementById(element+i).style.backgroundColor;
-            console.log(textColor);
+            //console.log(textColor);
 
             let couleur = CouleurBorder(textColor); // traitement des donnée de la variable borderColor + convertiseur RGB en HEX
-            console.log(couleur);
+            //console.log(couleur);
+
 
             document.getElementById('op_backgrouwn_couleur').value = couleur;//.substring(0,border.length-8) // voir pour la modification de couleur de la border
         }
@@ -599,21 +602,42 @@ function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque
     }
 
     if(parcour_menu == 4){ // Module autre
-        if(document.getElementById('idiv'+divnb).style.backgroundColor){
-            document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;
+        if(onoff == 0){
+            if(document.getElementById('idiv'+divnb)){
 
-        }else if(document.getElementById('op_backgrouwn_couleur').value != '#ffffff'){
+                if(document.getElementById('idiv'+divnb).style.backgroundColor){
+                    
+                    if(document.getElementById('op_opacite_couleur').value != '255'){
+                        let opaciteCouleur = xdecimal(document.getElementById('op_opacite_couleur').value);
 
-            document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;
-
-        }else{document.getElementById(element+i).style.backgroundColor = null}
+                        document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value+opaciteCouleur;
         
-        if(document.getElementById('op_opacite').value != '100'){
-            document.getElementById(element+i).style.opacity = document.getElementById('op_opacite').value+'%';
-        }else{document.getElementById(element+i).style.opacity = null}
+                    }else{document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;}
+                    
+                }
 
+            }
+            if(document.getElementById('op_backgrouwn_couleur').value){
+
+                if(document.getElementById('op_opacite_couleur').value != '255'){
+                    let opaciteCouleur = xdecimal(document.getElementById('op_opacite_couleur').value);
+
+                    document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value+opaciteCouleur;
+    
+                }else{document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;}
+
+            }else{document.getElementById(element+i).style.backgroundColor = null}
+        }else{
+            document.getElementById(element+i).style.backgroundColor = null
+        }
+            if(document.getElementById('op_opacite').value != '100'){
+                document.getElementById(element+i).style.opacity = document.getElementById('op_opacite').value+'%';
+            }else{document.getElementById(element+i).style.opacity = null}
+        
+        document.getElementById('af_op_opacite_couleur').innerHTML = document.getElementById('op_opacite_couleur').value;
         document.getElementById('af_op_opacite').innerHTML = document.getElementById('op_opacite').value+'%';
         
         
     }
+
 }

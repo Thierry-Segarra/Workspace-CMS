@@ -2,9 +2,9 @@
 // le titre de l'article
 // l'article (div et composans)
 // et la structure (le tableaudiv)
-function enregistrer_page(){
+function enregistrer(){
 
-    document.getElementById("affichage_avance").innerHTML = '<form action="../Fonction-Requet/enregistrer_article.php" method="post" id="enregistre"></form>';
+    document.getElementById("affichage_avance").innerHTML = '<form action="../Fonction-Requet/enregistrer_page.php" method="post" id="enregistre"></form>';
 
     document.getElementById('affichage_avance').style.visibility = 'visible';
     document.getElementById("affichage_avance").innerHTML = document.getElementById("affichage_avance").innerHTML + '<br><br>Enregistrement en Cours...<br><br><br>';
@@ -35,7 +35,7 @@ function enregistrer_page(){
     console.log(contenue)
     
     }
-    let HTML = "'"+document.querySelector('article').innerHTML+"'";
+    let HTML = "'"+document.querySelector('page').innerHTML+"'";
     console.log(HTML)
     contenue = contenue + '<input type="text" name="HTML" value='+HTML+'><br>'
     contenue = contenue + '<input type="text" name="Modif" value="modif"><br>'

@@ -13,7 +13,11 @@
         // Pour aller dans le menu "Article"
         
     }
-    else {
+    else if(isset($_GET['page'])){
+        echo '<script type="text/javascript">B4()</script>';
+        // Pour aller dans le menu "Article"
+    }
+    else{
         echo '<script type="text/javascript">B1()</script>';
     }
 ?>

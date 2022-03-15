@@ -165,24 +165,50 @@ function option_defaul_div(){
 //  convertir RGB en Hexa
 
 function CouleurBorder(Color){
-// Ce traitement permet d'enlever rgb( 
-Color = Color.substring(Color.search('rgb')+4);
-// donnes a la variable red le premier numerot qui vois jusqu'a la virgule
-let red = Color.substring(Color.search(','),0);
+    if(Color.indexOf("rgb(") != -1){
+        // Ce traitement permet d'enlever rgb( 
+        Color = Color.substring(Color.search('rgb')+4);
+        // donnes a la variable red le premier numerot qui vois jusqu'a la virgule
+        let red = Color.substring(Color.search(','),0);
 
-// On enlève jusqu'a la première virgule
-Color = Color.substring(Color.search(',')+2);
-// donnes a la variable green les premier numerot qui vois jusqu'a la virgule
-let green = Color.substring(Color.search(','),0);
+        // On enlève jusqu'a la première virgule
+        Color = Color.substring(Color.search(',')+2);
+        // donnes a la variable green les premier numerot qui vois jusqu'a la virgule
+        let green = Color.substring(Color.search(','),0);
 
-// On enlève jusqu'a la première virgule
-Color = Color.substring(Color.search(',')+2);
-// donnes a la variable red le premier numerot qui vois jusqu'a la parenthèse
-let blue = Color.substring(0,Color.length - 1);
+        // On enlève jusqu'a la première virgule
+        Color = Color.substring(Color.search(',')+2);
+        // donnes a la variable red le premier numerot qui vois jusqu'a la parenthèse
+        let blue = Color.substring(0,Color.length - 1);
 
-// On convertie les varaible ne numerot et on le traite pour qu'il puisse nous donnée la donnée en HEXA
-Color = ConvertRGBtoHex(Number(red), Number(green), Number(blue));
+        // On convertie les varaible ne numerot et on le traite pour qu'il puisse nous donnée la donnée en HEXA
+        Color = ConvertRGBtoHex(Number(red), Number(green), Number(blue));
+    }else{
+        // Ce traitement permet d'enlever rgba( 
+            Color = Color.substring(Color.search('rgba')+5);
+            // donnes a la variable red le premier numerot qui vois jusqu'a la virgule
+            let red = Color.substring(Color.search(','),0);
+    
+            // On enlève jusqu'a la première virgule
+            Color = Color.substring(Color.search(',')+2);
+            // donnes a la variable green les premier numerot qui vois jusqu'a la virgule
+            let green = Color.substring(Color.search(','),0);
+    
+            // On enlève jusqu'a la première virgule
+            Color = Color.substring(Color.search(',')+2);
+            // donnes a la variable red le premier numerot qui vois jusqu'a la virgule
+            let blue = Color.substring(Color.search(','),0);
 
+            Color = Color.substring(Color.search(',')+2);
+            // donnes a la variable red le premier numerot qui vois jusqu'a la parenthèse
+            let opacit = Color.substring(0,Color.length - 1);
+    
+            // On convertie les varaible ne numerot et on le traite pour qu'il puisse nous donnée la donnée en HEXA
+            Color = ConvertRGBtoHex(Number(red), Number(green), Number(blue));
+            console.log(Color);
+            console.log(Math.round(Number(opacit)*255));
+            document.getElementById('op_opacite_couleur').value = Math.round(Number(opacit)*255);
+    }
 return Color;
 }
 
@@ -193,6 +219,13 @@ return "#" + ColorToHex(red) + ColorToHex(green) + ColorToHex(blue);
 function ColorToHex(color) {
 var hexadecimal = color.toString(16);
 return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
+}
+
+function xdecimal(decimal)
+{
+    let convert;
+    convert = (decimal-0).toString(16);
+    return convert;
 }
 
 
@@ -255,4 +288,15 @@ function lien(url){
     url = url.substring(url.indexOf("`")+1,0);
     console.log(url);
     return url;
+}
+
+function couleur_onoff(){
+    if(onoff == 0){
+        onoff = 1;
+        document.getElementById('op_onoff_couleur').innerHTML= 'OFF';
+    }else{
+        onoff = 0;
+        document.getElementById('op_onoff_couleur').innerHTML= 'ON';
+    }
+
 }

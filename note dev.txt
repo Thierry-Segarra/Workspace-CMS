@@ -302,3 +302,11 @@ Mars 2022
         A faire:
 
         modifier le code pour permettre a lutilisateur choisi si il veut mettrede la couleur sur les composans ou pas en backgrouwnd
+
+    15/03/2022
+
+    A faire:
+
+    rajouter l'opaciter pour les couleur RGBA
+
+    rajouter un bouton pour oui/ non pour mettre de la couleur en backgrouwnd

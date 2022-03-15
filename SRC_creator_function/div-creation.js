@@ -3,7 +3,11 @@ function adddiv(){
     let structure = '<p>DIV '+idiv+'</p><div id="div'+idiv+'"><button onclick="menu_add_fermer('+idiv+')">↓</button><br><button onclick="addTitreDiv('+idiv+')">titre</button><button onclick="addTextDiv('+idiv+')">text</button><button onclick="addBoutonDiv('+idiv+')">bouton</button><button onclick="addImageDiv('+idiv+')">image</button><br><button onclick="addVideoDiv('+idiv+')">video</button><button onclick="addListeDiv('+idiv+')">liste</button><button onclick="addMapDiv('+idiv+')">map</button><button onclick="addHtmlDiv('+idiv+')">HTML</button><br><button onclick="option_div('+idiv+')">option</button><button onclick="suprime_Div('+idiv+')">suprimer</button><button onclick="up_div('+idiv+')">up</button><button onclick="down_div('+idiv+')">down</button></div>'
     document.getElementById('structure').innerHTML = document.getElementById('structure').innerHTML + structure;
     let div = '<div class="builddiv" id="idiv'+idiv+'"></div>';
-    document.querySelector('article').innerHTML = document.querySelector('article').innerHTML + div;
+    if(document.querySelector('article')){
+        document.querySelector('article').innerHTML = document.querySelector('article').innerHTML + div;
+    }else if(document.querySelector('page')){
+        document.querySelector('page').innerHTML = document.querySelector('page').innerHTML + div;
+    }
     let comdiv = "idiv"+idiv; // ex: idiv1
     tablediv.push(comdiv);
     tablediv[comdiv]= []; // dire que c'est un tableau

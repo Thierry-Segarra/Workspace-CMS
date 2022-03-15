@@ -9,13 +9,13 @@
     const tablediv = [];
 
 
-    <?php include("../SRC_creator_function/modification_article_html.php") ?> // permet d'afficher l'HTML de l'article
+    <?php include("../SRC_creator_function/modification_page_html.php") ?> // permet d'afficher l'HTML de l'page
     // Initialise une affiche par defaut
     
 </script>
 
-<!--  Partie Modification d'un article -->
-<script type="text/javascript" src="../SRC_creator_function/modification_table.js"></script><!--  Pour modifier un l'article -->
+<!--  Partie Modification d'une page -->
+<script type="text/javascript" src="../SRC_creator_function/modification_table.js"></script><!--  Pour modifier un la page -->
 
 <!-- Structure -->
 <script type="text/javascript" src="../SRC_creator_function/structure_menu.js"></script> <!-- Pour afficher les different element dans la structure -->
@@ -36,7 +36,7 @@
     var adv_op_media_contenue = '<?php include("../Option_menu/adv_op_media_contenue.php") ?>';
 
     // partie module du menu
-    //var op_contenue = '<?php include("../Option_menu/composant_menu/contenue.php") ?>'; menuu qui ne sert plus
+    //var op_contenue = '<?php include("../Option_menu/composant_menu/contenue.php") ?>'; menu qui ne sert plus
     var op_bordure = '<?php include("../Option_menu/composant_menu/bordure.php") ?>';
     var op_position = '<?php include("../Option_menu/composant_menu/position.php") ?>';
     var op_autre = '<?php include("../Option_menu/composant_menu/autre.php") ?>';
@@ -66,7 +66,7 @@
 <!-- Fonction disponible pour les modifications -->
 <script type="text/javascript" src="../SRC_creator_function/updo_comp.js"></script> <!-- Pour monté ou decendre un composant dans une div -->
 <script type="text/javascript" src="../SRC_creator_function/updo_div.js"></script> <!-- Pour monté ou decendre une div dans la structure -->
-<script type="text/javascript" src="../SRC_creator_function/traitement_ligneliste.js"></script> <!-- Permet de traiter l'HTML de l'article pour récuperer les ligne de la liste a modifer -->
+<script type="text/javascript" src="../SRC_creator_function/traitement_ligneliste.js"></script> <!-- Permet de traiter l'HTML de l'page pour récuperer les ligne de la liste a modifer -->
 <script type="text/javascript" src="../SRC_creator_function/Option_Element_Fonction.js"></script> <!-- Permet de differencier le code de modifiacation au code de traitement de donnée des modification (RGB en HEX, Supprimer un ellement ...) -->
 
 
@@ -74,14 +74,14 @@
 <?php
     if(isset($_GET['Modification'])){ // Pour vérifier si c'est une modification ou une création
     ?>
-        <script type="text/javascript" src="../SRC_creator_function/enregistrement_modification.js"></script> <!-- Pour enregistrer la structure et l'article -->
+        <script type="text/javascript" src="../SRC_creator_function/enregistrement_modification_page.js"></script> <!-- Pour enregistrer la structure et la page -->
         <?php    
     }else{
         ?>
-        <script type="text/javascript" src="../SRC_creator_function/enregistrement.js"></script> <!-- Pour enregistrer la structure et l'article -->
+        <script type="text/javascript" src="../SRC_creator_function/enregistrement_page.js"></script> <!-- Pour enregistrer la structure et la page -->
         <?php 
     }
 ?>
 
-<script type="text/javascript" src="../SRC_creator_function/quitter.js"></script> <!-- Pour quitter l'article snas sauvegarder -->
+<script type="text/javascript" src="../SRC_creator_function/quitter.js"></script> <!-- Pour quitter la page snas sauvegarder -->
 

@@ -9,3 +9,7 @@ function B2(){
 function B3(){
     document.getElementById("info").innerHTML= linkB3; 
 }
+
+function B4(){
+    document.getElementById("info").innerHTML= linkB4; 
+}
