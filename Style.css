@@ -127,6 +127,10 @@ article .builddiv{
     height: 100%;
 }
 
+.article .builddiv{
+    padding: 1px;
+}
+
 page .builddiv{
     margin: 0 0 0 0 ;
     border: solid 5px green;
