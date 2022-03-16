@@ -205,8 +205,8 @@ function CouleurBorder(Color){
     
             // On convertie les varaible ne numerot et on le traite pour qu'il puisse nous donnée la donnée en HEXA
             Color = ConvertRGBtoHex(Number(red), Number(green), Number(blue));
-            console.log(Color);
-            console.log(Math.round(Number(opacit)*255));
+            //console.log(Color);
+            //console.log(Math.round(Number(opacit)*255));
             document.getElementById('op_opacite_couleur').value = Math.round(Number(opacit)*255);
     }
 return Color;
@@ -230,7 +230,7 @@ function xdecimal(decimal)
 
 
 function suprime_element(dv,i,comp,element){
-console.log(comp);
+//console.log(comp);
 Fermer_op_avancee(); // pour fermer automatiquement la fenetre des option menu avancée (là ou il y a les ligne de liste etc)
 
 delete tablediv["idiv"+dv][comp]; // suprimer les elements du compsans
@@ -286,7 +286,7 @@ function apercu_map(div,element){
 function lien(url){
     url = url.substring(url.search("window.open")+13);
     url = url.substring(url.indexOf("`")+1,0);
-    console.log(url);
+    //console.log(url);
     return url;
 }
 

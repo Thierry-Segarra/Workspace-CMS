@@ -1,6 +1,6 @@
 function addBoutonDiv(i){
     let divcomp = "div"+i+"comp"+compo;
-    console.log(divcomp);
+    //console.log(divcomp);
     let add = '<div id="div'+i+'comp'+compo+'"><button id="boudiv'+i+compo+'">Click</button></div>'
     
     // Permet de créé un text dans une div
@@ -8,7 +8,7 @@ function addBoutonDiv(i){
     tablediv["idiv"+i].push(divcomp);
 
     tablediv["idiv"+i][divcomp] ='BOUTON'; // ajouter a divcomp un nom
-    console.log(tablediv);
+    //console.log(tablediv);
     compo = compo + 1;
 
     boucle_composans(i)

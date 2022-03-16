@@ -51,7 +51,6 @@
 <!-- Composans dans une div -->
 
 <script type="text/javascript" src="../SRC_creator_function/Option_Element.js"></script> <!-- Pour modifier le css d'un titre, text, image, bouton, liste-->
-<script type="text/javascript" src="../SRC_creator_function/Option_Div.js"></script> <!-- Pour modifier le css d'une div-->
 
 <script type="text/javascript" src="../SRC_creator_function/composans/bouton.js"></script> <!-- Pour crée une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/image.js"></script> <!-- Pour crée une liste -->

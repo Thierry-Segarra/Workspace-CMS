@@ -74,8 +74,24 @@
     display: inline-flex;
     list-style: none;
     /* haut | droit | bas | gauche */
-    margin: 0px 10px 0px 10px ;
+    margin: 0px 10px 0 10px ;
 }
+
+.panneau .ligneparam{
+    width: 59.1vw;
+    visibility: hidden;
+    border: solid 1px rgb(185, 185, 185);
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 50px;
+    list-style: none;
+    /* haut | droit | bas | gauche */
+    margin: 0px 10px 0 10px ;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 30vw ;
+}
+
 .panneau .ligne .L1{
     width: 18vw;
 }

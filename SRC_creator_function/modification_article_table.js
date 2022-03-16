@@ -1,7 +1,7 @@
 var divtable = 0;
 var comptable = 0;
 function modif_table_structure(){
-    console.log('Traitement en cours ...');
+    //console.log('Traitement en cours ...');
 
     while(traitement.indexOf('idiv') != -1){
         var idiv = traitement.indexOf('idiv'); // chercher le premier element qui commence par idiv
@@ -12,7 +12,7 @@ function modif_table_structure(){
         var idivt = traitement.indexOf('"'); // on cherche le caractère qui suit le numerot
 
         divtable = traitement.substring(0,idivt); // on isole le numero grace au caractère  "  qui défini la limit
-        console.log('idiv : '+divtable);
+        //console.log('idiv : '+divtable);
 
         // intégrer dans la table "idiv"+le numero de la div
         let comdiv = "idiv"+divtable; // ex: idiv1
@@ -28,7 +28,7 @@ function modif_table_structure(){
             var compt = traitement.indexOf('"'); // on cherche le caractère qui suit le numerot
 
             comptable = traitement.substring(0,compt); // on isole le numero grace au caractère  "  qui défini la limit
-            console.log('composans : '+comptable);
+            //console.log('composans : '+comptable);
 
 
             var nom = traitement.indexOf('":"'); // chercher le premier element qui commence par ":" pour avoir les caractère du test en premier
@@ -38,7 +38,7 @@ function modif_table_structure(){
             var nomt = traitement.indexOf('"}'); // on cherche le caractère qui suit le nom du composans
 
             var nomtable = traitement.substring(0,nomt); // on isole le nom grace au caractère "} qui défini la limit
-            console.log('nom : '+nomtable);
+            //console.log('nom : '+nomtable);
 
             // intégrer dans la table "idiv"+le numero de la div
             tablediv["idiv"+divtable].push("div"+divtable+"comp"+comptable);
@@ -46,6 +46,6 @@ function modif_table_structure(){
             
         }
     };
-    console.log('Traitement Terminer');
-    console.log(tablediv);
+    //console.log('Traitement Terminer');
+    //console.log(tablediv);
 }

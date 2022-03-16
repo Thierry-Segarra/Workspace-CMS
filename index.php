@@ -32,13 +32,54 @@
         /* src="Fonction-Requet/menu.js" Bouton B4*/ var linkB4 = `<?php include("Menu-Page/page.php") ?>`;
 
         // Permet de suprimer un article
-        function sup(id){
+        function sup_art(id){
             if ( confirm( "Voulez vous suprimer cette article" ) ) {
                 // suprime (true)
                window.location = "./Fonction-Requet/suprimer_article.php?id="+id;
             } else {
                 // rien (false)
             }
+        }
+        function sup_pag(id){
+            if ( confirm( "Voulez vous suprimer cette page" ) ) {
+                // suprime (true)
+               window.location = "./Fonction-Requet/suprimer_page.php?id="+id;
+            } else {
+                // rien (false)
+            }
+        }
+
+        function param_art_pag(id,nb){
+            console.log('test');
+            console.log(id);
+            console.log(document.getElementById('btligneid'+id).innerHTML);
+            if(nb == 2){ // Pour la PAGE
+                if(document.getElementById('btligneid'+id).innerHTML == ''){
+                    console.log('yes');
+                    document.getElementById('btligneid'+id).style.visibility = 'visible';
+                    document.getElementById('btligneid'+id).innerHTML = '<span>Changer le titre : </span><input type="text" value="" placeholder="Changer le titre"></input><span>Modifier la description : </span><input type="text" value="" placeholder="Changer la description"></input><a class="boutton" href="./Menu-Page/creation_page.php?Modification='+id+'">modifier le conteue</a><button class="boutton" onclick="sup_pag('+id+')"">suprimer</button>';
+                    document.getElementById('bt_fleche'+id).innerHTML = '↑';
+                }else{
+                    console.log('no');
+                    document.getElementById('btligneid'+id).style.visibility = 'hidden';
+                    document.getElementById('btligneid'+id).innerHTML = '';
+                    document.getElementById('bt_fleche'+id).innerHTML = '↓';
+                }
+            }else if(nb == 1){ // Pour l'ARTICLE
+                if(document.getElementById('btligneid'+id).innerHTML == ''){
+                    console.log('yes');
+                    document.getElementById('btligneid'+id).style.visibility = 'visible';
+                    document.getElementById('btligneid'+id).innerHTML = '<span>Changer le titre : </span><input type="text" value="" placeholder="Changer le titre"></input><span>Modifier la description : </span><input type="text" value="" placeholder="Changer la description"></input><a class="boutton" href="./Menu-Page/creation_article.php?Modification='+id+'">modifier le conteue</a><button class="boutton" onclick="sup_art('+id+')">suprimer</button>';
+                    document.getElementById('bt_fleche'+id).innerHTML = '↑';
+                }else{
+                    console.log('no');
+                    document.getElementById('btligneid'+id).style.visibility = 'hidden';
+                    document.getElementById('btligneid'+id).innerHTML = '';
+                    document.getElementById('bt_fleche'+id).innerHTML = '↓';
+                }
+            }
+            
+
         }
         
     </script>

@@ -8,7 +8,7 @@ function up_comp(dv,i){
         change = tablediv["idiv"+dv][index-1];
         tablediv["idiv"+dv][index-1]=up;
         tablediv["idiv"+dv][index]=change;
-        console.log(tablediv["idiv"+dv]);
+        //console.log(tablediv["idiv"+dv]);
         //document.getElementById('tampon').innerHTML = document.getElementById('idiv'+dv).innerHTML 
         //document.getElementById('idiv'+dv).innerHTML = '<button onclick="addTitreDiv('+dv+')">titre</button><button onclick="addTextDiv('+dv+')">text</button><button onclick="addBoutonDiv('+dv+')">bouton</button><button onclick="addImageDiv('+dv+')">image</button><button onclick="suprime_Div('+dv+')">suprimer</button>';
         affiche_comp(dv);
@@ -28,7 +28,7 @@ function down_comp(dv,i){
         change = tablediv["idiv"+dv][index+1];
         tablediv["idiv"+dv][index+1]=down;
         tablediv["idiv"+dv][index]=change;
-        console.log(tablediv["idiv"+dv]);
+        //console.log(tablediv["idiv"+dv]);
         //document.getElementById('tampon').innerHTML = document.getElementById('idiv'+dv).innerHTML 
         //document.getElementById('idiv'+dv).innerHTML = '<button onclick="addTitreDiv('+dv+')">titre</button><button onclick="addTextDiv('+dv+')">text</button><button onclick="addBoutonDiv('+dv+')">bouton</button><button onclick="addImageDiv('+dv+')">image</button><button onclick="suprime_Div('+dv+')">suprimer</button>';
         affiche_comp(dv);
@@ -43,7 +43,7 @@ function down_comp(dv,i){
 function affiche_comp(dv){
     for(let i=0;i < tablediv["idiv"+dv].length;i++){
         document.getElementById('tampon').innerHTML = document.getElementById('tampon').innerHTML +'<div id='+tablediv["idiv"+dv][i]+'>'+document.getElementById(tablediv["idiv"+dv][i]).innerHTML +'</div>';
-        console.log(tablediv["idiv"+dv][i]);
+        //console.log(tablediv["idiv"+dv][i]);
         if(i == tablediv["idiv"+dv].length-1){
             document.getElementById('idiv'+dv).innerHTML = document.getElementById('tampon').innerHTML;
             document.getElementById('tampon').innerHTML = "";
@@ -87,15 +87,15 @@ function ligne_up(i,comp,nbcomp,divnb){
        var apres_ligne = list.substring(list.search(ligne_selec)+ligne_selec.length);
        apres_ligne = apres_ligne.substring(0,apres_ligne.search('</ul>'));
        /*
-       console.log('##########');
-       console.log('LISTE : '+list);
-       console.log('|');
-       console.log('AVANT : '+avant_ligne);
-       console.log('|');
-       console.log('SELECTIONER : '+ligne_selec);
-       console.log('|');
-       console.log('APRES : '+apres_ligne);
-       console.log('##########');
+       //console.log('##########');
+       //console.log('LISTE : '+list);
+       //console.log('|');
+       //console.log('AVANT : '+avant_ligne);
+       //console.log('|');
+       //console.log('SELECTIONER : '+ligne_selec);
+       //console.log('|');
+       //console.log('APRES : '+apres_ligne);
+       //console.log('##########');
        */
    
        if(avant_ligne != ''){
@@ -142,18 +142,18 @@ function ligne_up(i,comp,nbcomp,divnb){
           
           // contenue apres la ligne à monté
           var apres_ligne = list.substring(list.search(ligne_selec)+ligne_selec.length);
-          console.log('APRES : '+ligne_selec);
+          //console.log('APRES : '+ligne_selec);
           apres_ligne = apres_ligne.substring(0,apres_ligne.search('</ul>'));
           
-          console.log('##########');
-          console.log('LISTE : '+list);
-          console.log('|');
-          console.log('AVANT : '+avant_ligne);
-          console.log('|');
-          console.log('SELECTIONER : '+ligne_selec);
-          console.log('|');
-          console.log('APRES : '+apres_ligne);
-          console.log('##########');
+          //console.log('##########');
+          //console.log('LISTE : '+list);
+          //console.log('|');
+          //console.log('AVANT : '+avant_ligne);
+          //console.log('|');
+          //console.log('SELECTIONER : '+ligne_selec);
+          //console.log('|');
+          //console.log('APRES : '+apres_ligne);
+          //console.log('##########');
           
           if(apres_ligne != ''){
               traitement = apres_ligne;

@@ -8,11 +8,11 @@ var onoff = 0;
 function option_element(i,nom_element,element,divnb,compnb){
     stock_divnb = divnb;
     stock_compnb = compnb;
-// i = numerot du composans
-// nom_ellement = nom de l'ellement ex TITRE, TEXT, LISTE ...
-// element = l'identifiant de l'ellement ex imadiv ...
-// divnb = numero de la div
-// compnb = numero du composans
+    // i = numerot du composans
+    // nom_ellement = nom de l'ellement ex TITRE, TEXT, LISTE ...
+    // element = l'identifiant de l'ellement ex imadiv ...
+    // divnb = numero de la div
+    // compnb = numero du composans
 
     stock_i = i;
     stock_nom_element = nom_element;
@@ -166,16 +166,20 @@ function option_element(i,nom_element,element,divnb,compnb){
             if(document.getElementById(element+i).attributes.onclick){
                 
                 let url = lien(document.getElementById(element+i).attributes.onclick.value);
-                console.log(url);
+                //console.log(url);
                 document.getElementById('op_lien').value = url;
             }
+            
+        }else if(nom_element == 'DIV'){
+            
+            document.getElementById("contenue").innerHTML = '<p>Image en Arrière plan</p><button id="op_plus" onclick="contenue_media_image()" >Select Image</button><br><br>';
             
         }else{
             document.getElementById("contenue").innerHTML = '<p>Aucun contenue est disponible pour cette element</p>';
 
         }
     }
-   
+
     if(parcour_menu == 2){
         // Affichage du module souhaiter
         document.getElementById('contenue').innerHTML = '';
@@ -281,19 +285,55 @@ function option_element(i,nom_element,element,divnb,compnb){
         // partie bordure arrondi
         if(document.getElementById(element+i).style.borderTopLeftRadius){
             let borderTopLeftRadius = document.getElementById(element+i).style.borderTopLeftRadius;
-            document.getElementById('op_bordure_hg').value = borderTopLeftRadius.substring(borderTopLeftRadius.search('%'),0);
+            let borderTopLeftRadiusH = borderTopLeftRadius.substring(borderTopLeftRadius.search('%'),0); // On recupere la valeur pour axe horizotal
+            let borderTopLeftRadiusV = borderTopLeftRadius.substring(borderTopLeftRadiusH.length+2); // on isole la valeur qui est apres la valuer de l'axe horizontal
+            borderTopLeftRadiusV = borderTopLeftRadiusV.substring(borderTopLeftRadiusV.search('%'),0); // On recupere la valeur pour axe vertical
+            
+            document.getElementById('op_bordure_hg_h').value = borderTopLeftRadiusH;
+
+            if(borderTopLeftRadiusV){
+                document.getElementById('op_bordure_hg_v').value = borderTopLeftRadiusV;
+            }else{document.getElementById('op_bordure_hg_v').value = 0}
         }
+
         if(document.getElementById(element+i).style.borderTopRightRadius){
             let borderTopRightRadius = document.getElementById(element+i).style.borderTopRightRadius;
-            document.getElementById('op_bordure_hd').value = borderTopRightRadius.substring(borderTopRightRadius.search('%'),0);
+            let borderTopRightRadiusH = borderTopRightRadius.substring(borderTopRightRadius.search('%'),0); // On recupere la valeur pour axe horizotal
+            let borderTopRightRadiusV = borderTopRightRadius.substring(borderTopRightRadiusH.length+2); // on isole la valeur qui est apres la valuer de l'axe horizontal
+            borderTopRightRadiusV = borderTopRightRadiusV.substring(borderTopRightRadiusV.search('%'),0); // On recupere la valeur pour axe vertical
+            
+            document.getElementById('op_bordure_hd_h').value = borderTopRightRadiusH;
+
+            if(borderTopRightRadiusV){
+                document.getElementById('op_bordure_hd_v').value = borderTopRightRadiusV;
+            }else{document.getElementById('op_bordure_hd_v').value = 0}
+
         }
+
         if(document.getElementById(element+i).style.borderBottomLeftRadius){
             let borderBottomLeftRadius = document.getElementById(element+i).style.borderBottomLeftRadius;
-            document.getElementById('op_bordure_bg').value = borderBottomLeftRadius.substring(borderBottomLeftRadius.search('%'),0);
+            let borderBottomLeftRadiusH = borderBottomLeftRadius.substring(borderBottomLeftRadius.search('%'),0); // On recupere la valeur pour axe horizotal
+            let borderBottomLeftRadiusV = borderBottomLeftRadius.substring(borderBottomLeftRadiusH.length+2); // on isole la valeur qui est apres la valuer de l'axe horizontal
+            borderBottomLeftRadiusV = borderBottomLeftRadiusV.substring(borderBottomLeftRadiusV.search('%'),0); // On recupere la valeur pour axe vertical
+            
+            document.getElementById('op_bordure_bg_h').value = borderBottomLeftRadiusH;
+
+            if(borderBottomLeftRadiusV){
+                document.getElementById('op_bordure_bg_v').value = borderBottomLeftRadiusV;
+            }else{document.getElementById('op_bordure_bg_v').value = 0}
         }
+
         if(document.getElementById(element+i).style.borderBottomRightRadius){
             let borderBottomRightRadius = document.getElementById(element+i).style.borderBottomRightRadius;
-            document.getElementById('op_bordure_bd').value = borderBottomRightRadius.substring(borderBottomRightRadius.search('%'),0);
+            let borderBottomRightRadiusH = borderBottomRightRadius.substring(borderBottomRightRadius.search('%'),0); // On recupere la valeur pour axe horizotal
+            let borderBottomRightRadiusV = borderBottomRightRadius.substring(borderBottomRightRadiusH.length+2); // on isole la valeur qui est apres la valuer de l'axe horizontal
+            borderBottomRightRadiusV = borderBottomRightRadiusV.substring(borderBottomRightRadiusV.search('%'),0); // On recupere la valeur pour axe vertical
+            
+            document.getElementById('op_bordure_bd_h').value = borderBottomRightRadiusH;
+
+            if(borderBottomRightRadiusV){
+                document.getElementById('op_bordure_bd_v').value = borderBottomRightRadiusV;
+            }else{document.getElementById('op_bordure_bd_v').value = 0}
         }
         
     }
@@ -475,6 +515,17 @@ function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque
 
             document.getElementById(element+i+'css').innerHTML = document.getElementById('op_css').value;
 
+        }else if(nom_element == 'DIV'){
+            
+            if(document.getElementById("switch")){ // c'est une balise tempom pour récuperer les information en php pour js
+                if(document.getElementById("switch").src){
+                    if(document.getElementById("switch").src != document.getElementById('idiv'+divnb).style.backgroundImage){
+                        document.getElementById('idiv'+divnb).style.backgroundImage = 'url('+document.getElementById("switch").src+')';
+                        document.getElementById('idiv'+divnb).style.backgroundSize = 'cover';
+                    }
+                }
+            }
+
         }
 
     
@@ -535,30 +586,35 @@ function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque
 
 
         // Partie bordure arrondie
-        if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
+        if(document.getElementById('op_bordure_hg_h').value != '0' && document.getElementById('op_bordure_hg_v').value != '0'){
             
-            document.getElementById(element+i).style.borderTopLeftRadius = document.getElementById('op_bordure_hg').value+'%';
+            document.getElementById(element+i).style.borderTopLeftRadius = document.getElementById('op_bordure_hg_h').value+'%'+document.getElementById('op_bordure_hg_v').value+'%';
         }else{document.getElementById(element+i).style.borderTopLeftRadius = null}
         
-        if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
+        if(document.getElementById('op_bordure_hd_h').value != '0' && document.getElementById('op_bordure_hd_v').value != '0'){
             
-            document.getElementById(element+i).style.borderTopRightRadius = document.getElementById('op_bordure_hd').value+'%';
+            document.getElementById(element+i).style.borderTopRightRadius = document.getElementById('op_bordure_hd_h').value+'%'+document.getElementById('op_bordure_hd_v').value+'%';
         }else{document.getElementById(element+i).style.borderTopRightRadius = null}
         
-        if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
+        if(document.getElementById('op_bordure_bg_h').value != '0' && document.getElementById('op_bordure_bg_v').value != '0'){
             
-            document.getElementById(element+i).style.borderBottomLeftRadius = document.getElementById('op_bordure_bg').value+'%';
+            document.getElementById(element+i).style.borderBottomLeftRadius = document.getElementById('op_bordure_bg_h').value+'%'+document.getElementById('op_bordure_bg_v').value+'%';
         }else{document.getElementById(element+i).style.borderBottomLeftRadius = null}
         
-        if(document.getElementById('op_bordure').value || document.getElementById('op_bordure_haut').value || document.getElementById('op_bordure_droit').value || document.getElementById('op_bordure_bas').value || document.getElementById('op_bordure_gauche').value){
+        if(document.getElementById('op_bordure_bd_h').value != '0' && document.getElementById('op_bordure_bd_v').value != '0'){
             
-            document.getElementById(element+i).style.borderBottomRightRadius = document.getElementById('op_bordure_bd').value+'%';
+            document.getElementById(element+i).style.borderBottomRightRadius = document.getElementById('op_bordure_bd_h').value+'%'+document.getElementById('op_bordure_bd_v').value+'%';
         }else{document.getElementById(element+i).style.borderBottomRightRadius = null}
 
-        document.getElementById('af_op_bordure_hg').innerHTML = document.getElementById('op_bordure_hg').value+'%';
-        document.getElementById('af_op_bordure_hd').innerHTML = document.getElementById('op_bordure_hd').value+'%';
-        document.getElementById('af_op_bordure_bg').innerHTML = document.getElementById('op_bordure_bg').value+'%';
-        document.getElementById('af_op_bordure_bd').innerHTML = document.getElementById('op_bordure_bd').value+'%';
+        document.getElementById('af_op_bordure_hg_h').innerHTML = document.getElementById('op_bordure_hg_h').value+'%';
+        document.getElementById('af_op_bordure_hd_h').innerHTML = document.getElementById('op_bordure_hd_h').value+'%';
+        document.getElementById('af_op_bordure_bg_h').innerHTML = document.getElementById('op_bordure_bg_h').value+'%';
+        document.getElementById('af_op_bordure_bd_h').innerHTML = document.getElementById('op_bordure_bd_h').value+'%';
+
+        document.getElementById('af_op_bordure_hg_v').innerHTML = document.getElementById('op_bordure_hg_v').value+'%';
+        document.getElementById('af_op_bordure_hd_v').innerHTML = document.getElementById('op_bordure_hd_v').value+'%';
+        document.getElementById('af_op_bordure_bg_v').innerHTML = document.getElementById('op_bordure_bg_v').value+'%';
+        document.getElementById('af_op_bordure_bd_v').innerHTML = document.getElementById('op_bordure_bd_v').value+'%';
     }
 
     if(parcour_menu == 3){ // Module Position
@@ -602,38 +658,58 @@ function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque
     }
 
     if(parcour_menu == 4){ // Module autre
-        if(onoff == 0){
-            if(document.getElementById('idiv'+divnb)){
 
-                if(document.getElementById('idiv'+divnb).style.backgroundColor){
-                    
+        if(onoff == 0){
+            if(nom_element != 'DIV'){
+                if(document.getElementById('idiv'+divnb)){
+
+                    if(document.getElementById('idiv'+divnb).style.backgroundColor){
+                        
+                        if(document.getElementById('op_opacite_couleur').value != '255'){
+                            let opaciteCouleur = xdecimal(document.getElementById('op_opacite_couleur').value);
+
+                            document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value+opaciteCouleur;
+            
+                        }else{document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;}
+                        
+                    }
+
+                }
+                if(document.getElementById('op_backgrouwn_couleur').value){
+
                     if(document.getElementById('op_opacite_couleur').value != '255'){
                         let opaciteCouleur = xdecimal(document.getElementById('op_opacite_couleur').value);
 
                         document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value+opaciteCouleur;
         
                     }else{document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;}
-                    
-                }
 
-            }
-            if(document.getElementById('op_backgrouwn_couleur').value){
+                }else{document.getElementById(element+i).style.backgroundColor = null}
+
+            }else{
 
                 if(document.getElementById('op_opacite_couleur').value != '255'){
+                    
                     let opaciteCouleur = xdecimal(document.getElementById('op_opacite_couleur').value);
-
+                    //console.log(document.getElementById('op_opacite_couleur').value);
+                    //console.log(document.getElementById('op_backgrouwn_couleur').value);
                     document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value+opaciteCouleur;
     
-                }else{document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;}
-
-            }else{document.getElementById(element+i).style.backgroundColor = null}
+                }else if(document.getElementById('op_backgrouwn_couleur').value != '#ffffff'){
+    
+                    document.getElementById(element+i).style.backgroundColor = document.getElementById('op_backgrouwn_couleur').value;
+    
+                }else{document.getElementById(element+i).style.backgroundColor = null}
+            }
+        
+        
         }else{
             document.getElementById(element+i).style.backgroundColor = null
         }
-            if(document.getElementById('op_opacite').value != '100'){
-                document.getElementById(element+i).style.opacity = document.getElementById('op_opacite').value+'%';
-            }else{document.getElementById(element+i).style.opacity = null}
-        
+        if(document.getElementById('op_opacite').value != '100'){
+            document.getElementById(element+i).style.opacity = document.getElementById('op_opacite').value+'%';
+        }else{document.getElementById(element+i).style.opacity = null}
+    
         document.getElementById('af_op_opacite_couleur').innerHTML = document.getElementById('op_opacite_couleur').value;
         document.getElementById('af_op_opacite').innerHTML = document.getElementById('op_opacite').value+'%';
         

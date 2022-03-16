@@ -316,4 +316,37 @@ Mars 2022
         Ajoue de l'enregistrement et la modification d'une page plus supression de la page
 
         probleme d'enregistrement des modification voire probleme
+
+    16/03/2022 Nouvelle Petit Objectif Paramètre
+
+        A faire:
+        Modifier les borders radius pour une meillieur utilisation de l'outil
+        Mettre les option de la div dans le fichier Option_Element.php
+
+        Fini:
+
+        résolution du probleme de sauvegarde pour les enregistrement des modification pour les aricles
+        modification de l'utilisation de la modification des border radius avec l'ajoue:
+        axe horizontal
+        axe vertical
+        plus verifiacation des donnée pour pouvoir les modifier par la suite
+        ajoue des option de la div dans les option des l'elements
+
+        Nouvelle Petit Objectif paramètre:
+
+            ajoue des catégorie pour les articles a laide d'une base de donnée :
+            crée un catégorie de base : Non-Defini (id = 0)
+            ajouter et suprimer des catégories hors la catégorie de base
+
+            On peut rajouter les meme catégories pour les pages aussi
+
+            ajouter dans le menue de page et d'article une fonctionnaliter de modification rapide
+            qui permet de changer le titre, la catégorie, rajouter une description
+            Specialement pour les articles de remetre un bouton pour savoir si on doit mettre les commentaires ou pas
+
+        ajoue du menue rapide mais a rajouter le code pour connumiquer les modification avec la bdd
+
+
+        
+        
         

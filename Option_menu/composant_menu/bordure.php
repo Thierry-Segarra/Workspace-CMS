@@ -102,16 +102,20 @@ echo '<p>Taille de la bordure</p>'.
     '<p>Bordure arrondi</p>'.
 
     '<label for="op_bordure_hg">Bordure Haut Gauche</label>'.'<br>'.
-    '<input type="range" id="op_bordure_hg" name="op_bordure_hg" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_hg">0%</span>'.'<br>'.
+    '<span>Axe horizontal</span><input type="range" id="op_bordure_hg_h" name="op_bordure_hg" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_hg_h">0%</span>'.'<br>'.
+    '<span>Axe vertical</span><input type="range" id="op_bordure_hg_v" name="op_bordure_hg" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_hg_v">0%</span>'.'<br><br>'.
 
     '<label for="op_bordure_hd">Bordure Haut Droit</label>'.'<br>'.
-    '<input type="range" id="op_bordure_hd" name="op_bordure_hd" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_hd">0%</span>'.'<br>'.
+    '<span>Axe horizontal</span><input type="range" id="op_bordure_hd_h" name="op_bordure_hg" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_hd_h">0%</span>'.'<br>'.
+    '<span>Axe vertical</span><input type="range" id="op_bordure_hd_v" name="op_bordure_hg" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_hd_v">0%</span>'.'<br><br>'.
     
     '<label for="op_bordure_bg">Bordure Bas Gauche</label>'.'<br>'.
-    '<input type="range" id="op_bordure_bg" name="op_bordure_bg" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_bg">0%</span>'.'<br>'.
+    '<span>Axe horizontal</span><input type="range" id="op_bordure_bg_h" name="op_bordure_bg" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_bg_h">0%</span>'.'<br>'.
+    '<span>Axe vertical</span><input type="range" id="op_bordure_bg_v" name="op_bordure_bg" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_bg_v">0%</span>'.'<br><br>'.
 
     '<label for="op_bordure_bd">Bordure Bas Droit</label>'.'<br>'.
-    '<input type="range" id="op_bordure_bd" name="op_bordure_bd" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_bd">0%</sapn>'.'<br>'.
+    '<span>Axe horizontal</span><input type="range" id="op_bordure_bd_h" name="op_bordure_bd" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_bd_h">0%</span>'.'<br>'.
+    '<span>Axe vertical</span><input type="range" id="op_bordure_bd_v" name="op_bordure_bd" min="0" max="100" value="0" step="1">'.'<span id="af_op_bordure_bd_v">0%</span>'.'<br><br>'.
     
 
 '</div>'.
