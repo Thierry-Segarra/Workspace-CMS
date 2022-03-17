@@ -10,12 +10,15 @@
     else if(isset($_GET['media'])){
         $media = $_GET['media'];
         echo '<script type="text/javascript">B3();categorie_media='.$media.';categorie();</script>';
-        // Pour aller dans le menu "Article"
-        
+        // Pour aller dans le menu "Media"
     }
     else if(isset($_GET['page'])){
         echo '<script type="text/javascript">B4()</script>';
-        // Pour aller dans le menu "Article"
+        // Pour aller dans le menu "Page"
+    }
+    else if(isset($_GET['parametre'])){
+        echo '<script type="text/javascript">B5()</script>';
+        // Pour aller dans le menu "Parametre"
     }
     else{
         echo '<script type="text/javascript">B1()</script>';

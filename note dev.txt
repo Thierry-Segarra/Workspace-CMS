@@ -335,7 +335,7 @@ Mars 2022
         Nouvelle Petit Objectif paramètre:
 
             ajoue des catégorie pour les articles a laide d'une base de donnée :
-            crée un catégorie de base : Non-Defini (id = 0)
+            crée un catégorie de base : Non-Defini (id = 0 ou id = 1) c'est la meme chose
             ajouter et suprimer des catégories hors la catégorie de base
 
             On peut rajouter les meme catégories pour les pages aussi
@@ -344,8 +344,16 @@ Mars 2022
             qui permet de changer le titre, la catégorie, rajouter une description
             Specialement pour les articles de remetre un bouton pour savoir si on doit mettre les commentaires ou pas
 
-        ajoue du menue rapide mais a rajouter le code pour connumiquer les modification avec la bdd
+        ajoue du menue rapide mais a rajouter le code pour communiquer les modification avec la bdd
 
+    17/03/2022
+
+        ajoue de la form pour le changement de titre pour les article et le page
+
+        ajoue d'une description pour les pages et les articles dans la bdd et en plus modification de son contnue dans le menue rapide pour la page et l'article
+        ajoue du medu paramètre
+        il est vide faudra rajouter tout d'abord les catégorie pour les page et les article
+        
 
         
         

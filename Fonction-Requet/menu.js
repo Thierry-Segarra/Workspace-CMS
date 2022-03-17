@@ -13,3 +13,7 @@ function B3(){
 function B4(){
     document.getElementById("info").innerHTML= linkB4; 
 }
+
+function B5(){
+    document.getElementById("info").innerHTML= linkB5; 
+}
