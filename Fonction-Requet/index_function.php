@@ -86,8 +86,9 @@
                     document.getElementById('bt_fleche'+id).innerHTML = '↓';
                 }
             }
+        }
           */  
 
-        }
+        
         
     </script>
