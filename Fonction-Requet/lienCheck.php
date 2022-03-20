@@ -17,7 +17,8 @@
         // Pour aller dans le menu "Page"
     }
     else if(isset($_GET['parametre'])){
-        echo '<script type="text/javascript">B5()</script>';
+        $parametre = $_GET['parametre'];
+        echo '<script type="text/javascript">B5();categorie_parametre='.$parametre.';parametre_categorie_catego();</script>';
         // Pour aller dans le menu "Parametre"
     }
     else{

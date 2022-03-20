@@ -1,5 +1,5 @@
 <script>
-    function parametre_categorie_cate_pag_art(){
+    function parametre_categorie_catego(){
         categorie_parametre = 0;
         document.getElementById("upload_media_liste").innerHTML= `<?php include("./Fonction-Requet/parametre_newcategorie.php")?>`; 
         document.getElementById("affiche_media_liste").innerHTML= `<?php include("./Fonction-Requet/parametre_categorie.php") ?>`; 

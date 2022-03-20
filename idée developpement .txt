@@ -1,0 +1,46 @@
+Dans article et page ajouter création de code HTML
+cela permet de crée son propre code html pour par exemple un copi colle de site pour l'integrer dans l'article etc
+dans les Option:
+textarea pour incerer du code HTML,CSS,JS
+
+
+Dans Page
+ajouter function de map plus pointeur
+cela permet de mettre des point sur une map pour situer un endroit voulue
+
+
+
+modifier l'areatext pour mettre un meillieurediteur de text ex: https://nicedit.com/demos.php?demo=1
+
+modifier le bouton pour mette des fonctionnaliter comme changer de page, réseau sociaux, télecharger du contenue (dossier, vidéo etc)
+
+Relier tout les option des element de l'article en un pour avoir un seul fichier MAIS A VOIR !!!
+
+Changer les point de la ligne pour qu'il on des designe de point diffement ou de les mettre en invisible
+
+
+bouton pour slide des produits 
+
+
+
+FAIRE LES COMMENTAIRE POUR LES ARTICLES (dans la page)
+
+
+faire une selection entre une création d'article a vide ou avec un model de base
+
+rajouter la couleru en arrière plan ou une image en arrière plan
+changer la couleur du text 
+faire une option pour la div
+
+
+rajouter un slide, un map, html, compteur (temps et autre),
+
+mettre un lectur de clavier pour récuperer l'input control+R pour afaire une alert si il veut refresh la page ou pas
+
+catégorie
+
+
+rajouter la un compomposant du style comme un texte d'un coté et une image de l'autre
+
+Faire un slide
+

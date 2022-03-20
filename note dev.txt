@@ -354,7 +354,20 @@ Mars 2022
         ajoue du medu paramètre
         il est vide faudra rajouter tout d'abord les catégorie pour les page et les article
         
+    20/03/2022 Petit Objectif Paramètre 50%
 
-        
-        
-        
+        modifiaction du code pour les description des pages et des articles
+
+        ajoue de la modifiaction de nom et de supression de catégorie dans le menu paramètre
+
+        Petit Objectif Paramètre 50%
+
+        A faire :
+
+        Rajouter dans la bdd la colonne catégorie pour les articles et les pages
+        rajouter dans enregisterment et enregisterment des modifiaction la catégorie par défaut = 1
+        rajouter dans le menu rapide la liste des catégories
+        rajouter dans la supression des catégorie si il ne sont pas deja attribuer car la supression ne poura pas ce faire
+
+
+        Ajoue du README.md qui permet de savoir les fonctionnaliter des fichier et a quoi elle serve
