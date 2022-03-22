@@ -148,7 +148,7 @@ if(isset($_POST['Modif'])){
     include('../Fonction-Requet/connectionBDD.php');
     $Chemain = "./Page/".$titre.".php";
 
-    $requete = "INSERT INTO `page`(`auteur`, `date`, `titre`, `Structure`, `Chemain`) VALUES ('admin',now(),'".$titre."','".$Structure."','".$Chemain."')";
+    $requete = "INSERT INTO `page`(`auteur`, `date`, `titre`,`categorie`, `Structure`, `Chemain`) VALUES ('admin',now(),'".$titre."','1','".$Structure."','".$Chemain."')";
     $exec_requete = mysqli_query($db,$requete);
     if($exec_requete){
         echo 'REQUETE REUSSIS';

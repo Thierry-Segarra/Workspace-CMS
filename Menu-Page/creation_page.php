@@ -16,7 +16,6 @@
         
     <h1>Structure</h1>
     <button onclick="adddiv()">div</button>
-
     </div>
     <div class="option" id="menu_option">
     <h1>OPTION</h1>

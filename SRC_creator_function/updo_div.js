@@ -34,7 +34,11 @@ function affiche_div(){
         document.getElementById('tampon').innerHTML = document.getElementById('tampon').innerHTML +'<div class="builddiv" id='+tablediv[i]+'>'+document.getElementById(tablediv[i]).innerHTML +'</div>';
 
         if(i == tablediv.length-1){
-            document.getElementById('article').innerHTML = document.getElementById('tampon').innerHTML;
+            if(document.querySelector('article')){
+                document.getElementById('article').innerHTML = document.getElementById('tampon').innerHTML;
+            }else if(document.querySelector('page')){
+                document.getElementById('page').innerHTML = document.getElementById('tampon').innerHTML;
+            }
             document.getElementById('tampon').innerHTML = "";
             affiche_structure();
             

@@ -91,7 +91,7 @@
 .panneau .ligneparam .L1{
     display: grid;
     text-align: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .panneau .ligne .L1{

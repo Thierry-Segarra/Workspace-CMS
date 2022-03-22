@@ -3,7 +3,9 @@
         var categorie_media = 0; // Pour differencier des different catégorie du menu media
         var categorie_parametre = 0; // Pour differencier les different catégorie du menu paramètre
         var description = []; // Pour avoir la description des pages ou des articles
-
+        // description[id][0] c'est pour avoir sa description
+        // description[id][1] c'est pour avoir sa catégorie
+        var liste_categorie = '';
         /* src="Fonction-Requet/menu.js" Bouton B1*/ var linkB1 = `<?php include("Menu-Page/tableau-de-bord.php") ?>`;
         /* src="Fonction-Requet/menu.js" Bouton B2*/ var linkB2 = `<?php include("Menu-Page/article.php") ?>`;
         /* src="Fonction-Requet/menu.js" Bouton B3*/ var linkB3 = `<?php include("Menu-Page/media.php") ?>`;
@@ -46,7 +48,9 @@
             if(nb == 2){ // Pour la PAGE
                 if(document.getElementById('btligneid'+id).innerHTML == ''){
                     document.getElementById('btligneid'+id).style.visibility = 'visible';
-                    document.getElementById('btligneid'+id).innerHTML = '<a class="boutton" href="./Menu-Page/creation_page.php?Modification='+id+'">modifier le conteue</a><br><br><div class="L1"><form action="Fonction-Requet/modifier_titre_page.php" method="POST"><span>Changer le titre : </span><input type="text" name="titre" value="" placeholder="Changer le titre" required><input type="text" name="id" value="'+id+'" style="visibility:collapse"><input type="submit" value="Modifier Titre"></form><form action="Fonction-Requet/modifier_description_page.php" method="POST"><span>Modifier la description : </span><input type="text" name="description" value="'+description[id]+'" placeholder="Changer la description"></input><input type="text" name="id" value="'+id+'" style="visibility:collapse"><input type="submit" value="Modifier Description"></form></div><button class="boutton" onclick="sup_pag('+id+')"">suprimer</button>';
+                    document.getElementById('btligneid'+id).innerHTML = '<a class="boutton" href="./Menu-Page/creation_page.php?Modification='+id+'">modifier le conteue</a><br><br><div class="L1"><form action="Fonction-Requet/modifier_titre_page.php" method="POST"><span>Changer le titre : </span><input type="text" name="titre" value="" placeholder="Changer le titre" required><input type="text" name="id" value="'+id+'" style="visibility:collapse"><input type="submit" value="Modifier Titre"></form><form action="Fonction-Requet/modifier_description_page.php" method="POST"><span>Modifier la description : </span><input type="text" name="description" value="'+description[id][0]+'" placeholder="Changer la description"></input><input type="text" name="id" value="'+id+'" style="visibility:collapse"><input type="submit" value="Modifier Description"></form><form action="Fonction-Requet/modifier_categorie_page.php" method="POST"><span>Changer de categorie : </span><select name="categorie">'+liste_categorie+'</select><input type="text" name="id" value="'+id+'" style="visibility:collapse"><input type="submit" value="Modifier Categorie"></form></div><button class="boutton" onclick="sup_pag('+id+')"">suprimer</button>';
+
+                    document.getElementById('categorie'+description[id][1]).setAttribute('selected','selected');
                     document.getElementById('bt_fleche'+id).innerHTML = '↑';
                 }else{
                     document.getElementById('btligneid'+id).style.visibility = 'hidden';
@@ -56,7 +60,8 @@
             }else if(nb == 1){ // Pour l'ARTICLE
                 if(document.getElementById('btligneid'+id).innerHTML == ''){
                     document.getElementById('btligneid'+id).style.visibility = 'visible';
-                    document.getElementById('btligneid'+id).innerHTML = '<a class="boutton" href="./Menu-Page/creation_article.php?Modification='+id+'">modifier le conteue</a><br><br><div class="L1"><form action="Fonction-Requet/modifier_titre_article.php" method="POST"><span>Changer le titre : </span><input type="text"  name="titre" value="" placeholder="Changer le titre" required><input type="text" name="id" value="'+id+'" style="visibility:collapse"><input type="submit" value="Modifier Titre"></form><form action="Fonction-Requet/modifier_description_article.php" method="POST"><span>Modifier la description : </span><input type="text" name="description" value="'+description[id]+'" placeholder="Changer la description"><input type="text" name="id" value="'+id+'" style="visibility:collapse"><input type="submit" value="Modifier Description"></form></div><button class="boutton" onclick="sup_art('+id+')">suprimer</button>';
+                    document.getElementById('btligneid'+id).innerHTML = '<a class="boutton" href="./Menu-Page/creation_article.php?Modification='+id+'">modifier le conteue</a><br><br><div class="L1"><form action="Fonction-Requet/modifier_titre_article.php" method="POST"><span>Changer le titre : </span><input type="text"  name="titre" value="" placeholder="Changer le titre" required><input type="text" name="id" value="'+id+'" style="visibility:collapse"><input type="submit" value="Modifier Titre"></form><form action="Fonction-Requet/modifier_description_article.php" method="POST"><span>Modifier la description : </span><input type="text" name="description" value="'+description[id][0]+'" placeholder="Changer la description"><input type="text" name="id" value="'+id+'" style="visibility:collapse"><input type="submit" value="Modifier Description"></form><form action="Fonction-Requet/modifier_categorie_article.php" method="POST"><span>Changer de categorie : </span><select name="categorie">'+liste_categorie+'</select><input type="text" name="id" value="'+id+'" style="visibility:collapse"><input type="submit" value="Modifier Categorie"></form></div><button class="boutton" onclick="sup_art('+id+')">suprimer</button>';
+                    document.getElementById('categorie'+description[id][1]).setAttribute('selected','selected');
                     document.getElementById('bt_fleche'+id).innerHTML = '↑';
                 }else{
                     document.getElementById('btligneid'+id).style.visibility = 'hidden';
@@ -80,6 +85,7 @@
                     reponse.push('<?php echo $row['id'] ?>');
                     reponse['<?php echo $row['id'] ?>'] = [];
                     reponse['<?php echo $row['id'] ?>'].push('<?php echo $row['description'] ?>');
+                    reponse['<?php echo $row['id'] ?>'].push('<?php echo $row['categorie'] ?>');
                     <?php
                 };
                 ?>
@@ -97,11 +103,28 @@
                     reponse.push('<?php echo $row['id'] ?>');
                     reponse['<?php echo $row['id'] ?>'] = [];
                     reponse['<?php echo $row['id'] ?>'].push('<?php echo $row['description'] ?>');
+                    reponse['<?php echo $row['id'] ?>'].push('<?php echo $row['categorie'] ?>');
                     <?php
                 };
                 ?>
                 return reponse;
             }
+        }
+
+        function categorie_dbb(){
+                let reponse = '';
+                <?php
+                $requete = "SELECT * FROM categorie ";
+                $exec_requete = mysqli_query($db,$requete);
+
+                while ($row = mysqli_fetch_assoc($exec_requete)){
+
+                    ?>
+                    reponse = reponse + '<option id=categorie'+'<?php echo $row['id'] ?>'+'>'+'<?php echo $row['nom'] ?>'+'</option>';
+                    <?php
+                };
+                ?>
+                return reponse;
         }
 
         function param_categorie(id){

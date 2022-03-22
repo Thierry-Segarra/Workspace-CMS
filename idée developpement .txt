@@ -44,3 +44,48 @@ rajouter la un compomposant du style comme un texte d'un coté et une image de l
 
 Faire un slide
 
+Specialement pour les articles de remetre un bouton pour savoir si on doit mettre les commentaires ou pas
+
+rajouter un composant Flux RSS
+
+-------------------------------------------------------------------------------------
+Faire formulaire
+mettre des VRAIS paramètres
+"catégorie" plus clair et dans un onglet à part
+prévisu sur la page les pdf
+bort CHANGER LA FAUTE
+créer une doc
+rajouter le css
+créer une page membre
+
+rajouter un filtre
+
+--------------------------------------------------------------------------------------
+
+crée un div qui a comme fonctionnliter la liéson des fonction comme
+faire la liéson avec les article 
+et faire un filtre pour afficher uniquement les articles avec la catégorie voulue
+
+
+
+
+flux RSS
+
+ajouter composans div vide qui vais appel a une fonction en php qui continent le code du rss
+le composans devras etre en php pour fair appel a une fonction en php
+pour faire appelt au composant en php faudra mettre en avance les balsie <script></script>
+et mettre en l'interieur '<?php include("ici sont lien") ?>'
+
+<script>'<?php include("ici sont lien flux RSS") ?>'</script>
+
+code:
+<?php
+$url = "https://www.tomshardware.fr/tag/processeurs/feed/"; /* insérer ici l'adresse du flux RSS de votre choix */
+$rss = simplexml_load_file($url);
+foreach ($rss->channel->item as $item){
+ $datetime = date_create($item->pubDate);
+ $date = date_format($datetime, 'd M Y, H\hi');
+ echo '<div class="actuespace"><a  href="'.$item->link.'">'.$item->title.'<br></a> ('.$date.')</div>';
+}
+?>
+

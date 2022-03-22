@@ -61,6 +61,7 @@
 <script type="text/javascript" src="../SRC_creator_function/composans/ligne-liste.js"></script> <!-- Pour crée une ligne dans une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/map.js"></script> <!-- Pour crée une map -->
 <script type="text/javascript" src="../SRC_creator_function/composans/html.js"></script> <!-- Pour crée une map -->
+<script type="text/javascript" src="../SRC_creator_function/composans/fluxRSS.js"></script> <!-- Pour crée un flux RSS -->
 
 <!-- Fonction disponible pour les modifications -->
 <script type="text/javascript" src="../SRC_creator_function/updo_comp.js"></script> <!-- Pour monté ou decendre un composant dans une div -->

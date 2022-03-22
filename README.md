@@ -39,6 +39,9 @@ Permet d'afficher la liste des articles crée.
 afficher-list-page.php :
 Permet d'afficher la liste des pages crée.
 
+afficher-paramlist-categorie.php :
+Permet d'afficher la liste des categorie existance.
+
 connectionBDD.php :
 Permet de ce connecter à la base de donnée.
 

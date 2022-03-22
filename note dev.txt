@@ -342,7 +342,7 @@ Mars 2022
 
             ajouter dans le menue de page et d'article une fonctionnaliter de modification rapide
             qui permet de changer le titre, la catégorie, rajouter une description
-            Specialement pour les articles de remetre un bouton pour savoir si on doit mettre les commentaires ou pas
+            Specialement pour les articles de remetre un bouton pour savoir si on doit mettre les commentaires ou pas (optionnel pour l'instant)
 
         ajoue du menue rapide mais a rajouter le code pour communiquer les modification avec la bdd
 
@@ -371,3 +371,13 @@ Mars 2022
 
 
         Ajoue du README.md qui permet de savoir les fonctionnaliter des fichier et a quoi elle serve
+    
+    22/03/2022 Petit Objectif paramètre FINI
+
+        ajoue de l'enregisterment et l'enregisterment des modifiaction de la catégorie par défaut = 1
+        ajoue de la categorie pour les pages et les articles dns le menue rapide 
+        plus ajoue des risques de modifier la categorie donne lors de la supression de la categorie
+
+        
+
+    
