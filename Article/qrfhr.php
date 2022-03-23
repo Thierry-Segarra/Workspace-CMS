@@ -1,0 +1,1 @@
+    <div class="builddiv" id="idiv1"><div id="div1comp1"><div id="rssdiv11">https://www.tomshardware.fr/tag/processeurs/feed/</div></div><div id="div1comp2"><img id="imadiv12" class="media_size_defaul" src="../Image/screenshot_2021-10-09_14-00-42.png" alt="Image introuvable"></div><div id="div1comp3"><div id="rssdiv13">https://wwwurs/feed/</div></div></div>

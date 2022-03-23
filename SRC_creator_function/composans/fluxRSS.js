@@ -2,8 +2,7 @@ function addRssDiv(i){
     // Permet de créé un text dans une div
     let divcomp = "div"+i+"comp"+compo;
     //console.log(divcomp);
-    let code = 'https://www.tomshardware.fr/tag/processeurs/feed/';
-    let add = '<div id="div'+i+'comp'+compo+'"><div id="rssdiv'+i+compo+'">'+code+'</div></div>';
+    let add = '<div id="div'+i+'comp'+compo+'"><div id="rssdiv'+i+compo+'"></div></div>';
     
     document.getElementById('idiv'+i).innerHTML =  document.getElementById('idiv'+i).innerHTML + add;
     tablediv["idiv"+i].push(divcomp);

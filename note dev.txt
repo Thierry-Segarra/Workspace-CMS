@@ -383,4 +383,10 @@ Mars 2022
         
     23/03/2022 (2 mois de developpement)
     
-    
+    ajour des verification pour le flux RSS
+    il manque juste le test pour voir il le site existe ou pas
+    mais sinon il y aurais un warning qui s'affichera
+
+    a faire:
+
+    faire une fonction qui permet de ne pas afficher le warning

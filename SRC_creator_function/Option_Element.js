@@ -146,7 +146,7 @@ function option_element(i,nom_element,element,divnb,compnb){
 
         }else if(nom_element == 'RSS'){
 
-            document.getElementById("contenue").innerHTML = '<p>Lien flux RSS</p><br><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value="">';
+            document.getElementById("contenue").innerHTML = '<p>Lien flux RSS</p><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><br><br>';
 
             if(document.getElementById(element+i).innerHTML){
                 document.getElementById('op_contenue').value = document.getElementById(element+i).innerHTML; // Permet de selectionné le contenue a modifier
