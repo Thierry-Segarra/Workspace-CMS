@@ -378,6 +378,9 @@ Mars 2022
         ajoue de la categorie pour les pages et les articles dns le menue rapide 
         plus ajoue des risques de modifier la categorie donne lors de la supression de la categorie
 
-        
+        ajouer du composant flux RSS mais il manque les options
 
+        
+    23/03/2022 (2 mois de developpement)
+    
     

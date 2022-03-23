@@ -3,7 +3,7 @@ function addRssDiv(i){
     let divcomp = "div"+i+"comp"+compo;
     //console.log(divcomp);
     let code = 'https://www.tomshardware.fr/tag/processeurs/feed/';
-    let add = '<div id="div'+i+'comp'+compo+'"><rss id="rssdiv'+i+compo+'">'+code+'</rss></div>';
+    let add = '<div id="div'+i+'comp'+compo+'"><div id="rssdiv'+i+compo+'">'+code+'</div></div>';
     
     document.getElementById('idiv'+i).innerHTML =  document.getElementById('idiv'+i).innerHTML + add;
     tablediv["idiv"+i].push(divcomp);
