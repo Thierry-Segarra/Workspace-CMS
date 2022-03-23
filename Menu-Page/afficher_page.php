@@ -14,16 +14,4 @@
     ?>
 
 </html>
-<script>
-    function RSS(url){
-        <?php
-        $url = ?>url<?php ; //"https://www.tomshardware.fr/tag/processeurs/feed/"; /* insérer ici l'adresse du flux RSS de votre choix */
-        ?>
-        <?php
-        $rss = simplexml_load_file($url);
-        foreach ($rss->channel->item as $item){
-        $datetime = date_create($item->pubDate);
-        $date = date_format($datetime, 'd M Y, H\hi');?>
-        let rss = <?php echo '<div class="actuespace"><a  href="'.$item->link.'">'.$item->title.'<br></a> ('.$date.')</div>';}?>
-    }
-</script>
+<?php include("../SRC_creator_function/fluxrss.php"); ?>

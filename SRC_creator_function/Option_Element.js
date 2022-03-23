@@ -144,6 +144,14 @@ function option_element(i,nom_element,element,divnb,compnb){
                 document.getElementById('op_text_couleur').value = couleur;//.substring(0,border.length-8) // voir pour la modification de couleur de la border
             }
 
+        }else if(nom_element == 'RSS'){
+
+            document.getElementById("contenue").innerHTML = '<p>Lien flux RSS</p><br><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value="">';
+
+            if(document.getElementById(element+i).innerHTML){
+                document.getElementById('op_contenue').value = document.getElementById(element+i).innerHTML; // Permet de selectionné le contenue a modifier
+            }
+
         }else if(nom_element == 'HTML'){
             document.getElementById("contenue").innerHTML = '<p>code HTML</p><textarea name="op_html" id="op_html"></textarea><br><br><p>code CSS</p><textarea name="op_css" id="op_css"></textarea>';
 
@@ -508,6 +516,10 @@ function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque
             if(document.getElementById('op_taille_height').value){
                 document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value +"px";
             }else{document.getElementById(element+i).style.height = null}
+
+        }else if(nom_element == 'RSS'){
+            // Le contenue de la balise
+            document.getElementById(element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
 
         }else if(nom_element == 'HTML'){
             
