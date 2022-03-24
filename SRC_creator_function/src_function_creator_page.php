@@ -61,7 +61,7 @@
 <script type="text/javascript" src="../SRC_creator_function/composans/map.js"></script> <!-- Pour crée une map -->
 <script type="text/javascript" src="../SRC_creator_function/composans/html.js"></script> <!-- Pour crée un HTML et CSS -->
 <script type="text/javascript" src="../SRC_creator_function/composans/fluxRSS.js"></script> <!-- Pour crée un flux RSS -->
-
+<script type="text/javascript" src="../SRC_creator_function/composans/listearticle.js"></script> <!-- Pour crée une liste des article -->
 
 
 <!-- Fonction disponible pour les modifications -->

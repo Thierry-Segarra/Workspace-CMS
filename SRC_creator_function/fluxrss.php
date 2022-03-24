@@ -1,11 +1,25 @@
-<script>
-    // on met en haut la fonction pour mettre le contenue car sinon la fonction ne marcheras pas
-    function addresultat(resultat,nb){
-        document.getElementById('rssdiv'+nb).innerHTML = resultat;
-    }
-</script>
-
 <?php
+// Permet de verifier si le site existe
+function validerLien($lien,$nb)
+{
+$ch = curl_init($lien);
+curl_setopt($ch, CURLOPT_FAILONERROR, true);
+curl_setopt($ch, CURLOPT_NOBODY, true);
+	if (curl_exec($ch) === false) {
+        // si non il envois un message d'erreur
+		echo 'Lien invalide: ' . $lien . "<br>";
+	}
+	else
+	{  
+        
+        // si oui faire la fonction qui permet d'appeler le flux RSS
+		fluxRSS($lien,$nb);// on transfère url et le numero de son composant
+	}
+curl_close($ch);
+}
+
+
+
 if(isset($article)){
 $fichier = $article;
 }else if(isset($page)){
@@ -13,6 +27,17 @@ $fichier = $page;
 }
 $text = file_get_contents('.'.$fichier);
 $text =  htmlspecialchars($text);
+
+if(strpos($text, 'rssdiv') !== false){
+    ?>
+        <script>
+            // on met en haut la fonction pour mettre le contenue car sinon la fonction ne marcheras pas
+            function addresultat(resultat,nb){
+                document.getElementById('rssdiv'+nb).innerHTML = resultat;
+            }
+        </script>
+    <?php 
+}
 
 while(strpos($text, 'rssdiv') !== false){
     $text = stristr($text,'rssdiv'); // on recherche si il y a rssdiv dans le text
@@ -25,8 +50,7 @@ while(strpos($text, 'rssdiv') !== false){
     if(stripos($url,'http')>0){
         $url = stristr($url,'http');
         $url = substr($url, 0, -5);
-        
-        fluxRSS($url,$nb); // on transfère url et le numero de son composant
+        validerLien($url,$nb);
     }
 
     
@@ -37,7 +61,6 @@ function fluxRSS($url,$nb){
     //$url =  ; //"https://www.tomshardware.fr/tag/processeurs/feed/"; /* insérer ici l'adresse du flux RSS de votre choix */
 
     $context  = stream_context_create(array('http' => array('header' => 'Accept: application/xml')));
-    //$url = 'http://api.ean.com/ean-services/rs/hotel/v3/list?cid=55505&minorRev=12&apiKey=2hkhej72gxyas3ky6hhjtsga&locale=en_US&currencyCode=USD&customerIpAddress=10.184.2.9&customerSessionId=&xml=<HotelListRequest><arrivalDate>01/22/2012</arrivalDate><departureDate>01/24/2012</departureDate><RoomGroup><Room><numberOfAdults>1</numberOfAdults><numberOfChildren>1</numberOfChildren><childAges>4</childAges></Room></RoomGroup><city>Amsterdam</city><countryCode>NL</countryCode><supplierCacheTolerance>MED</supplierCacheTolerance></HotelListRequest> ';
 
     if(file_get_contents($url, false, $context)){
         $xml = file_get_contents($url, false, $context);
@@ -48,7 +71,7 @@ function fluxRSS($url,$nb){
             foreach ($xml->channel->item as $item){
                 $datetime = date_create($item->pubDate);
                 $date = date_format($datetime, 'd M Y, H\hi');
-                $resultat = $resultat.'<div><a  href="'.$item->link.'">'.$item->title.'<br></a> ('.$date.')</div>';
+                $resultat = $resultat.'<div><a  href="'.$item->link.'">'.$item->title.'<br></a> ('.$date.')</div><br>';
             }
             
             // on tranfère dans une fonction en JS pour mettre les reponse dans la baliser conserné a l'aire d'une fonction

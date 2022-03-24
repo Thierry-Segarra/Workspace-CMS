@@ -146,7 +146,7 @@ function option_element(i,nom_element,element,divnb,compnb){
 
         }else if(nom_element == 'RSS'){
 
-            document.getElementById("contenue").innerHTML = '<p>Lien flux RSS</p><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><br><br>';
+            document.getElementById("contenue").innerHTML = '<p>Lien flux RSS</p><input name="op_contenue" id="op_contenue" placeholder="Saisir votre titre" type="text" value=""><br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
 
             if(document.getElementById(element+i).innerHTML){
                 document.getElementById('op_contenue').value = document.getElementById(element+i).innerHTML; // Permet de selectionné le contenue a modifier
@@ -520,6 +520,11 @@ function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque
         }else if(nom_element == 'RSS'){
             // Le contenue de la balise
             document.getElementById(element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
+
+            // Alignement du text
+            if(document.querySelector('input[name=align]:checked').value){
+                document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
+            }
 
         }else if(nom_element == 'HTML'){
             

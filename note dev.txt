@@ -383,10 +383,17 @@ Mars 2022
         
     23/03/2022 (2 mois de developpement)
     
-    ajour des verification pour le flux RSS
-    il manque juste le test pour voir il le site existe ou pas
-    mais sinon il y aurais un warning qui s'affichera
+        ajour des verification pour le flux RSS
+        il manque juste le test pour voir il le site existe ou pas
+        mais sinon il y aurais un warning qui s'affichera
 
-    a faire:
+        a faire:
 
-    faire une fonction qui permet de ne pas afficher le warning
+        faire une fonction qui permet de ne pas afficher le warning
+
+    24/03/2022
+
+        ajoue de la fonction pour verifier si le site existe ou pas
+        plus ajoue de l'affichage de la fonction en js pour pas l'afficher si l'article ne dispose pas de la balise flux RSS
+
+    
