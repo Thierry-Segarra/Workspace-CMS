@@ -52,11 +52,13 @@ while(strpos($text, 'listearticlediv') !== false){
         };
     }else{
         include('../Fonction-Requet/connectionBDD.php');
-        
-        // récuperer info du fichier pour pouvoir le suprimer
-        $requete = "SELECT * FROM `article` WHERE categorie = '".$categorie."'";
+        $requete = "SELECT * FROM `categorie` WHERE nom = '".$categorie."'";
         $exec_requete = mysqli_query($db,$requete);
-        while ($row = mysqli_fetch_assoc($exec_requete)){
+        $reponse      = mysqli_fetch_array($exec_requete);
+        // récuperer info du fichier pour pouvoir le suprimer
+        $requete2 = "SELECT * FROM `article` WHERE categorie = '".$reponse['id']."'";
+        $exec_requete2 = mysqli_query($db,$requete2);
+        while ($row = mysqli_fetch_assoc($exec_requete2)){
             echo '<br><br>';
             echo $row["titre"];
         };

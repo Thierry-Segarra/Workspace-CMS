@@ -396,4 +396,7 @@ Mars 2022
         ajoue de la fonction pour verifier si le site existe ou pas
         plus ajoue de l'affichage de la fonction en js pour pas l'afficher si l'article ne dispose pas de la balise flux RSS
 
+        ajoue de la fonction article mais il est mal réglé il faudra le metre a la place du text "categoruie selectionner :"
+        Faire dans les option la liste qui repertorie toutes els catégorie en forme de le liste
+
     
