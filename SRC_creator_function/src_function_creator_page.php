@@ -41,6 +41,12 @@
     var op_position = '<?php include("../Option_menu/composant_menu/position.php") ?>';
     var op_autre = '<?php include("../Option_menu/composant_menu/autre.php") ?>';
 
+    // autre module
+    <?php include("../SRC_creator_function/list_categorie_article.php") ?>
+    var op_article_categorie = article_categorie();
+    var list_article_categorie = liste_article_categorie();
+    console.log(list_article_categorie);
+
 </script>
 
 
@@ -69,6 +75,8 @@
 <script type="text/javascript" src="../SRC_creator_function/updo_div.js"></script> <!-- Pour monté ou decendre une div dans la structure -->
 <script type="text/javascript" src="../SRC_creator_function/traitement_ligneliste.js"></script> <!-- Permet de traiter l'HTML de l'page pour récuperer les ligne de la liste a modifer -->
 <script type="text/javascript" src="../SRC_creator_function/Option_Element_Fonction.js"></script> <!-- Permet de differencier le code de modifiacation au code de traitement de donnée des modification (RGB en HEX, Supprimer un ellement ...) -->
+
+<!-- Autre Fonctionnalité-->
 
 
 <!-- Partie enregistrement && Quitter -->

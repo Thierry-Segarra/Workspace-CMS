@@ -396,7 +396,24 @@ Mars 2022
         ajoue de la fonction pour verifier si le site existe ou pas
         plus ajoue de l'affichage de la fonction en js pour pas l'afficher si l'article ne dispose pas de la balise flux RSS
 
-        ajoue de la fonction article mais il est mal réglé il faudra le metre a la place du text "categoruie selectionner :"
+        ajoue de la fonction article mais il est mal réglé il faudra le metre a la place du text "categorie selectionner :"
         Faire dans les option la liste qui repertorie toutes els catégorie en forme de le liste
 
-    
+    25/03/2022
+
+        modification du code pour la liste déroulant pour les categories
+
+    26/03/2022
+
+        réflection pour les modification pour laffichage des liste des categorie
+
+        a faire les modification mis en commentaire dans le fichier liste_categorie_article.php
+
+    27/03/2022
+
+        Ajoue de la fonctionnaliter de faire appele au article sur une page
+
+        A faire:
+        mettre la reponse des article dans le composans au lieux de les afficher a la fin
+        ajoue les modifiactions pour les article sur une page (aligne, border, taille ...)
+        faire la meme modification pour le flux rss

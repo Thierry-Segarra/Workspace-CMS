@@ -75,6 +75,12 @@ Permet d'afficher la liste des document importer dans le menu Media catégorie D
 menu.js :
 Permet de naviguer dans le menu, d'aller de la page a l'article.
 
+modifier_categorie_article.php :
+Permet de mofifier les categories des articles.
+
+modifier_categorie_page.php :
+Permet de mofifier les categories des page.
+
 modifier_description_article.php :
 Permet de mofifier les descriptions des articles.
 
@@ -126,12 +132,6 @@ Permet d'upload des document sur la BDD et dans le fichier Image
 upload_image.php :
 Affichage permetant d'upload des images
 
-upload_image_form.php :
-Permet d'upload des document sur la BDD et dans le fichier Image
-
-upload_image.php :
-Affichage permetant d'upload des images
-
 upload_parametre_categorie_form.php:
 Permet d'ajouter une nouvelle catégorie dans la BDD
 
@@ -160,6 +160,9 @@ Affichage des option d'une div
 
 op_menu_element.php :
 Affichage des option d'un element
+
+op_menu_list.php :
+Affichage des option d'une liste
 
 op_menu.php :
 Affichage par defaut des options.
@@ -196,16 +199,25 @@ Permet d'enregister des nouvelles pages.
 enregistrement.js :
 Permet d'enregister des nouveaux articles.
 
+fluxrss.php :
+Permet de faire des verifiaction et de crée le flux rss pour un article et page.
+
+listearticle.php :
+Permet d'afficher les articles sur une page.
+
+list_categorie_article.php :
+Permet de faire des verifiaction et de crée un lien pour faire appele a des article sur page.
+
 modification_article_html.php :
 Permet de récuperet des information de l'article, la table de tructure, le chemain de l'aricle et de sont titre.
 
-modification_article_table.php :
+modification_article_table.js :
 Permet de faire des modification avec la table de structure deja enregistrer
 
 modification_page_html.php :
 Permet de récuperet des information d'une page, la table de tructure, le chemain de l'aricle et de sont titre.
 
-modification_table.php :
+modification_table.js :
 Permet de faire des modification avec la table de structure deja enregistrer
 
 Option_Element_Fonction.js :

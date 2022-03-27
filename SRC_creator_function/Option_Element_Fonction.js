@@ -300,3 +300,47 @@ function couleur_onoff(){
     }
 
 }
+
+function categorie_traitement(element){
+    text = document.getElementById(element).innerHTML;
+    text = text.substring(text.search(':')+2);
+    let lock = 0;
+    if(text != 'Tout'){
+        for (let i = 0; i < list_article_categorie.length; i++){
+            if(lock == 0){
+                console.log(i);
+                if(list_article_categorie[i] == text){
+                    console.log(list_article_categorie[text][0]);
+                    let option_element ='list_categorie'+list_article_categorie[text][0];
+                    lock = 1;
+                    return option_element;
+                }
+            }
+        }
+        if(lock == 0){
+            let option_element ='list_categorie0';
+            alert('categorie "'+text+'" introuvable, il sera modifier par la categorie "Tout"')
+            lock = 1;
+            return option_element;
+        }
+    }else{
+        let option_element ='list_categorie0';
+        return option_element;
+    }
+    //console.log(text);
+    
+}
+function categorie_traitement_nom(element){
+    text = document.getElementById(element).innerHTML;
+    text = text.substring(text.search(':')+2);
+    return text;
+    //console.log(text);
+    
+}
+
+function modif_op_article_categorie(option,categorie){
+    debut = option.substring(0,option.search(categorie)+categorie.length+1);
+    fin = option.substring(option.search(categorie)+categorie.length+1);
+    option = debut + ' selected' + fin;
+    return option
+}

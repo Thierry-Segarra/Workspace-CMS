@@ -152,6 +152,13 @@ function option_element(i,nom_element,element,divnb,compnb){
                 document.getElementById('op_contenue').value = document.getElementById(element+i).innerHTML; // Permet de selectionné le contenue a modifier
             }
 
+        }else if(nom_element == 'ARTICLE'){
+
+            let categorie = categorie_traitement(element+i) // permet de récuperer l'id de l'option selectionner
+            option = modif_op_article_categorie(op_article_categorie,categorie); // cette foncvtion permet d'ajouter a la liste de scategorie, la catégorie selectionner
+
+            document.getElementById("contenue").innerHTML = '<p>Categorie Article</p><select name="op_contenue" id="select_categorie">'+option+'</select><br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
+
         }else if(nom_element == 'HTML'){
             document.getElementById("contenue").innerHTML = '<p>code HTML</p><textarea name="op_html" id="op_html"></textarea><br><br><p>code CSS</p><textarea name="op_css" id="op_css"></textarea>';
 
@@ -522,6 +529,17 @@ function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque
             document.getElementById(element+i).innerHTML = document.getElementById('op_contenue').value; // pour afficher le contenue modifier
 
             // Alignement du text
+            if(document.querySelector('input[name=align]:checked').value){
+                document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
+            }
+
+        }else if(nom_element == 'ARTICLE'){
+            let nom_categorie = categorie_traitement_nom(element+i);
+            
+            if(nom_categorie != document.getElementById('select_categorie').value){
+                document.getElementById(element+i).innerHTML = 'categorie selectionner : '+document.getElementById('select_categorie').value;
+            }
+
             if(document.querySelector('input[name=align]:checked').value){
                 document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
             }

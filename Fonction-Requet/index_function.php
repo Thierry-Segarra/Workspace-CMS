@@ -5,7 +5,7 @@
         var description = []; // Pour avoir la description des pages ou des articles
         // description[id][0] c'est pour avoir sa description
         // description[id][1] c'est pour avoir sa catégorie
-        var liste_categorie = '';
+        var liste_categorie = ''; // le resultat et fait avec la fonction qui ce trouve dans le ficfier menu.js
         /* src="Fonction-Requet/menu.js" Bouton B1*/ var linkB1 = `<?php include("Menu-Page/tableau-de-bord.php") ?>`;
         /* src="Fonction-Requet/menu.js" Bouton B2*/ var linkB2 = `<?php include("Menu-Page/article.php") ?>`;
         /* src="Fonction-Requet/menu.js" Bouton B3*/ var linkB3 = `<?php include("Menu-Page/media.php") ?>`;
