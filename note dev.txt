@@ -417,3 +417,9 @@ Mars 2022
         mettre la reponse des article dans le composans au lieux de les afficher a la fin
         ajoue les modifiactions pour les article sur une page (aligne, border, taille ...)
         faire la meme modification pour le flux rss
+
+    28/03/2022
+
+        ajoue de l'affichage des description des articles sur une page
+
+        réflection pour ajouter les modification en plus pour l'affichage des articles et du flux RSS

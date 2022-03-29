@@ -3,6 +3,16 @@
 $fichier = $page;
 $text = file_get_contents('.'.$fichier);
 $text =  htmlspecialchars($text);
+if(strpos($text, 'listearticlediv') !== false){
+    ?>
+        <script>
+            // on met en haut la fonction pour mettre le contenue car sinon la fonction ne marcheras pas
+            function listearticleresultat(resultat,nb){
+                document.getElementById('listearticlediv'+nb).innerHTML = resultat;
+            }
+        </script>
+    <?php 
+}
 
 while(strpos($text, 'listearticlediv') !== false){
     $text = stristr($text,'listearticlediv'); // on recherche si il y a rssdiv dans le text
@@ -22,9 +32,11 @@ while(strpos($text, 'listearticlediv') !== false){
         $requete = "SELECT * FROM `article`";
         $exec_requete = mysqli_query($db,$requete);
         while ($row = mysqli_fetch_assoc($exec_requete)){
-            $resultat = $resultat . '<div><a  href="./afficher_article.php?article='.$row["Chemain"].'">'.$row["titre"].'</a></div><br>';
+            $resultat = $resultat . '<div><a  href="./afficher_article.php?article='.$row["Chemain"].'">'.$row["titre"].'</a><p>'.$row["description"].'</p></div><br>';
         };
-        echo $resultat;
+        ?>
+            <script>listearticleresultat(`<?php echo $resultat ?>`,`<?php echo $nb ?>`);</script>
+        <?php
     }else{
         $resultat = '';
         include('../Fonction-Requet/connectionBDD.php');
@@ -35,9 +47,11 @@ while(strpos($text, 'listearticlediv') !== false){
         $requete2 = "SELECT * FROM `article` WHERE categorie = '".$reponse['id']."'";
         $exec_requete2 = mysqli_query($db,$requete2);
         while ($row = mysqli_fetch_assoc($exec_requete2)){
-            $resultat = $resultat . '<div><a  href="./afficher_article.php?article='.$row["Chemain"].'">'.$row["titre"].'</a></div><br>';
+            $resultat = $resultat . '<div><a  href="./afficher_article.php?article='.$row["Chemain"].'">'.$row["titre"].'</a><p>'.$row["description"].'</p></div><br>';
         };
-        echo $resultat;
+        ?>
+            <script>listearticleresultat(`<?php echo $resultat ?>`,`<?php echo $nb ?>`);</script>
+        <?php
     }
 
     
