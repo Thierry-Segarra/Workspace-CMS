@@ -379,7 +379,6 @@ Mars 2022
         plus ajoue des risques de modifier la categorie donne lors de la supression de la categorie
 
         ajouer du composant flux RSS mais il manque les options
-
         
     23/03/2022 (2 mois de developpement)
     
@@ -423,3 +422,23 @@ Mars 2022
         ajoue de l'affichage des description des articles sur une page
 
         réflection pour ajouter les modification en plus pour l'affichage des articles et du flux RSS
+
+    31/03/2022 TRAVAILLE A FAIRE
+
+        A FAIRE:
+        moyen pour mofidier l'affichage des articles et du flux rss est de l'enregistrer avec un fonction qu'on appel celon sont id
+
+        cette function est crée a chaque fois que l'on crée un flux RSS et/ou affichage d'article
+        si  on veut récuperer via une balise qui aura comme nom l'id de l'element
+        on le récupere avec document.getelementByName().innerHTML ou l'id avec un detaille en plus
+        ex: function modifaffichage + (id de l'affichage){
+            var stockage = (le style ou l'HTML avec le style) ou document.getelementByID().innerHTML
+            reture stockage
+        }
+
+        Apres cela faudra faire le header et le footer
+        Pour le header et le footeer il faudra le mettre dans une nouvelle catégorie qui sappelera widget (gadjet)
+        dans cette categorie nous pouvons rajouter des menus (header, footer)
+        avant la création il faudra mettre une option pour choisir en header, footer ...
+
+
