@@ -2,7 +2,7 @@ function addLigneListe(i,nbcomp){
     // i = le numero de la div
     // compo = le numerot du composan
     // nbcomp = le numerot du composans de la list
-    let divcomp = "div"+i+"comp"+compo; // ex: div1comp1
+    //let divcomp = "div"+i+"comp"+compo; // ex: div1comp1
     //console.log(divcomp);
      let add = '<li id="lignelistdiv'+i+compo+'">Nouvelle ellement</li>';
      

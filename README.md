@@ -274,3 +274,51 @@ Permet de faire du CSS et c'est tout
 workspace_bdd.sql :
 C'est la base de donnée du CMS pour pouvoir enregister les article, page ...
 
+
+
+# fichier
+
+Dossier : WorkSpace CMS
+
+
+## Présentation du projet
+    L’otil WorkSpace permet de crée, modifier et supprimer des éléments sur un site internet.
+    WorkSpace donne a l’utilisateur un outil de création d’article et de page.
+    L’utilisateur a à sa disposition des composants qui permet de remplir des page et des articles.
+    Le propriétaire du site pourras accéder a l’outil WorkSpace Via une page de connection pour sécuriser les conrenues
+
+
+## Technologies
+
+    PHP
+    Langage de programmation
+    PHP est principalement conçu pour servir de langage de script coté serveur
+
+    JS
+    Langage de programmation
+    Javascript permet aux pages web d’être dynamiques et d’éviter que celles-ci se recharge lors d’une modification de la page.
+
+    HTML/CSS
+    Langage de description de données
+    HTML/CSS permettent de représenter les pages web.
+
+    MySQL
+    Base de données
+    MySQL est un système de gestion de bases de données relationnelles.
+
+
+## Compétences
+
+    FrameWork
+    BDD Acces
+    Code en BDD (Procedure / Trigger)
+    Site Web
+    Tests Unitaires
+    Modele (MCD)
+    Authentification
+    Environnement travail colaboratif (GITHUB)
+    Solution de sauvegarde
+    Deux types de terminaux
+    Chiffrement
+    2 languages
+    Logiciel de controle de version (encore GITHUB)

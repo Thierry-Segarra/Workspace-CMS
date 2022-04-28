@@ -30,13 +30,14 @@
 
     // Affiche le menu de Modification avancée
     var adv_op_ligne_liste = '<?php include("../Option_menu/adv_op_ligne_liste.php") ?>';
+    var adv_op_style_rss = '<?php include("../Option_menu/adv_op_style_rss.php") ?>';
     // media
     var adv_op_media_image = '<?php include("../Option_menu/adv_op_media_image.php") ?>';
     var adv_op_media_video = '<?php include("../Option_menu/adv_op_media_video.php") ?>';
     var adv_op_media_contenue = '<?php include("../Option_menu/adv_op_media_contenue.php") ?>';
 
     // partie module du menu
-    //var op_contenue = '<?php include("../Option_menu/composant_menu/contenue.php") ?>'; menuu qui ne sert plus
+    //var op_contenue = '<?php //include("../Option_menu/composant_menu/contenue.php") ?>'; menuu qui ne sert plus
     var op_bordure = '<?php include("../Option_menu/composant_menu/bordure.php") ?>';
     var op_position = '<?php include("../Option_menu/composant_menu/position.php") ?>';
     var op_autre = '<?php include("../Option_menu/composant_menu/autre.php") ?>';
@@ -62,6 +63,7 @@
 <script type="text/javascript" src="../SRC_creator_function/composans/map.js"></script> <!-- Pour crée une map -->
 <script type="text/javascript" src="../SRC_creator_function/composans/html.js"></script> <!-- Pour crée une map -->
 <script type="text/javascript" src="../SRC_creator_function/composans/fluxRSS.js"></script> <!-- Pour crée un flux RSS -->
+<script type="text/javascript" src="../SRC_creator_function/composans/lien_fluxrss.js"></script> <!-- Pour ajouter un ou des liens pour un flux RSS -->
 
 <!-- Fonction disponible pour les modifications -->
 <script type="text/javascript" src="../SRC_creator_function/updo_comp.js"></script> <!-- Pour monté ou decendre un composant dans une div -->
