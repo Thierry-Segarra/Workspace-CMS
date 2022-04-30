@@ -442,5 +442,17 @@ Mars 2022
         avant la création il faudra mettre une option pour choisir en header, footer ...
 
 Avril 2022
+
     28/40/2022
+    
         en cour de création du changerent de style pour le flux RSS
+
+    29/40/2022
+    
+        en cour de création du changerent de style pour le flux RSS
+        modification sur le traitement de la liste plus du flux 20%
+    
+    30/40/2022
+    
+        en cour de création du changerent de style pour le flux RSS
+        modification sur le traitement de la liste plus du flux 90%

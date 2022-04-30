@@ -1,4 +1,5 @@
 function contenue_Liste(i,divnb,compnb){
+    console.log(compnb);
     document.getElementById('affichage_avance').style.visibility = 'visible';
     document.getElementById("affichage_avance").innerHTML = '<button class="bouton_ligne_list" onclick="Fermer_op_avancee()">X</button><button onclick="addLigneListe('+divnb+','+compnb+')">add ligne</button>',
     document.getElementById("affichage_avance").innerHTML = document.getElementById("affichage_avance").innerHTML + adv_op_ligne_liste; // Permet d'affichet la liste des ellements d'une liste ou d'une tableau
@@ -29,7 +30,7 @@ function contenue_media_contenue(){
 
 function contenue_style_RSS(i,divnb,compnb){
     document.getElementById('affichage_avance').style.visibility = 'visible';
-    document.getElementById("affichage_avance").innerHTML = '<button class="bouton_ligne_list" onclick="Fermer_op_avancee_media()">X</button><button onclick="addLienFluxRss('+divnb+','+compnb+')">add ligne</button>';
+    document.getElementById("affichage_avance").innerHTML = '<button class="bouton_ligne_list" onclick="Fermer_op_avancee()">X</button><button onclick="addLienFluxRss('+divnb+','+compnb+')">add flux</button>';
     document.getElementById("affichage_avance").innerHTML = document.getElementById("affichage_avance").innerHTML + adv_op_style_rss; // Permet d'affichet la liste des ellements d'une liste ou d'une tableau
     compnb = compnb +1;
     traitement_lignefluxrss(i,divnb,compnb);
@@ -52,7 +53,6 @@ function traitement_lignefluxrss(i,divnb,compnb){
 
     article = article.substring(article.search('<div id="rssdiv'+i));
     article = article.substring(0,article.search('</div>')+6);
-    console.log(article);
     
     while(article.search('<p id="') != -1){
         article = article.substring(article.search('<p id="')+7);
@@ -62,15 +62,15 @@ function traitement_lignefluxrss(i,divnb,compnb){
         // Pour récuperer le numerot de l'id
         let nbid_ligne = document.getElementById(id_ligne);
         nbid_ligne = nbid_ligne.getAttribute("id");
-        nbid_ligne = nbid_ligne.substring(('lienrssdiv').length);
-
+        nbid_ligne = nbid_ligne.substring(('rssliendiv').length);
+        console.log(nbid_ligne);
 
         // isoler le nom de la lisgne pour l'affichage de la liste
         let nom_ligne = article.substring(article.search('">')+2);
         nom_ligne = nom_ligne.substring(0,nom_ligne.search('</p>'));
         
 
-        document.getElementById("list_composans").innerHTML = document.getElementById("list_composans").innerHTML + '<button id="id_op'+nbid_ligne+'" onclick="clearInterval(inter),option_element('+nbid_ligne+',`LIENRSS`,`lienrssdiv`)">option</button>'+'<button id="id_sup'+nbid_ligne+'" onclick="clearInterval(inter),suprime_lienRSS_liste('+nbid_ligne+')">suprimer</button><button id="up'+nbid_ligne+'" onclick="ligne_up('+i+','+nbid_ligne+','+compnb+','+divnb+')">up</button><button id="down'+nbid_ligne+'" onclick="ligne_down('+i+','+nbid_ligne+','+compnb+','+divnb+')">down</button><br id="id_br'+nbid_ligne+'"><p id="trai_'+id_ligne+'">'+nom_ligne+'</p>'
+        document.getElementById("list_composans").innerHTML = document.getElementById("list_composans").innerHTML + '<button id="id_op'+nbid_ligne+'" onclick="clearInterval(inter),option_element('+nbid_ligne+',`LIENRSS`,`rssliendiv`)">option</button>'+'<button id="id_sup'+nbid_ligne+'" onclick="clearInterval(inter),suprime_lienRSS_liste('+nbid_ligne+')">suprimer</button><button id="up'+nbid_ligne+'" onclick="ligne_rss_up('+i+','+nbid_ligne+','+compnb+','+divnb+')">up</button><button id="down'+nbid_ligne+'" onclick="ligne_rss_down('+i+','+nbid_ligne+','+compnb+','+divnb+')">down</button><br id="id_br'+nbid_ligne+'"><p id="trai_'+id_ligne+'">'+nom_ligne+'</p>'
 
         // list_composans mettre une balsie p ou autre et mettre le nom de la ligne
         // rajouter des bouton pour la modification, supresion, monté ou décendre la ligne
@@ -87,7 +87,6 @@ function traitement_ligneliste(i,divnb,compnb){
 
     article = article.substring(article.search('<ul id="listdiv'+i));
     article = article.substring(0,article.search('</ul>')+5);
-    console.log(article);
     
     while(article.search('<li id="') != -1){
         article = article.substring(article.search('<li id="')+8);
@@ -104,7 +103,6 @@ function traitement_ligneliste(i,divnb,compnb){
         let nom_ligne = article.substring(article.search('">')+2);
         nom_ligne = nom_ligne.substring(0,nom_ligne.search('</li>'));
         
-
         document.getElementById("list_composans").innerHTML = document.getElementById("list_composans").innerHTML + '<button id="id_op'+nbid_ligne+'" onclick="clearInterval(inter),option_element('+nbid_ligne+',`LIGNE`,`lignelistdiv`)">option</button>'+'<button id="id_sup'+nbid_ligne+'" onclick="clearInterval(inter),suprime_ligne_liste('+nbid_ligne+')">suprimer</button><button id="up'+nbid_ligne+'" onclick="ligne_up('+i+','+nbid_ligne+','+compnb+','+divnb+')">up</button><button id="down'+nbid_ligne+'" onclick="ligne_down('+i+','+nbid_ligne+','+compnb+','+divnb+')">down</button><br id="id_br'+nbid_ligne+'"><p id="trai_'+id_ligne+'">'+nom_ligne+'</p>'
 
         // list_composans mettre une balsie p ou autre et mettre le nom de la ligne
