@@ -24,7 +24,7 @@ function option_element(i,nom_element,element,divnb,compnb){
     
 
 
-    if(nom_element == 'LIGNE' || nom_element == 'LIENRSS'){
+    if(nom_element == 'LIGNE' || nom_element == 'LIENRSS' || nom_element == 'CATEGORIEARTICLE'){
 
         document.getElementById("option_compossan").innerHTML = op_menu_element; // Permet d'afficher les options disponible à cette element
         document.getElementById("menu_option").innerHTML = op_menu; // pour eviter un conflie avec les paramettre
@@ -158,8 +158,19 @@ function option_element(i,nom_element,element,divnb,compnb){
 
         }else if(nom_element == 'ARTICLE'){
 
+            //let categorie = categorie_traitement(element+i) // permet de récuperer l'id de l'option selectionner
+            //option = modif_op_article_categorie(op_article_categorie,categorie); // cette foncvtion permet d'ajouter a la liste de scategorie, la catégorie selectionner
+            //<p>Modifer contenue de la liste</p><button id="op_plus" onclick="clearInterval(inter),contenue_Liste('+i+','+stock_divnb+','+stock_compnb+')">Option Ligne</button>
+            document.getElementById("contenue").innerHTML = '<p>Modifer contenue de la liste</p><button id="op_plus" onclick="clearInterval(inter),contenue_ligne_article('+i+','+stock_divnb+','+stock_compnb+')">Option Ligne</button><br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
+
+            //document.getElementById("contenue").innerHTML = '<p>Categorie Article</p><select name="op_contenue" id="select_categorie">'+option+'</select><br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
+
+        }else if(nom_element == 'CATEGORIEARTICLE'){
+
             let categorie = categorie_traitement(element+i) // permet de récuperer l'id de l'option selectionner
             option = modif_op_article_categorie(op_article_categorie,categorie); // cette foncvtion permet d'ajouter a la liste de scategorie, la catégorie selectionner
+            //<p>Modifer contenue de la liste</p><button id="op_plus" onclick="clearInterval(inter),contenue_Liste('+i+','+stock_divnb+','+stock_compnb+')">Option Ligne</button>
+            //document.getElementById("contenue").innerHTML = '<p>Modifer contenue de la liste</p><button id="op_plus" onclick="clearInterval(inter),contenue_ligne_article('+i+','+stock_divnb+','+stock_compnb+')">Option Ligne</button><br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
 
             document.getElementById("contenue").innerHTML = '<p>Categorie Article</p><select name="op_contenue" id="select_categorie">'+option+'</select><br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
 
@@ -546,12 +557,27 @@ function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque
             }
 
         }else if(nom_element == 'ARTICLE'){
+            /*
             let nom_categorie = categorie_traitement_nom(element+i);
             
             if(nom_categorie != document.getElementById('select_categorie').value){
                 document.getElementById(element+i).innerHTML = 'categorie selectionner : '+document.getElementById('select_categorie').value;
             }
+            */
+            if(document.querySelector('input[name=align]:checked').value){
+                document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
+            }
 
+        }else if(nom_element == 'CATEGORIEARTICLE'){
+            
+            let nom_categorie = categorie_traitement_nom(element+i);
+            
+            if(nom_categorie != document.getElementById('select_categorie').value){
+                document.getElementById(element+i).innerHTML = 'categorie article : '+document.getElementById('select_categorie').value;
+                document.getElementById('trai_'+element+i).innerHTML = 'categorie article : '+document.getElementById('select_categorie').value; // pour afficher le contenue modifier
+
+            }
+            
             if(document.querySelector('input[name=align]:checked').value){
                 document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
             }

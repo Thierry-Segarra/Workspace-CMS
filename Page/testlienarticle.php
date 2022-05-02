@@ -1,0 +1,1 @@
+    <div class="builddiv" id="idiv1"><div id="div1comp1"><div id="articlelistediv11" style=""><p id="lignearticlelistediv12">categorie article : Tout</p><p id="lignearticlelistediv13" style="text-align: center;">categorie article : Non-Defini</p><p id="lignearticlelistediv14" style="text-align: right;">categorie article : article</p></div></div></div>

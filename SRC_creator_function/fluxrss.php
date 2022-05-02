@@ -32,6 +32,7 @@ if(strpos($text, 'rssdiv') !== false){
             // on met en haut la fonction pour mettre le contenue car sinon la fonction ne marcheras pas
             function addresultat(resultat,nb){
                 document.getElementById('rssliendiv'+nb).innerHTML = resultat;
+                document.getElementById('rssliendiv'+nb).removeAttribute('style');
             }
         </script>
     <?php 
@@ -45,29 +46,26 @@ while(strpos($text, 'rssdiv') !== false){
     while(strpos($text, 'rssliendiv') !== false){ // tant qu'il y a plusieur fulx RSS
 
         $text = stristr($text,'rssliendiv'); // on recherche si il y a rssdiv dans le text
-        echo $text;
-        echo '<br><br><br>';
+        
         // traitement pour récuperer l'id du composant lien RSS
         $nb = substr($text, 10); // 10 = la taille de 'rssliendiv'
         $nb = substr($nb,0,strpos($nb,'&')); // on isole le nombre
         // Pour récuperer le numerot de la div et de sont composant
         $text = substr($text, 10+strlen($nb)); // on elève la traitement au text de base pour pas refaire la meme recherche
-        echo $text;
-        echo '<br><br><br>';
+        
 
         // traitement pour récuperer le style du composant lien RSS
         $style = $text;
-        $style = substr($style,0,strpos($style,'gt;1'));
+        $style = substr($style,0,strpos($style,'gt;'));
         //$style = substr($nb,0,strpos($nb,'&')); // on isole le nombre
-        echo 'STYLE : '.$style;
-        echo '<br><br><br>';
+        
         if(strpos($style, 'style') !== false){
             $style = stristr($style,'style'); // on s'avance jusqu'a sont url pour pas que pour la prochaine recherche si tombe sur le meme element a 3 chiffre
             $style = stristr($style,'quot;');
             $style = substr($style, 5);
             $style = substr($style,0,strpos($style,'&')); // on isole le style
-            echo 'TEST style : '.$style;
-            echo '<br><br><br>';
+            
+
         }
 
         // on isole l'url
@@ -75,7 +73,7 @@ while(strpos($text, 'rssdiv') !== false){
         $url = stristr($url,'lt;/p', true);
         $url = substr($url, 3);
         $url = substr($url,0,strpos($url,'&'));
-        echo $url;
+        
 
         if(strpos($url, 'http') !== false){
             $text = stristr($text,'http'); // on s'avance jusqu'a sont url pour pas que pour la prochaine recherche si tombe sur le meme element a 3 chiffre
@@ -90,10 +88,6 @@ while(strpos($text, 'rssdiv') !== false){
 }
 
 function fluxRSS($url,$nb,$style){
-    $css = 'style="'.$style.'"';
-    echo '<br><br><br>';
-    echo 'STYLE FINALLE :'.$style;
-    echo '<br><br><br>';
     $resultat = '';
     //$url =  ; //"https://www.tomshardware.fr/tag/processeurs/feed/"; /* insérer ici l'adresse du flux RSS de votre choix */
 
@@ -108,7 +102,7 @@ function fluxRSS($url,$nb,$style){
             foreach ($xml->channel->item as $item){
                 $datetime = date_create($item->pubDate);
                 $date = date_format($datetime, 'd M Y, H\hi');
-                $resultat = $resultat.'<div '.$css.' ><a  href="'.$item->link.'">'.$item->title.'<br></a> ('.$date.')</div><br>';
+                $resultat = $resultat.'<div style="'.$style.'" ><a  href="'.$item->link.'">'.$item->title.'<br></a> ('.$date.')</div><br>';
             }
             
             // on tranfère dans une fonction en JS pour mettre les reponse dans la baliser conserné a l'aire d'une fonction

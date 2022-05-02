@@ -6,7 +6,7 @@ function addLienFluxRss(i,nbcomp){
     //console.log(divcomp);
      let add = '<p id="rssliendiv'+i+compo+'">Nouveau Flux RSS</p>';
      
-     document.getElementById('list_composans').innerHTML =  document.getElementById('list_composans').innerHTML + '<button id="id_op'+i+compo+'" onclick="clearInterval(inter),option_element('+i+compo+',`LIENRSS`,`rssliendiv`)">option</button>'+'<button id="id_sup'+i+compo+'" onclick="clearInterval(inter),suprime_lienRSS_liste('+i+compo+')">suprimer</button><button id="up'+i+compo+'" onclick="ligne_up('+i+nbcomp+','+i+compo+','+nbcomp+','+i+')">up</button><button id="down'+i+compo+'" onclick="ligne_down('+i+nbcomp+','+i+compo+','+nbcomp+','+i+')">down</button><br id="id_br'+i+compo+'"><p id="trai_rssliendiv'+i+compo+'">Nouveau Flux RSS</p>';
+     document.getElementById('list_composans').innerHTML =  document.getElementById('list_composans').innerHTML + '<button id="id_op'+i+compo+'" onclick="clearInterval(inter),option_element('+i+compo+',`LIENRSS`,`rssliendiv`)">option</button>'+'<button id="id_sup'+i+compo+'" onclick="clearInterval(inter),suprime_lienRSS_liste('+i+compo+')">suprimer</button><button id="up'+i+compo+'" onclick="ligne_rss_up('+i+nbcomp+','+i+compo+','+nbcomp+','+i+')">up</button><button id="down'+i+compo+'" onclick="ligne_rss_down('+i+nbcomp+','+i+compo+','+nbcomp+','+i+')">down</button><br id="id_br'+i+compo+'"><p id="trai_rssliendiv'+i+compo+'">Nouveau Flux RSS</p>';
      // Permet de créé un une ligne dans une liste
      document.getElementById('rssdiv'+i+nbcomp).innerHTML =  document.getElementById('rssdiv'+i+nbcomp).innerHTML + add;
      

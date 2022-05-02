@@ -457,6 +457,8 @@ Avril 2022
         en cour de création du changerent de style pour le flux RSS
         modification sur le traitement de la liste plus du flux 90%
 
+Mai 2022
+
     01/05/2022
 
         correction a 90% du probleme avec les option avancée sur la création de composans
@@ -464,4 +466,9 @@ Avril 2022
     02/05/2022
 
         Fin de correction du probleme avec les option avancée sur la création de composans
+        Ajoue du css pour chaque reponse au flux RSS
+        ajoue du css pour chaque lien des articles dans les pages
+        
+
+
         

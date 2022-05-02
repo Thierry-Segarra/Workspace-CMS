@@ -30,13 +30,16 @@
 
     // Affiche le menu de Modification avancée
     var adv_op_ligne_liste = '<?php include("../Option_menu/adv_op_ligne_liste.php") ?>';
+    var adv_op_style_rss = '<?php include("../Option_menu/adv_op_style_rss.php") ?>';
+
+    var adv_op_ligne_article = '<?php include("../Option_menu/adv_op_ligne_article.php") ?>';
     // media
     var adv_op_media_image = '<?php include("../Option_menu/adv_op_media_image.php") ?>';
     var adv_op_media_video = '<?php include("../Option_menu/adv_op_media_video.php") ?>';
     var adv_op_media_contenue = '<?php include("../Option_menu/adv_op_media_contenue.php") ?>';
 
     // partie module du menu
-    //var op_contenue = '<?php include("../Option_menu/composant_menu/contenue.php") ?>'; menu qui ne sert plus
+    //var op_contenue = '<?php //include("../Option_menu/composant_menu/contenue.php") ?>'; menu qui ne sert plus
     var op_bordure = '<?php include("../Option_menu/composant_menu/bordure.php") ?>';
     var op_position = '<?php include("../Option_menu/composant_menu/position.php") ?>';
     var op_autre = '<?php include("../Option_menu/composant_menu/autre.php") ?>';
@@ -63,11 +66,13 @@
 <script type="text/javascript" src="../SRC_creator_function/composans/text.js"></script> <!-- Pour crée une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/liste.js"></script> <!-- Pour crée une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/video.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/ligne-liste.js"></script> <!-- Pour crée une ligne dans une liste -->
+<script type="text/javascript" src="../SRC_creator_function/composans/ligne_liste.js"></script> <!-- Pour crée une ligne dans une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/map.js"></script> <!-- Pour crée une map -->
 <script type="text/javascript" src="../SRC_creator_function/composans/html.js"></script> <!-- Pour crée un HTML et CSS -->
 <script type="text/javascript" src="../SRC_creator_function/composans/fluxRSS.js"></script> <!-- Pour crée un flux RSS -->
 <script type="text/javascript" src="../SRC_creator_function/composans/listearticle.js"></script> <!-- Pour crée une liste des article -->
+<script type="text/javascript" src="../SRC_creator_function/composans/lien_fluxrss.js"></script> <!-- Pour ajouter un ou des liens pour un flux RSS -->
+<script type="text/javascript" src="../SRC_creator_function/composans/ligne_article.js"></script> <!-- Pour crée un flux RSS -->
 
 
 <!-- Fonction disponible pour les modifications -->

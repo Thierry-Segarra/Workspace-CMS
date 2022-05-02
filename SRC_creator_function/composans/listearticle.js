@@ -2,7 +2,7 @@ function addArticleDiv(i){
     // Permet de créé un text dans une div
     let divcomp = "div"+i+"comp"+compo;
     //console.log(divcomp);
-    let add = '<div id="div'+i+'comp'+compo+'"><div id="listearticlediv'+i+compo+'">categorie selectionner : Tout</div></div>';
+    let add = '<div id="div'+i+'comp'+compo+'"><div id="articlelistediv'+i+compo+'"></div></div>'; // categorie selectionner : Tout
     
     document.getElementById('idiv'+i).innerHTML =  document.getElementById('idiv'+i).innerHTML + add;
     tablediv["idiv"+i].push(divcomp);

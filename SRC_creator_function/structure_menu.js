@@ -93,7 +93,8 @@ function boucle_composans(divnb){
 
                 //document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`,'+divnb+','+compnb+')">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
             }else if(nom == 'ARTICLE'){
-                type_element = "listearticlediv";
+                type_element = "articlelistediv";
+                nbligne = nombre_ligne_article(compnb,divnb); // A FAIRE
                 //document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`,'+divnb+','+compnb+')">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
             }
             if(type_element != ''){
@@ -117,6 +118,22 @@ function nombre_ligne_list(nbcomposant,nbdiv){
     //console.log(list);
     while(list.search('<li id="lignelistdiv')!=-1){
         list = list.substring(list.search('<li id="lignelistdiv')+20);
+        console.log(list);
+        i = i +1
+        console.log(i);
+    }
+    return i;
+}
+
+function nombre_ligne_article(nbcomposant,nbdiv){
+    console.log(nbcomposant);
+    var i = 0;
+    var list = document.getElementById("apercu").innerHTML
+    list = list.substring(list.search('<div id="articlelistediv'+nbdiv+nbcomposant));
+    list = list.substring(0,list.search('</div>')+6);
+    //console.log(list);
+    while(list.search('<p id="lignearticlelistediv')!=-1){
+        list = list.substring(list.search('<p id="lignearticlelistediv')+27);
         console.log(list);
         i = i +1
         console.log(i);
