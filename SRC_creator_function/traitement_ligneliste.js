@@ -3,7 +3,7 @@ function contenue_Liste(i,divnb,compnb){
     document.getElementById('affichage_avance').style.visibility = 'visible';
     document.getElementById("affichage_avance").innerHTML = '<button class="bouton_ligne_list" onclick="Fermer_op_avancee()">X</button><button onclick="addLigneListe('+divnb+','+compnb+')">add ligne</button>',
     document.getElementById("affichage_avance").innerHTML = document.getElementById("affichage_avance").innerHTML + adv_op_ligne_liste; // Permet d'affichet la liste des ellements d'une liste ou d'une tableau
-    compnb = compnb +1; // Pour avoir l'id du composans
+    //compnb = compnb +1; // Pour avoir l'id du composans
     traitement_ligneliste(i,divnb,compnb);
 }
 

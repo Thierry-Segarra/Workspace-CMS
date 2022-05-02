@@ -1,6 +1,6 @@
 <?php
 // Permet de verifier si le site existe
-function validerLien($lien,$nb){
+function validerLien($lien,$nb,$style){
     $ch = curl_init($lien);
     curl_setopt($ch, CURLOPT_FAILONERROR, true);
     curl_setopt($ch, CURLOPT_NOBODY, true);
@@ -11,7 +11,7 @@ function validerLien($lien,$nb){
         else
         { 
             // si oui faire la fonction qui permet d'appeler le flux RSS
-            fluxRSS($lien,$nb);// on transfère url et le numero de son composant
+            fluxRSS($lien,$nb,$style);// on transfère url et le numero de son composant
         }
     curl_close($ch);
 }
@@ -45,23 +45,43 @@ while(strpos($text, 'rssdiv') !== false){
     while(strpos($text, 'rssliendiv') !== false){ // tant qu'il y a plusieur fulx RSS
 
         $text = stristr($text,'rssliendiv'); // on recherche si il y a rssdiv dans le text
+        echo $text;
+        echo '<br><br><br>';
         // traitement pour récuperer l'id du composant lien RSS
         $nb = substr($text, 10); // 10 = la taille de 'rssliendiv'
         $nb = substr($nb,0,strpos($nb,'&')); // on isole le nombre
         // Pour récuperer le numerot de la div et de sont composant
         $text = substr($text, 10+strlen($nb)); // on elève la traitement au text de base pour pas refaire la meme recherche
+        echo $text;
+        echo '<br><br><br>';
+
+        // traitement pour récuperer le style du composant lien RSS
+        $style = $text;
+        $style = substr($style,0,strpos($style,'gt;1'));
+        //$style = substr($nb,0,strpos($nb,'&')); // on isole le nombre
+        echo 'STYLE : '.$style;
+        echo '<br><br><br>';
+        if(strpos($style, 'style') !== false){
+            $style = stristr($style,'style'); // on s'avance jusqu'a sont url pour pas que pour la prochaine recherche si tombe sur le meme element a 3 chiffre
+            $style = stristr($style,'quot;');
+            $style = substr($style, 5);
+            $style = substr($style,0,strpos($style,'&')); // on isole le style
+            echo 'TEST style : '.$style;
+            echo '<br><br><br>';
+        }
 
         // on isole l'url
         $url = stristr($text,'gt;');
         $url = stristr($url,'lt;/p', true);
         $url = substr($url, 3);
         $url = substr($url,0,strpos($url,'&'));
+        echo $url;
 
         if(strpos($url, 'http') !== false){
             $text = stristr($text,'http'); // on s'avance jusqu'a sont url pour pas que pour la prochaine recherche si tombe sur le meme element a 3 chiffre
             $text = stristr($text,'lt;/p');
             $text = substr($text, 5);
-            validerLien($url,$nb); // on vérifie si le lien marche
+            validerLien($url,$nb,$style); // on vérifie si le lien marche
         
         }else{
             echo 'Lien invalide: ' . $url . "<br>"; // si le lien marche mais que ce n'est pas un XML
@@ -69,7 +89,11 @@ while(strpos($text, 'rssdiv') !== false){
     }
 }
 
-function fluxRSS($url,$nb){
+function fluxRSS($url,$nb,$style){
+    $css = 'style="'.$style.'"';
+    echo '<br><br><br>';
+    echo 'STYLE FINALLE :'.$style;
+    echo '<br><br><br>';
     $resultat = '';
     //$url =  ; //"https://www.tomshardware.fr/tag/processeurs/feed/"; /* insérer ici l'adresse du flux RSS de votre choix */
 
@@ -84,7 +108,7 @@ function fluxRSS($url,$nb){
             foreach ($xml->channel->item as $item){
                 $datetime = date_create($item->pubDate);
                 $date = date_format($datetime, 'd M Y, H\hi');
-                $resultat = $resultat.'<div><a  href="'.$item->link.'">'.$item->title.'<br></a> ('.$date.')</div><br>';
+                $resultat = $resultat.'<div '.$css.' ><a  href="'.$item->link.'">'.$item->title.'<br></a> ('.$date.')</div><br>';
             }
             
             // on tranfère dans une fonction en JS pour mettre les reponse dans la baliser conserné a l'aire d'une fonction

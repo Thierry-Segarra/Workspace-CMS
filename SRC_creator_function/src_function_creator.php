@@ -37,7 +37,7 @@
     var adv_op_media_contenue = '<?php include("../Option_menu/adv_op_media_contenue.php") ?>';
 
     // partie module du menu
-    //var op_contenue = '<?php //include("../Option_menu/composant_menu/contenue.php") ?>'; menuu qui ne sert plus
+    //var op_contenue = '<?php //include("../Option_menu/composant_menu/contenue.php") ?>'; menu qui ne sert plus
     var op_bordure = '<?php include("../Option_menu/composant_menu/bordure.php") ?>';
     var op_position = '<?php include("../Option_menu/composant_menu/position.php") ?>';
     var op_autre = '<?php include("../Option_menu/composant_menu/autre.php") ?>';

@@ -13,7 +13,7 @@ function addLienFluxRss(i,nbcomp){
 
      compo = compo + 1;
  
-     boucle_composans(i);
+     //boucle_composans(i); // on ne modifie pas la structure priscipale, donc pas la peine de l'appeler
  }  
 
 // option

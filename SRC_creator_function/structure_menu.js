@@ -42,8 +42,10 @@ function boucle_composans(divnb){
             document.getElementById('div'+divnb).innerHTML = '<button onclick="menu_add_fermer('+divnb+')">↓</button><br><button onclick="addTitreDiv('+divnb+')">titre</button><button onclick="addTextDiv('+divnb+')">text</button><button onclick="addBoutonDiv('+divnb+')">bouton</button><button onclick="addImageDiv('+divnb+')">image</button><br><button onclick="addVideoDiv('+divnb+')">video</button><button onclick="addListeDiv('+divnb+')">liste</button><button onclick="addMapDiv('+divnb+')">map</button><button onclick="addHtmlDiv('+divnb+')">HTML</button><button onclick="addRssDiv('+divnb+')">RSS</button><button onclick="addArticleDiv('+divnb+')">Liste Article</button><br><button onclick="option_element('+divnb+',`DIV`,`idiv`)">option</button><button onclick="suprime_Div('+divnb+')">suprimer</button><button onclick="up_div('+divnb+')">up</button><button onclick="down_div('+divnb+')">down</button><div id="comp'+divnb+'"></div>'
         }
         for(let c=0;c < tablecomp.length;c++){
+            var nbligne = 0;
             let table2 = tablecomp[c]; // récuperer un par un
             let nom = tablecomp[table2] // récuperer le nom du composans
+            
             //console.log(c,table2,nom)
 
             // divnb = numero de la div
@@ -52,7 +54,6 @@ function boucle_composans(divnb){
 
             //console.log(table2.substring(3,table2.search('comp'))); // Pour récuperer le nb de la div
             compnb = table2.substring(table2.search('comp')+4)  // Pour récuperer le nb du composans
-            //console.log(nom)
             let type_element = '';
             if(nom == 'IMAGE'){
                 type_element = "imadiv";
@@ -76,6 +77,8 @@ function boucle_composans(divnb){
             }
             else if(nom == 'LISTE'){
                 type_element = "listdiv";
+                nbligne = nombre_ligne_list(compnb,divnb);
+
                 //document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`,'+divnb+','+compnb+')">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
             }else if(nom == 'MAP'){
                 type_element = "mapdiv";
@@ -85,6 +88,9 @@ function boucle_composans(divnb){
                 //document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`,'+divnb+','+compnb+')">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
             }else if(nom == 'RSS'){
                 type_element = "rssdiv";
+                nbligne = nombre_ligne_fluxrss(compnb,divnb);
+                // Faire une fonction pour récuperer le nombre d'ellement dans ce compoisant (le nombrede ligne qui est dans le flux)
+
                 //document.getElementById('div'+divnb).innerHTML = document.getElementById('div'+divnb).innerHTML + '<p id="idnomcomp'+divnb+compnb+'">'+nom+'</p><button id="id_op'+divnb+compnb+'" onclick="clearInterval(inter),option_element('+divnb+compnb+',`'+nom+'`,`'+type_element+'`,'+divnb+','+compnb+')">option</button>'+'<button id="id_sup'+divnb+compnb+'" onclick="clearInterval(inter),suprime_element('+divnb+','+divnb+compnb+',`'+table2+'`,`'+type_element+'`)">suprimer</button><button id="up'+divnb+compnb+'" onclick="up_comp('+divnb+',`'+table2+'`)">up</button><button id="down'+divnb+compnb+'" onclick="down_comp('+divnb+',`'+table2+'`)">down</button><br id="id_br'+divnb+compnb+'">'
             }else if(nom == 'ARTICLE'){
                 type_element = "listearticlediv";
@@ -95,6 +101,41 @@ function boucle_composans(divnb){
             }else{
                 //console.log('Probleme mineur');
             }
+            compnb = parseInt(compnb);
+            compo = compnb + nbligne + 1;
+            
         }
+        console.log(compo);
     }
+}
+
+function nombre_ligne_list(nbcomposant,nbdiv){
+    var i = 0;
+    var list = document.getElementById("apercu").innerHTML 
+    list = list.substring(list.search('<ul id="listdiv'+nbdiv+nbcomposant));
+    list = list.substring(0,list.search('</ul>')+5);
+    //console.log(list);
+    while(list.search('<li id="lignelistdiv')!=-1){
+        list = list.substring(list.search('<li id="lignelistdiv')+20);
+        console.log(list);
+        i = i +1
+        console.log(i);
+    }
+    return i;
+}
+
+function nombre_ligne_fluxrss(nbcomposant,nbdiv){
+    console.log(nbcomposant);
+    var i = 0;
+    var list = document.getElementById("apercu").innerHTML
+    list = list.substring(list.search('<div id="rssdiv'+nbdiv+nbcomposant));
+    list = list.substring(0,list.search('</div>')+6);
+    //console.log(list);
+    while(list.search('<p id="rssliendiv')!=-1){
+        list = list.substring(list.search('<p id="rssliendiv')+17);
+        console.log(list);
+        i = i +1
+        console.log(i);
+    }
+    return i;
 }
