@@ -1,1 +1,0 @@
-    <div class="builddiv" id="idiv1"><div id="div1comp1"><div id="rssdiv11"><p id="rssliendiv12" style="border: 5px dashed rgb(0, 0, 0);">https://www.tomshardware.fr/tag/processeurs/feed/</p><p id="rssliendiv13">Nouveau Flux RSS</p></div></div></div>

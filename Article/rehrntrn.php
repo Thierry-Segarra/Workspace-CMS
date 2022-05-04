@@ -1,1 +1,0 @@
-    <div class="builddiv" id="idiv1"><div id="div1comp1"><h1 id="tidiv11">Titre</h1></div></div>

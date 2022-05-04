@@ -1,1 +1,0 @@
-    <div class="builddiv" id="idiv1"><div id="div1comp1"><button id="boudiv11" onclick="window.open=

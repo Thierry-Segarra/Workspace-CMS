@@ -1,1 +1,0 @@
-    <div class="builddiv" id="idiv1"><div id="div1comp1"><div id="htmldiv11">Portfolio<br>bienvenue et aurevoir</div></div></div>
