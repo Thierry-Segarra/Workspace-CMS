@@ -33,6 +33,7 @@ if(strpos($text, 'rssdiv') !== false){
             function addresultat(resultat,nb){
                 document.getElementById('rssliendiv'+nb).innerHTML = resultat;
                 document.getElementById('rssliendiv'+nb).removeAttribute('style');
+                document.getElementById('rssliendiv'+nb).setAttribute('style', 'display: flex; flex-wrap: wrap; justify-content: space-between;');
             }
         </script>
     <?php 

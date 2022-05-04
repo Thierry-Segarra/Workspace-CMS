@@ -10,7 +10,7 @@ cela permet de mettre des point sur une map pour situer un endroit voulue
 
 
 
-modifier l'areatext pour mettre un meillieurediteur de text ex: https://nicedit.com/demos.php?demo=1
+modifier l'areatext pour mettre un meillieur editeur de text ex: https://nicedit.com/demos.php?demo=1
 
 modifier le bouton pour mette des fonctionnaliter comme changer de page, réseau sociaux, télecharger du contenue (dossier, vidéo etc)
 

@@ -9,7 +9,8 @@ while(strpos($text, 'articlelistediv') !== false){
             // on met en haut la fonction pour mettre le contenue car sinon la fonction ne marcheras pas
             function listearticleresultat(resultat,nb){
                 document.getElementById('lignearticlelistediv'+nb).innerHTML = resultat;
-                document.getElementById('lignearticlelistediv'+nb).removeAttribute('style');
+                //document.getElementById('lignearticlelistediv'+nb).removeAttribute('style');
+                document.getElementById('lignearticlelistediv'+nb).setAttribute('style', 'display: flex; flex-wrap: wrap; justify-content: space-between;');
             }
         </script>
     <?php 
@@ -32,7 +33,7 @@ while(strpos($text, 'articlelistediv') !== false){
             $style = stristr($style,'quot;');
             $style = substr($style, 5);
             $style = substr($style,0,strpos($style,'&')); // on isole le style
-            
+            //echo 'STYLE : '. $style;
         }
 
         $text = stristr($text,'categorie article : ');
@@ -49,7 +50,7 @@ while(strpos($text, 'articlelistediv') !== false){
             $requete = "SELECT * FROM `article`";
             $exec_requete = mysqli_query($db,$requete);
             while ($row = mysqli_fetch_assoc($exec_requete)){
-                $resultat = $resultat . '<div><a  href="./afficher_article.php?article='.$row["Chemain"].'">'.$row["titre"].'</a><p>'.$row["description"].'</p></div><br>';
+                $resultat = $resultat . '<div  style = "'.$style.'"><a  href="./afficher_article.php?article='.$row["Chemain"].'">'.$row["titre"].'</a><p>'.$row["description"].'</p></div><br>';
             };
             ?>
                 <script>listearticleresultat(`<?php echo $resultat ?>`,`<?php echo $nb ?>`);</script>

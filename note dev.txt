@@ -468,7 +468,13 @@ Mai 2022
         Fin de correction du probleme avec les option avancée sur la création de composans
         Ajoue du css pour chaque reponse au flux RSS
         ajoue du css pour chaque lien des articles dans les pages
-        
+    
+    03/05/2022
+
+        A FAIRE:
+        verifier le fonctionnement global
+        Finaliser le projet pour faire une version 1
+        rajouter le header et le footer avec une categorie gadjet
 
 
         

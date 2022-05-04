@@ -163,6 +163,7 @@ function option_element(i,nom_element,element,divnb,compnb){
             //<p>Modifer contenue de la liste</p><button id="op_plus" onclick="clearInterval(inter),contenue_Liste('+i+','+stock_divnb+','+stock_compnb+')">Option Ligne</button>
             document.getElementById("contenue").innerHTML = '<p>Modifer contenue de la liste</p><button id="op_plus" onclick="clearInterval(inter),contenue_ligne_article('+i+','+stock_divnb+','+stock_compnb+')">Option Ligne</button><br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
 
+            
             //document.getElementById("contenue").innerHTML = '<p>Categorie Article</p><select name="op_contenue" id="select_categorie">'+option+'</select><br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
 
         }else if(nom_element == 'CATEGORIEARTICLE'){
@@ -172,7 +173,18 @@ function option_element(i,nom_element,element,divnb,compnb){
             //<p>Modifer contenue de la liste</p><button id="op_plus" onclick="clearInterval(inter),contenue_Liste('+i+','+stock_divnb+','+stock_compnb+')">Option Ligne</button>
             //document.getElementById("contenue").innerHTML = '<p>Modifer contenue de la liste</p><button id="op_plus" onclick="clearInterval(inter),contenue_ligne_article('+i+','+stock_divnb+','+stock_compnb+')">Option Ligne</button><br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
 
-            document.getElementById("contenue").innerHTML = '<p>Categorie Article</p><select name="op_contenue" id="select_categorie">'+option+'</select><br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
+            document.getElementById("contenue").innerHTML = '<p>Categorie Article</p><select name="op_contenue" id="select_categorie">'+option+'</select><br><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br><label for="op_taille_height">Hauteur</label><br><input name="op_taille_height" id="op_taille_height" type="text" placeholder="image par defaut" value=""><br><p>Alignement</p><input style="position:absolute;visibility: hidden;z-index=-100;" type="radio" id="none" name="align" value="" checked><input type="radio" id="left" name="align" value="left"><label for="left">Left</label><input type="radio" id="center" name="align" value="center"><label for="center">Center</label><input type="radio" id="right" name="align" value="right"><label for="right">Right</label><br><br>';
+            
+            if(document.getElementById(element+i).style.width){
+                let width = document.getElementById(element+i).style.width;
+                document.getElementById('op_taille_width').value = width.substring(0,width.length);
+            }
+        
+            if(document.getElementById(element+i).style.height){
+                let height = document.getElementById(element+i).style.height;
+                document.getElementById('op_taille_height').value = height.substring(0,height.length)
+            } 
+
 
         }else if(nom_element == 'HTML'){
             document.getElementById("contenue").innerHTML = '<p>code HTML</p><textarea name="op_html" id="op_html"></textarea><br><br><p>code CSS</p><textarea name="op_css" id="op_css"></textarea>';
@@ -564,6 +576,8 @@ function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque
                 document.getElementById(element+i).innerHTML = 'categorie selectionner : '+document.getElementById('select_categorie').value;
             }
             */
+            
+
             if(document.querySelector('input[name=align]:checked').value){
                 document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
             }
@@ -577,6 +591,15 @@ function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque
                 document.getElementById('trai_'+element+i).innerHTML = 'categorie article : '+document.getElementById('select_categorie').value; // pour afficher le contenue modifier
 
             }
+
+            if(document.getElementById('op_taille_width').value){
+                document.getElementById(element+i).style.width = document.getElementById('op_taille_width').value;
+            }else{document.getElementById(element+i).style.width = null}
+
+            if(document.getElementById('op_taille_height').value){
+                document.getElementById(element+i).style.height = document.getElementById('op_taille_height').value;
+            }else{document.getElementById(element+i).style.height = null}
+
             
             if(document.querySelector('input[name=align]:checked').value){
                 document.getElementById(element+i).style.textAlign = document.querySelector('input[name=align]:checked').value; // pour afficher les modificaton fait sur l'alignement du titre
