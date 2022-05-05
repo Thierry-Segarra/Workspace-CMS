@@ -19,7 +19,7 @@ Page : Liste des pages crée, ce menue permet aussi de crée, modifier le titre,
 
 Article : Liste des articles crée, ce menue permet aussi de crée, modifier le titre, description et sa catégorie
 
-Formulaire : Liste des formulaire crée, ce menue permet aussi de crée, modifier le titre, description et sa catégorie
+(Comming soon)Formulaire : Liste des formulaire crée, ce menue permet aussi de crée, modifier le titre, description et sa catégorie
 
 Media : Liste de document importer, elle permet d'imorter des images, URL de vidéo et de PDF, elle permet aussi de les suprimers
 
@@ -143,6 +143,9 @@ Affichage permetant d'upload des images
 
 ## Chapitre 4 Fichier Option_menu
 
+adv_op_ligne_article.php :
+affichage la liste des catégorie que l'on veut afficher.
+
 adv_op_ligne_liste.php :
 affichage par defaut des option avancé.
 
@@ -153,7 +156,10 @@ adv_op_media_image.php :
 affichage les image upload pour les ajoutée dans les articles et les pages.
 
 adv_op_media_video.php :
-affichage les video upload pour les ajoutée dans les articles et les pages
+affichage les video upload pour les ajoutée dans les articles et les pages.
+
+adv_op_style_rss.php :
+affichage les lien des flux rss avec leur propre CSS.
 
 op_menu_div.php :
 Affichage des option d'une div
@@ -274,7 +280,8 @@ Permet de faire du CSS et c'est tout
 workspace_bdd.sql :
 C'est la base de donnée du CMS pour pouvoir enregister les article, page ...
 
-
+Probleme-rencontré.txt :
+Ce fichier et pour répertorier les probleme rencotré pour etre résolute plustard.
 
 # fichier
 

@@ -5,12 +5,13 @@ echo '<br>############# Partie Page ###############<br>';
 
 $titre = $_POST['titre'];
 $div = $_POST['div'];
+
 if(isset($_POST['composans'])){
 $composans = $_POST['composans'];
 $nom_composans = $_POST['nom_composans'];
 }
-$HTML = $_POST['HTML'];
-//$HTML = htmlspecialchars($HTML, ENT_QUOTES);
+$HTML = $_POST["HTML"];
+//$HTML = htmlentities($_POST["HTML"], ENT_QUOTES);
 echo $HTML;
 
 if(isset($_POST['Modif'])){

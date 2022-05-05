@@ -39,9 +39,14 @@ function enregistrer(){
             //console.log(contenue)
         
         }
-        let HTML = "'"+document.querySelector('page').innerHTML+"'";
-        //console.log(HTML)
-        contenue = contenue + '<input type="text" name="HTML" value='+HTML+'><br>'
+        function encodeHTMLEntities() {
+            return String(document.querySelector('page').innerHTML).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        var HTML = encodeHTMLEntities();
+        console.log(HTML);
+
+        contenue = contenue + '<input type="text" name="HTML" value="'+HTML+'"><br>'
         document.getElementById('enregistre').innerHTML = contenue;
         //console.log(document.getElementById('enregistre'));
 
