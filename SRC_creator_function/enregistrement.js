@@ -5,7 +5,7 @@
 function enregistrer(){
     
     var nom_article = prompt("Titre de cette article");
-
+    
     if(nom_article != null){
         document.getElementById("affichage_avance").innerHTML = '<form action="../Fonction-Requet/enregistrer_article.php" method="post" id="enregistre"></form>';
 
@@ -39,9 +39,14 @@ function enregistrer(){
             //console.log(contenue)
         
         }
-        let HTML = "'"+document.querySelector('article').innerHTML+"'";
+        function encodeHTMLEntities() {
+            return String(document.querySelector('page').innerHTML).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        var HTML = encodeHTMLEntities();
+        console.log(HTML);
         //console.log(HTML)
-        contenue = contenue + '<input type="text" name="HTML" value='+HTML+'><br>'
+        contenue = contenue + '<input type="text" name="HTML" value="'+HTML+'"><br>'
         document.getElementById('enregistre').innerHTML = contenue;
         //console.log(document.getElementById('enregistre'));
 

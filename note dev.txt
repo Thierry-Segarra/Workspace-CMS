@@ -480,5 +480,9 @@ Mai 2022
 
         V1 CMS
 
+    05/05/2022
+
+        résolution de problème majeur : probleme avec le symbole ' et "
+        pour faire des mot comme par exemple s'aider ou bien meme "s'assoire"
 
         

@@ -15,8 +15,8 @@ if(isset($_GET['Modification'])){
     
     ?>
     var traitement = '<?php echo json_encode($traitement); ?>'; // récupère la table php en string js
-    var html = '<?php include(".".$reponse["Chemain"]); ?>'; // récuperer le chemain de l'article pour ensuite l'afficher dans la balise < page >
+    var html = `<?php include(".".$reponse["Chemain"]); ?>`; // récuperer le chemain de l'article pour ensuite l'afficher dans la balise < page >
     var nom_article = '<?php echo $reponse["titre"] ?>'; // récupère le titre pour pas le remarquer l'or de l'enregistrement des modification
     <?php
-}else{ ?> var html =''; <?php }; 
+}else{ ?> var html =``; <?php }; 
 ?>
