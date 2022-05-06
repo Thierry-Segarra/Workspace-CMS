@@ -57,7 +57,7 @@ function option_element(i,nom_element,element,divnb,compnb){
 
         }else if(nom_element == 'VIDEO'){
             // option pour modifier le contenue et la taille d'une image
-            document.getElementById("contenue").innerHTML = '<p>lien de la video</p><button id="op_plus" onclick="contenue_media_video()" >Option Ligne</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br>';
+            document.getElementById("contenue").innerHTML = '<p>lien de la video</p><button id="op_plus" onclick="contenue_media_video()" >Option Vidéo</button><p>taille de l`element</p><label for="op_taille_width">Largeur</label><br><input name="op_taille_width" id="op_taille_width" type="text" placeholder="image par defaut" value=""><br>';
 
             if(document.getElementById(element+i).style.width){
                 let width = document.getElementById(element+i).style.width;
@@ -813,3 +813,4 @@ function op_update_element(i,nom_element,element,divnb){ // modifier pour chaque
     }
 
 }
+// sa fait beaucoup la non ?

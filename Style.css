@@ -149,7 +149,7 @@ article .builddiv{
     padding: 1px;
 }
 
-page .builddiv{
+.page .builddiv{
     margin: 0 0 0 0 ;
     border: solid 5px green;
     width: 99%;
@@ -163,6 +163,9 @@ page .builddiv{
     background-color: white;
     overflow-y:scroll;
     
+}
+.structure .titrenomcomp{
+   margin-left: 5%;    
 }
 
 .option{

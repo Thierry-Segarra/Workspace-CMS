@@ -487,6 +487,7 @@ Mai 2022
 
     06/05/2022
 
-        résolution de problème mineur : probleme syr le changement de titre sur les article et les page
+        résolution de problème mineur : probleme sur le changement de titre sur les article et les page
         le titre été modifier mais pas le reste (chemain d'accées et renomer le fichier)
         
+        résolution d'autre probleme mineur
