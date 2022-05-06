@@ -1,1 +1,0 @@
-    <div class="builddiv" id="idiv1"><div id="div1comp1"><p id="texdiv11" disabled="">s'aider 'voila' "voila"</p></div></div>

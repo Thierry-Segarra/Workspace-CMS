@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Segarra Portfolio.com</title>
+        <title>Workspace</title>
         <link rel="stylesheet" href="Style.css">
     </head>
     <body class="bodd">
