@@ -1,13 +1,1 @@
-probleme de changement de nom du fichier
-il faut rennomer le fichier avec le nouveau nom
-et modifier le chemain d'accé de fichier dans la base de donnée
-
-PROBLEME MAGEUR :
-avec le symbole ( ' ), on ne peut pas marquer un mot (ex: s'aimer)
-
-pour résourdre ce probleme il faudra remplacer les fichier js en php 
-pour faire un htmlentities avec ENT_QUOTES et pour le refaire affichier en HTML
-il faudra modifier les fichier d'affichage avec htmlentities et ENT_HTML5 
-pour lui rendre les proprièté du HTML 5
-
-Faire teste pour récuperer les contenue d'une balsie en php
+plus aucun probleme détecter

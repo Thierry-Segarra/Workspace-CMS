@@ -40,7 +40,7 @@ function enregistrer(){
         
         }
         function encodeHTMLEntities() {
-            return String(document.querySelector('page').innerHTML).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            return String(document.querySelector('article').innerHTML).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
         }
 
         var HTML = encodeHTMLEntities();
