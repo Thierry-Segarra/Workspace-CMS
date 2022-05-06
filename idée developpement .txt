@@ -96,3 +96,6 @@ afficher liste d'article dans une page
 faire un compomposant qui affiche dans els option la catégorie voulue
 selon la catégorie voulue fair une fontion qui récupère cette info et afficher tout les articles qui on cette catégorie
 
+
+
+faire liste choix des unité (px, vw, vh, % ...)

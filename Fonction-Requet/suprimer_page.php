@@ -21,7 +21,7 @@
     // Supression des donnée ddns la base de donnée
     $requete2 = "DELETE FROM `page` WHERE id=".$id."";
     $exec_requete2 = mysqli_query($db,$requete2);
-    $reponse2      = mysqli_fetch_array($exec_requete2);
+    //$reponse2      = mysqli_fetch_array($exec_requete2);
     header('Location: ../index.php?page');
     mysqli_close($db); // fermer la connexion
 
