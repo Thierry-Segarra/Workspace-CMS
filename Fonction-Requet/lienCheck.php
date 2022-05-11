@@ -8,7 +8,7 @@
         // Pour aller dans le menu "Article"
     }
     else if(isset($_GET['media'])){
-        $media = $_GET['media'];
+        $media = $_GET['media']; // pour afficher le menu avant rechargement de la page
         echo '<script type="text/javascript">B3();categorie_media='.$media.';categorie();</script>';
         // Pour aller dans le menu "Media"
     }

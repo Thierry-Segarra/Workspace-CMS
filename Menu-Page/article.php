@@ -9,7 +9,7 @@ echo '<h1 class="titre">Article</h1>'.
         '<li class="L2">Auteur/Autrice</li>'.
         '<li class="L3">Date</li>'.
     '</ul>';
-include("./Fonction-Requet/afficher-list-article.php");
+include("./Fonction-Requet/afficher-list-article.php"); // Affiche tout les article avec le menu pour modifier, suprimer, renommer le titre, changer le commentaire et changer de catégorie 
 echo '</div>';
 
 ?>

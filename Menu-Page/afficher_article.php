@@ -15,4 +15,4 @@
     </body>
 
 </html>
-<?php include("../SRC_creator_function/fluxrss.php"); ?>
+<?php include("../SRC_creator_function/fluxrss.php");// fichier pour le flux RSS ?>

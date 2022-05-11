@@ -4,8 +4,9 @@ function B1(){
 
 function B2(){
     document.getElementById("info").innerHTML= linkB2; // Article
-    description = description_dbb('1');
-    liste_categorie = categorie_dbb();
+    // function dans le ficiher index_function.php
+    description = description_dbb(1); // Permet de récuperer tout les information des article
+    liste_categorie = categorie_dbb(); // Permet de récuperer tout les catégories
     
 }
 
@@ -16,8 +17,9 @@ function B3(){
 
 function B4(){
     document.getElementById("info").innerHTML= linkB4; // Page
-    description = description_dbb('2');
-    liste_categorie = categorie_dbb();
+    // function dans le ficiher index_function.php
+    description = description_dbb(2); // Permet de récuperer tout les information des pages
+    liste_categorie = categorie_dbb(); // Permet de récuperer tout les catégories
 }
 
 function B5(){

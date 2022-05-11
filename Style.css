@@ -78,20 +78,26 @@
 }
 
 .panneau .ligneparam{
-    width: 59.1vw;
-    visibility: hidden;
+    width: 81%;
+    visibility: collapse;
     border: solid 1px rgb(185, 185, 185);
-    padding: 5px;
     padding-left: 20px;
     padding-right: 50px;
     list-style: none;
     /* haut | droit | bas | gauche */
-    margin: 0px 10px 0 10px ;
+    margin: 0px 10px 5px 10px ;
 }
 .panneau .ligneparam .L1{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    justify-content: space-around;
+    
+}
+
+.panneau .ligneparam .L1 .modification{
     display: grid;
     text-align: center;
-    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .panneau .ligne .L1{
