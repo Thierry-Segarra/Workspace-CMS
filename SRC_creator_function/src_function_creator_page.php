@@ -60,12 +60,12 @@
 
 <script type="text/javascript" src="../SRC_creator_function/Option_Element.js"></script> <!-- Pour modifier le css d'un titre, text, image, bouton, liste-->
 
-<script type="text/javascript" src="../SRC_creator_function/composans/bouton.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/image.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/titre.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/text.js"></script> <!-- Pour crée une liste -->
+<script type="text/javascript" src="../SRC_creator_function/composans/bouton.js"></script> <!-- Pour crée une bouton -->
+<script type="text/javascript" src="../SRC_creator_function/composans/image.js"></script> <!-- Pour crée une image -->
+<script type="text/javascript" src="../SRC_creator_function/composans/titre.js"></script> <!-- Pour crée une titre -->
+<script type="text/javascript" src="../SRC_creator_function/composans/text.js"></script> <!-- Pour crée une texte -->
 <script type="text/javascript" src="../SRC_creator_function/composans/liste.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/video.js"></script> <!-- Pour crée une liste -->
+<script type="text/javascript" src="../SRC_creator_function/composans/video.js"></script> <!-- Pour crée une video -->
 <script type="text/javascript" src="../SRC_creator_function/composans/ligne_liste.js"></script> <!-- Pour crée une ligne dans une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/map.js"></script> <!-- Pour crée une map -->
 <script type="text/javascript" src="../SRC_creator_function/composans/html.js"></script> <!-- Pour crée un HTML et CSS -->

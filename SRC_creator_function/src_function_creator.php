@@ -37,7 +37,6 @@
     var adv_op_media_contenue = '<?php include("../Option_menu/adv_op_media_contenue.php") ?>';
 
     // partie module du menu
-    //var op_contenue = '<?php //include("../Option_menu/composant_menu/contenue.php") ?>'; menu qui ne sert plus
     var op_bordure = '<?php include("../Option_menu/composant_menu/bordure.php") ?>';
     var op_position = '<?php include("../Option_menu/composant_menu/position.php") ?>';
     var op_autre = '<?php include("../Option_menu/composant_menu/autre.php") ?>';
@@ -53,15 +52,15 @@
 
 <script type="text/javascript" src="../SRC_creator_function/Option_Element.js"></script> <!-- Pour modifier le css d'un titre, text, image, bouton, liste-->
 
-<script type="text/javascript" src="../SRC_creator_function/composans/bouton.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/image.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/titre.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/text.js"></script> <!-- Pour crée une liste -->
+<script type="text/javascript" src="../SRC_creator_function/composans/bouton.js"></script> <!-- Pour crée une bouton -->
+<script type="text/javascript" src="../SRC_creator_function/composans/image.js"></script> <!-- Pour crée une image -->
+<script type="text/javascript" src="../SRC_creator_function/composans/titre.js"></script> <!-- Pour crée une titre -->
+<script type="text/javascript" src="../SRC_creator_function/composans/text.js"></script> <!-- Pour crée une texte -->
 <script type="text/javascript" src="../SRC_creator_function/composans/liste.js"></script> <!-- Pour crée une liste -->
-<script type="text/javascript" src="../SRC_creator_function/composans/video.js"></script> <!-- Pour crée une liste -->
+<script type="text/javascript" src="../SRC_creator_function/composans/video.js"></script> <!-- Pour crée une vidéo -->
 <script type="text/javascript" src="../SRC_creator_function/composans/ligne_liste.js"></script> <!-- Pour crée une ligne dans une liste -->
 <script type="text/javascript" src="../SRC_creator_function/composans/map.js"></script> <!-- Pour crée une map -->
-<script type="text/javascript" src="../SRC_creator_function/composans/html.js"></script> <!-- Pour crée une map -->
+<script type="text/javascript" src="../SRC_creator_function/composans/html.js"></script> <!-- Pour crée une html -->
 <script type="text/javascript" src="../SRC_creator_function/composans/fluxRSS.js"></script> <!-- Pour crée un flux RSS -->
 <script type="text/javascript" src="../SRC_creator_function/composans/lien_fluxrss.js"></script> <!-- Pour ajouter un ou des liens pour un flux RSS -->
 
