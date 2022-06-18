@@ -9,7 +9,7 @@ echo '<h1 class="titre">Page</h1>'.
         '<li class="L2">Auteur/Autrice</li>'.
         '<li class="L3">Date</li>'.
     '</ul>';
-include("./Fonction-Requet/afficher-list-page.php"); // Affiche tout les pages avec le menu pour modifier, suprimer, renommer le titre, changer le commentaire et changer de catégorie
+include("./SRC/Fonction-Requet/Afficher/afficher-list-page.php"); // Affiche tout les pages avec le menu pour modifier, suprimer, renommer le titre, changer le commentaire et changer de catégorie
 echo '</div>';
 
 ?>

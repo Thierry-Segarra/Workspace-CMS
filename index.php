@@ -22,15 +22,15 @@
         </section>
     </body>
     <!-- PARTI SCRIPT ET INCLUDE PHP -->
-    <?php include('Fonction-Requet/connectionBDD.php'); // connection à la base de donnée ?> 
+    <?php include('SRC/Fonction-Requet/Fonction/connectionBDD.php'); // connection à la base de donnée ?> 
 
-    <?php include('Fonction-Requet/index_function.php'); // Ce fichier est constituer de plusieur fontion comme la supression de l'article, de page et de catégorie, il a aussi le changement de menu ?>
+    <?php include('SRC/Fonction-Requet/Fonction/index_function.php'); // Ce fichier est constituer de plusieur fontion comme la supression de l'article, de page et de catégorie, il a aussi le changement de menu ?>
     
-    <?php include('Fonction-Requet/function_media.php'); // Fonction: upload, supression, changement de catégorie ?>
+    <?php include('SRC/Fonction-Requet/Fonction/function_media.php'); // Fonction: upload, supression, changement de catégorie ?>
     
-    <?php include('Fonction-Requet/function_parametre.php'); // Fonction pour les parametres : cathégorie ?>
+    <?php include('SRC/Fonction-Requet/Fonction/function_parametre.php'); // Fonction pour les parametres : cathégorie ?>
 
-    <script type="text/javascript" src="Fonction-Requet/menu.js">// Pour switch entre les menu grace au bouton dans le menu principal (tableua de bort , page, article ...)</script>
+    <script type="text/javascript" src="SRC/Fonction-Requet/Fonction/menu.js">// Pour switch entre les menu grace au bouton dans le menu principal (tableua de bort , page, article ...)</script>
 
-    <?php include('Fonction-Requet/lienCheck.php'); // Permet de lier les lien avec le menu pour garder un menu ouvert apres une modification ?>
+    <?php include('SRC/Fonction-Requet/Fonction/lienCheck.php'); // Permet de lier les lien avec le menu pour garder un menu ouvert apres une modification ?>
 </html>

@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../Style.css">
     </head>
     <body>
-    <?php include('../SRC_creator_function/src_function_creator_page.php');?>
+    <?php include('../SRC/SRC_creator_function/src_function_creator_page.php');?>
 
     <section class="menucreat" id="menucreat">
 

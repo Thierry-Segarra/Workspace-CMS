@@ -494,8 +494,22 @@ Mai 2022
 
     10/05/2022
 
-        ajoue de commentaire de code
+        ajoue de commentaire au code
 
     11/05/2022
 
-        ajoue de commentaire de code
+        ajoue de commentaire au code
+
+Juin 2022
+
+    13/06/2022
+
+        ajoue de la fonctionnaliter d'exporter sous format JSON une template de la page ou d'article.
+
+    17/06/2022
+
+        Restructuration des fichiers du projet
+
+    18/06/2022
+
+        Restructuration des fichiers du projet

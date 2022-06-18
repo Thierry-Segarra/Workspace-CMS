@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../Style.css">
     </head>
     <body>
-    <?php include('../SRC_creator_function/src_function_creator.php'); // permet de faire la création d'article ?> 
+    <?php include('../SRC/SRC_creator_function/src_function_creator.php'); // permet de faire la création d'article ?> 
 
     <section class="menucreat" id="menucreat">
 
